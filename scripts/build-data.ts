@@ -13,11 +13,18 @@ type Level = {
    *  IMMUTABLE once audio is rendered — changing the seed would re-map words to
    *  different MP3 positions and silently break every existing audio file. */
   seed: number;
+  /** Silent gap (seconds) inserted between dictated items by tts-spelling.ts.
+   *  IMMUTABLE once audio is rendered — changing it without re-rendering makes
+   *  the value disagree with the actual MP3s, and re-rendering costs ElevenLabs
+   *  quota. Tiers (see CLAUDE.md): Tier 1 (Y3/Y5) = 7.5, Tier 2 (Y7/Y9) = 5.5. */
+  pauseSec: number;
 };
 
 const LEVELS: Level[] = [
-  { id: 'y3-lc', title: 'Year 3 Language Conventions', seed: 30303 },
-  { id: 'y5-lc', title: 'Year 5 Language Conventions', seed: 50505 },
+  { id: 'y3-lc', title: 'Year 3 Language Conventions', seed: 30303, pauseSec: 7.5 },
+  { id: 'y5-lc', title: 'Year 5 Language Conventions', seed: 50505, pauseSec: 7.5 },
+  { id: 'y7-lc', title: 'Year 7 Language Conventions', seed: 70707, pauseSec: 5.5 },
+  { id: 'y9-lc', title: 'Year 9 Language Conventions', seed: 90909, pauseSec: 5.5 },
 ];
 
 function mulberry32(seed: number) {
@@ -63,6 +70,27 @@ function probeDuration(mp3: string): number | null {
   if (result.status !== 0) return null;
   const n = parseFloat(result.stdout.trim());
   return Number.isFinite(n) ? Math.round(n) : null;
+}
+
+/** Detect where each spoken word starts in a part MP3 by finding the silent
+ *  gaps between items (silencedetect=noise=-30dB:d=2). Returns one timestamp
+ *  per word — word 1 starts at t=0, word N+1 starts at the silence_end of the
+ *  N-th detected gap. Returns null on any mismatch so the player can fall
+ *  back to disabling the prev/next buttons rather than seeking to a wrong
+ *  offset. The ~0.5s of speech tail-off after each word is included in the
+ *  detected silence, which is fine — it just means "next word" snaps to the
+ *  start of the next spoken sound, not the geometric end of the silence. */
+function detectQuestionStarts(mp3: string, expected: number): number[] | null {
+  if (!existsSync(mp3)) return null;
+  const result = spawnSync(
+    'ffmpeg',
+    ['-hide_banner', '-nostats', '-i', mp3, '-af', 'silencedetect=noise=-30dB:d=2', '-f', 'null', '-'],
+    { encoding: 'utf8' },
+  );
+  if (result.status !== 0) return null;
+  const ends = [...result.stderr.matchAll(/silence_end:\s*([\d.]+)/g)].map((m) => Number(m[1]));
+  const starts = [0, ...ends].map((n) => Number(n.toFixed(3)));
+  return starts.length === expected ? starts : null;
 }
 
 function partRanges(total: number) {
@@ -113,12 +141,15 @@ async function buildLevel(level: Level) {
   const parts = ranges.map((r, i) => {
     const partNum = i + 1;
     const mp3 = join(audioDir, `part-${String(partNum).padStart(2, '0')}.mp3`);
+    const wordCount = r.end - r.start + 1;
+    const questionStarts = detectQuestionStarts(mp3, wordCount);
     return {
       part: partNum,
       start: r.start,
       end: r.end,
       audio: `/audio/${level.id}/part-${String(partNum).padStart(2, '0')}.mp3`,
       duration: probeDuration(mp3),
+      questionStarts,
     };
   });
 
@@ -126,6 +157,7 @@ async function buildLevel(level: Level) {
     id: level.id,
     title: level.title,
     wordsPerPart: WORDS_PER_PART,
+    pauseSec: level.pauseSec,
     parts,
     words,
   };
@@ -135,10 +167,12 @@ async function buildLevel(level: Level) {
 
   const missingSentences = words.filter((w) => !w.sentence).length;
   const missingDurations = parts.filter((p) => p.duration === null).length;
+  const missingQuestionStarts = parts.filter((p) => p.questionStarts === null).length;
   console.log(
     `Wrote ${outPath} — ${words.length} words, ${parts.length} parts` +
       (missingSentences ? ` (${missingSentences} missing sentences)` : '') +
-      (missingDurations ? ` (${missingDurations} missing durations)` : ''),
+      (missingDurations ? ` (${missingDurations} missing durations)` : '') +
+      (missingQuestionStarts ? ` (${missingQuestionStarts} parts: silencedetect mismatch — prev/next disabled)` : ''),
   );
 }
 

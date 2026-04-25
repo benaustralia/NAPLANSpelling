@@ -7,14 +7,16 @@ export function About() {
         <h1 className="font-display text-5xl font-extrabold tracking-tight">About</h1>
         <div className="mt-5 space-y-4 text-foreground/90 leading-relaxed">
           <p>
-            A small, fast, no-login practice site for Year 3 and Year 5 NAPLAN
-            Language Conventions spelling words.
+            A small, fast, no-login practice site for Year 3, Year 5, Year 7
+            and Year 9 NAPLAN Language Conventions spelling words.
           </p>
           <p>
             The spelling words were extracted from the publicly released NAPLAN
-            Language Conventions test papers (Year 3: 2008–2016; Year 5:
-            2008–2016). Audio was pre-rendered with ElevenLabs at 0.75× tempo
-            with a five-second pause between words.
+            Language Conventions test papers (paper era: 2008–2016, all four
+            year levels). Audio is pre-rendered with ElevenLabs at 0.75× tempo
+            with a paced silent gap between items: 7.5 seconds for Years 3 and
+            5, and 5.5 seconds for Years 7 and 9 — long enough to write a word
+            comfortably, short enough to keep the test moving.
           </p>
           <h2 className="font-display text-2xl font-bold mt-8">Copyright</h2>
           <p className="text-sm text-muted-foreground">

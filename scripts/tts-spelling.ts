@@ -13,6 +13,11 @@
  * substitutes its closest American-accented pre-built voice.
  * Speed 0.75x is set via voice settings (not ffmpeg post-processing).
  *
+ * Pause length comes from the level's `pauseSec` (locked per-level in
+ * scripts/build-data.ts LEVELS table — immutable once audio is rendered).
+ * The PAUSE_SECONDS env var is honoured for ad-hoc experiments only and
+ * emits a warning when it overrides the locked value.
+ *
  * Usage:  ELEVENLABS_API_KEY=... bun run scripts/tts-spelling.ts <levelId> [partNumber]
  *   bun run scripts/tts-spelling.ts y5-lc          # render every missing part
  *   bun run scripts/tts-spelling.ts y5-lc 3        # render only part 3
@@ -26,10 +31,10 @@ import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 
 const API_KEY = process.env.ELEVENLABS_API_KEY;
-const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? 'IKne3meq5aSn9XLyUdCD'; // Charlie — AU male, young
+const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? 'sai9UY7iXkRDSsXHR0bZ'; // Ben — AU male, young
 const MODEL_ID = process.env.ELEVENLABS_MODEL_ID ?? 'eleven_multilingual_v2';
 const SPEED = Number(process.env.ELEVENLABS_SPEED ?? '0.75');
-const PAUSE_SECONDS = Number(process.env.PAUSE_SECONDS ?? '7.5');
+const PAUSE_SECONDS_ENV = process.env.PAUSE_SECONDS ? Number(process.env.PAUSE_SECONDS) : null;
 const FORCE = process.env.FORCE === '1';
 
 const ROOT = process.cwd();
@@ -53,11 +58,23 @@ if (!existsSync(dataPath)) {
 
 type Word = { index: number; word: string; sentence: string };
 type Part = { part: number; start: number; end: number; audio: string };
-type Level = { id: string; title: string; parts: Part[]; words: Word[] };
+type Level = { id: string; title: string; pauseSec: number; parts: Part[]; words: Word[] };
 
 const level: Level = JSON.parse(await readFile(dataPath, 'utf8'));
 const audioDir = join(ROOT, `public/audio/${levelId}`);
 await mkdir(audioDir, { recursive: true });
+
+// Per-level pauseSec is the canonical source (locked in scripts/build-data.ts
+// LEVELS table and immutable once audio is rendered). PAUSE_SECONDS env is
+// only honoured for ad-hoc experimentation — warn loudly if it disagrees so
+// nobody silently re-renders a corpus at the wrong gap.
+const PAUSE_SECONDS = PAUSE_SECONDS_ENV ?? level.pauseSec;
+if (PAUSE_SECONDS_ENV !== null && PAUSE_SECONDS_ENV !== level.pauseSec) {
+  console.warn(
+    `WARNING: PAUSE_SECONDS=${PAUSE_SECONDS_ENV} overrides ${levelId}'s locked pauseSec=${level.pauseSec}. ` +
+      `Audio rendered at this pause will disagree with the corpus default.`,
+  );
+}
 
 function entryText(w: Word): string {
   // Absolute numbering across the whole corpus, matching the print sheet

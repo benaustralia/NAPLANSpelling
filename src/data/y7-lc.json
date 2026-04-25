@@ -1,0 +1,1677 @@
+{
+  "id": "y7-lc",
+  "title": "Year 7 Language Conventions",
+  "wordsPerPart": 20,
+  "pauseSec": 5.5,
+  "parts": [
+    {
+      "part": 1,
+      "start": 1,
+      "end": 20,
+      "audio": "/audio/y7-lc/part-01.mp3",
+      "duration": 263,
+      "questionStarts": [
+        0,
+        12.812,
+        25.624,
+        39.176,
+        52.783,
+        66.277,
+        80.36,
+        93.056,
+        105.317,
+        118.838,
+        131.95,
+        145.172,
+        160.382,
+        174.504,
+        188.549,
+        201.1,
+        214.527,
+        226.729,
+        240.763,
+        255.283
+      ]
+    },
+    {
+      "part": 2,
+      "start": 21,
+      "end": 40,
+      "audio": "/audio/y7-lc/part-02.mp3",
+      "duration": 264,
+      "questionStarts": [
+        0,
+        12.917,
+        26.234,
+        40.434,
+        53.991,
+        67.578,
+        81.342,
+        95.22,
+        109.182,
+        122.487,
+        135.751,
+        148.526,
+        161.927,
+        175.609,
+        188.575,
+        201.881,
+        215.37,
+        229.052,
+        242.352,
+        256.271
+      ]
+    },
+    {
+      "part": 3,
+      "start": 41,
+      "end": 60,
+      "audio": "/audio/y7-lc/part-03.mp3",
+      "duration": 267,
+      "questionStarts": [
+        0,
+        14.115,
+        27.243,
+        40.457,
+        54.579,
+        68.399,
+        81.446,
+        95.527,
+        108.939,
+        124.082,
+        137.533,
+        151.054,
+        163.703,
+        178.073,
+        192.73,
+        206.592,
+        220.011,
+        232.948,
+        246.708,
+        260.052
+      ]
+    },
+    {
+      "part": 4,
+      "start": 61,
+      "end": 80,
+      "audio": "/audio/y7-lc/part-04.mp3",
+      "duration": 273,
+      "questionStarts": [
+        0,
+        13.707,
+        27.983,
+        41.893,
+        54.985,
+        69.905,
+        85.261,
+        99.118,
+        114.039,
+        128.105,
+        141.142,
+        154.718,
+        168.31,
+        182.253,
+        195.751,
+        209.574,
+        224.073,
+        237.549,
+        251.335,
+        264.722
+      ]
+    },
+    {
+      "part": 5,
+      "start": 81,
+      "end": 100,
+      "audio": "/audio/y7-lc/part-05.mp3",
+      "duration": 265,
+      "questionStarts": [
+        0,
+        13.319,
+        26.426,
+        40.364,
+        54.033,
+        69.205,
+        82.715,
+        95.491,
+        108.946,
+        122.212,
+        135.792,
+        150.932,
+        164.589,
+        177.555,
+        190.438,
+        203.965,
+        217.217,
+        230.446,
+        243.489,
+        257.424
+      ]
+    },
+    {
+      "part": 6,
+      "start": 101,
+      "end": 120,
+      "audio": "/audio/y7-lc/part-06.mp3",
+      "duration": 270,
+      "questionStarts": [
+        0,
+        13.423,
+        26.774,
+        40.271,
+        53.898,
+        66.691,
+        81.847,
+        94.656,
+        108.079,
+        121.621,
+        135.334,
+        148.638,
+        163.641,
+        177.61,
+        191.376,
+        206.207,
+        220.356,
+        235.705,
+        249,
+        262.659
+      ]
+    },
+    {
+      "part": 7,
+      "start": 121,
+      "end": 140,
+      "audio": "/audio/y7-lc/part-07.mp3",
+      "duration": 279,
+      "questionStarts": [
+        0,
+        13.539,
+        29.442,
+        43.433,
+        58.707,
+        72.68,
+        86.488,
+        100.358,
+        114.369,
+        127.246,
+        140.977,
+        155.43,
+        168.444,
+        182.231,
+        196.485,
+        210.026,
+        224.936,
+        239.627,
+        254.808,
+        270.845
+      ]
+    },
+    {
+      "part": 8,
+      "start": 141,
+      "end": 160,
+      "audio": "/audio/y7-lc/part-08.mp3",
+      "duration": 276,
+      "questionStarts": [
+        0,
+        13.045,
+        26.599,
+        40.2,
+        56.187,
+        70.01,
+        83.274,
+        96.802,
+        110.402,
+        126.099,
+        141.003,
+        155.312,
+        168.843,
+        182.748,
+        197.257,
+        210.722,
+        226.987,
+        240.336,
+        254.293,
+        267.408
+      ]
+    },
+    {
+      "part": 9,
+      "start": 161,
+      "end": 180,
+      "audio": "/audio/y7-lc/part-09.mp3",
+      "duration": 276,
+      "questionStarts": [
+        0,
+        13.596,
+        27.779,
+        42.326,
+        56.102,
+        70.169,
+        83.613,
+        98.307,
+        111.653,
+        125.165,
+        139.306,
+        152.714,
+        166.76,
+        180.242,
+        195.733,
+        208.742,
+        224.127,
+        238.578,
+        252.276,
+        267.308
+      ]
+    },
+    {
+      "part": 10,
+      "start": 181,
+      "end": 200,
+      "audio": "/audio/y7-lc/part-10.mp3",
+      "duration": 276,
+      "questionStarts": [
+        0,
+        13.601,
+        27.204,
+        40.642,
+        54.722,
+        67.852,
+        81.397,
+        94.317,
+        109.733,
+        124.13,
+        139.283,
+        154.736,
+        168.553,
+        181.599,
+        197.42,
+        212.735,
+        226.095,
+        239.895,
+        253.991,
+        268.629
+      ]
+    },
+    {
+      "part": 11,
+      "start": 201,
+      "end": 224,
+      "audio": "/audio/y7-lc/part-11.mp3",
+      "duration": 327,
+      "questionStarts": [
+        0,
+        13.517,
+        28.927,
+        42.823,
+        55.298,
+        69.687,
+        82.986,
+        97.124,
+        111.996,
+        125.223,
+        138.882,
+        152.707,
+        167.552,
+        181.581,
+        196.392,
+        209.261,
+        224.451,
+        237.461,
+        251.441,
+        265.145,
+        279.634,
+        292.041,
+        305.059,
+        318.162
+      ]
+    }
+  ],
+  "words": [
+    {
+      "index": 1,
+      "word": "attitude",
+      "definition": "the way you think or feel about something",
+      "sentence": "Her positive attitude made the team work harder."
+    },
+    {
+      "index": 2,
+      "word": "adequate",
+      "definition": "enough for what is needed",
+      "sentence": "Bring an adequate supply of water for the hike."
+    },
+    {
+      "index": 3,
+      "word": "genius",
+      "definition": "a person with great natural ability",
+      "sentence": "Her solution to the puzzle was a stroke of genius."
+    },
+    {
+      "index": 4,
+      "word": "sympathy",
+      "definition": "understanding for someone else's feelings",
+      "sentence": "She offered her sympathy when the family pet died."
+    },
+    {
+      "index": 5,
+      "word": "abbreviation",
+      "definition": "a shortened form of a word or phrase",
+      "sentence": "The abbreviation for kilometre is km."
+    },
+    {
+      "index": 6,
+      "word": "finally",
+      "definition": "at last; after a long time",
+      "sentence": "After hours of waiting, the bus finally arrived."
+    },
+    {
+      "index": 7,
+      "word": "shoulder",
+      "definition": "the joint where your arm meets your body",
+      "sentence": "I carried my school bag on one shoulder."
+    },
+    {
+      "index": 8,
+      "word": "activity",
+      "definition": "something you do",
+      "sentence": "Painting is my favourite weekend activity."
+    },
+    {
+      "index": 9,
+      "word": "forecast",
+      "definition": "a prediction about future weather",
+      "sentence": "The forecast says it will rain tomorrow afternoon."
+    },
+    {
+      "index": 10,
+      "word": "measure",
+      "definition": "to find the size or amount of something",
+      "sentence": "Please measure the room before we buy a new rug."
+    },
+    {
+      "index": 11,
+      "word": "taste",
+      "definition": "the flavour something has in your mouth",
+      "sentence": "I love the taste of fresh mango on a hot day."
+    },
+    {
+      "index": 12,
+      "word": "atmosphere",
+      "definition": "the layer of air around a planet",
+      "sentence": "The Earth's atmosphere protects us from the sun's rays."
+    },
+    {
+      "index": 13,
+      "word": "tadpoles",
+      "definition": "baby frogs that live in water",
+      "sentence": "The pond was full of wriggling tadpoles in spring."
+    },
+    {
+      "index": 14,
+      "word": "eclipsed",
+      "definition": "blocked from view by something else",
+      "sentence": "The moon eclipsed the sun for a few stunning minutes."
+    },
+    {
+      "index": 15,
+      "word": "crunchy",
+      "definition": "making a loud sharp sound when bitten",
+      "sentence": "Carrot sticks are my favourite crunchy snack."
+    },
+    {
+      "index": 16,
+      "word": "antique",
+      "definition": "very old and often valuable",
+      "sentence": "Grandma keeps an antique clock on her mantelpiece."
+    },
+    {
+      "index": 17,
+      "word": "proceed",
+      "definition": "to go forward or continue",
+      "sentence": "You may now proceed to the next station."
+    },
+    {
+      "index": 18,
+      "word": "catchment",
+      "definition": "an area where rainwater collects and flows into a river",
+      "sentence": "The dam collects water from a large catchment area."
+    },
+    {
+      "index": 19,
+      "word": "evaluation",
+      "definition": "careful judging of something's value",
+      "sentence": "The teacher gave a fair evaluation of my project."
+    },
+    {
+      "index": 20,
+      "word": "onion",
+      "definition": "a strong-tasting vegetable used in cooking",
+      "sentence": "Chopping an onion always makes my eyes sting."
+    },
+    {
+      "index": 21,
+      "word": "worst",
+      "definition": "least good",
+      "sentence": "That was the worst movie I have seen all year."
+    },
+    {
+      "index": 22,
+      "word": "offering",
+      "definition": "giving something to someone",
+      "sentence": "He was offering free samples at the market stall."
+    },
+    {
+      "index": 23,
+      "word": "interfere",
+      "definition": "to get involved in something that isn't your business",
+      "sentence": "Please don't interfere when I am trying to concentrate."
+    },
+    {
+      "index": 24,
+      "word": "impression",
+      "definition": "an idea or feeling about something or someone",
+      "sentence": "The new principal made a strong first impression."
+    },
+    {
+      "index": 25,
+      "word": "opinion",
+      "definition": "what someone thinks about something",
+      "sentence": "Everyone has their own opinion about the new uniform."
+    },
+    {
+      "index": 26,
+      "word": "exaggerated",
+      "definition": "described as bigger or worse than it really is",
+      "sentence": "He exaggerated the size of the fish he caught."
+    },
+    {
+      "index": 27,
+      "word": "previously",
+      "definition": "before now",
+      "sentence": "She had previously worked as a junior reporter."
+    },
+    {
+      "index": 28,
+      "word": "overnight",
+      "definition": "during the night",
+      "sentence": "The package was delivered overnight by express post."
+    },
+    {
+      "index": 29,
+      "word": "achieved",
+      "definition": "successfully reached or completed",
+      "sentence": "He achieved his goal of running ten kilometres."
+    },
+    {
+      "index": 30,
+      "word": "encouraged",
+      "definition": "gave someone confidence to do something",
+      "sentence": "Our coach encouraged us to keep training through winter."
+    },
+    {
+      "index": 31,
+      "word": "frightened",
+      "definition": "scared",
+      "sentence": "Loud thunder frightened our small dog."
+    },
+    {
+      "index": 32,
+      "word": "weighed",
+      "definition": "measured the heaviness of something",
+      "sentence": "The vet weighed our puppy at his first checkup."
+    },
+    {
+      "index": 33,
+      "word": "bought",
+      "definition": "past tense of 'buy'",
+      "sentence": "We bought sausages and bread rolls for the barbecue."
+    },
+    {
+      "index": 34,
+      "word": "collar",
+      "definition": "a band of cloth or leather around the neck",
+      "sentence": "Our puppy chewed straight through her new collar."
+    },
+    {
+      "index": 35,
+      "word": "recognize",
+      "definition": "to see and know who or what something is",
+      "sentence": "I almost didn't recognize you with your new haircut."
+    },
+    {
+      "index": 36,
+      "word": "drought",
+      "definition": "a long period without enough rain",
+      "sentence": "The drought has lasted for almost two whole years."
+    },
+    {
+      "index": 37,
+      "word": "evaporate",
+      "definition": "to turn from liquid into vapour",
+      "sentence": "Water in puddles will evaporate on a hot day."
+    },
+    {
+      "index": 38,
+      "word": "recruits",
+      "definition": "new members joining a group like the army",
+      "sentence": "The army recruits trained from sunrise to dusk."
+    },
+    {
+      "index": 39,
+      "word": "balance",
+      "definition": "to stay steady without falling",
+      "sentence": "Try to balance on one foot for thirty seconds."
+    },
+    {
+      "index": 40,
+      "word": "discussed",
+      "definition": "talked about with other people",
+      "sentence": "The class discussed the chapter we had just read."
+    },
+    {
+      "index": 41,
+      "word": "instrument",
+      "definition": "a tool used for a particular job; or for music",
+      "sentence": "She is learning to play a new instrument this year."
+    },
+    {
+      "index": 42,
+      "word": "categories",
+      "definition": "groups of things sorted by what they have in common",
+      "sentence": "We sorted the books into three different categories."
+    },
+    {
+      "index": 43,
+      "word": "breakfast",
+      "definition": "the first meal of the day",
+      "sentence": "I had cereal and toast for breakfast."
+    },
+    {
+      "index": 44,
+      "word": "sponsored",
+      "definition": "supported with money in exchange for advertising",
+      "sentence": "The sports day was sponsored by a local business."
+    },
+    {
+      "index": 45,
+      "word": "format",
+      "definition": "the way something is arranged or presented",
+      "sentence": "The teacher explained the format of the upcoming test."
+    },
+    {
+      "index": 46,
+      "word": "nurture",
+      "definition": "to care for and help something grow",
+      "sentence": "Good teachers nurture their students' confidence."
+    },
+    {
+      "index": 47,
+      "word": "miniature",
+      "definition": "a very small version of something",
+      "sentence": "She built a miniature model of the Sydney Opera House."
+    },
+    {
+      "index": 48,
+      "word": "wrist",
+      "definition": "the joint between the hand and the arm",
+      "sentence": "I sprained my wrist trying to catch the falling vase."
+    },
+    {
+      "index": 49,
+      "word": "precipitation",
+      "definition": "rain, snow, sleet, or hail",
+      "sentence": "The graph shows yearly precipitation in millimetres."
+    },
+    {
+      "index": 50,
+      "word": "diamond",
+      "definition": "a very hard sparkling gemstone",
+      "sentence": "A diamond sparkled in the centre of her ring."
+    },
+    {
+      "index": 51,
+      "word": "stomach",
+      "definition": "the part of the body that digests food",
+      "sentence": "My stomach growled loudly during the quiet test."
+    },
+    {
+      "index": 52,
+      "word": "hedge",
+      "definition": "a row of bushes that forms a fence",
+      "sentence": "Dad trimmed the hedge along the front fence."
+    },
+    {
+      "index": 53,
+      "word": "biography",
+      "definition": "the story of a real person's life",
+      "sentence": "I am reading a biography of a famous scientist."
+    },
+    {
+      "index": 54,
+      "word": "thumbnail",
+      "definition": "the nail on your thumb; or a tiny picture",
+      "sentence": "The website showed a tiny thumbnail of each photograph."
+    },
+    {
+      "index": 55,
+      "word": "fiercely",
+      "definition": "in a strong and forceful way",
+      "sentence": "The wind blew fiercely all night long."
+    },
+    {
+      "index": 56,
+      "word": "lyrics",
+      "definition": "the words of a song",
+      "sentence": "I learned the lyrics to my favourite song by heart."
+    },
+    {
+      "index": 57,
+      "word": "anchor",
+      "definition": "a heavy hook that stops a boat from drifting",
+      "sentence": "The sailors dropped the anchor near the island."
+    },
+    {
+      "index": 58,
+      "word": "vehicle",
+      "definition": "a machine that moves people or things, like a car",
+      "sentence": "The vehicle came to a sudden stop at the lights."
+    },
+    {
+      "index": 59,
+      "word": "turtles",
+      "definition": "reptiles with hard shells that live in water or on land",
+      "sentence": "Several green turtles came ashore to lay their eggs."
+    },
+    {
+      "index": 60,
+      "word": "equipped",
+      "definition": "supplied with what is needed",
+      "sentence": "The new gym is equipped with the latest machines."
+    },
+    {
+      "index": 61,
+      "word": "stitch",
+      "definition": "a single loop of thread in sewing",
+      "sentence": "I had to redo every stitch on my crooked seam."
+    },
+    {
+      "index": 62,
+      "word": "temporary",
+      "definition": "lasting only for a short time",
+      "sentence": "The temporary classroom is at the back of the oval."
+    },
+    {
+      "index": 63,
+      "word": "accessible",
+      "definition": "easy to reach or use",
+      "sentence": "The new ramp makes the library more accessible."
+    },
+    {
+      "index": 64,
+      "word": "forfeit",
+      "definition": "to lose something as a penalty",
+      "sentence": "If we don't show up, the team will forfeit the match."
+    },
+    {
+      "index": 65,
+      "word": "fatigued",
+      "definition": "very tired",
+      "sentence": "The walkers felt fatigued after the long uphill climb."
+    },
+    {
+      "index": 66,
+      "word": "advertisement",
+      "definition": "a notice that promotes a product or service",
+      "sentence": "An advertisement for the new game played before the show."
+    },
+    {
+      "index": 67,
+      "word": "impossible",
+      "definition": "not able to be done",
+      "sentence": "It is almost impossible to read this tiny text."
+    },
+    {
+      "index": 68,
+      "word": "description",
+      "definition": "words that tell what someone or something is like",
+      "sentence": "The witness gave a clear description of the missing dog."
+    },
+    {
+      "index": 69,
+      "word": "aggressive",
+      "definition": "quick to attack or get angry",
+      "sentence": "The dog became aggressive when strangers came near."
+    },
+    {
+      "index": 70,
+      "word": "nursery",
+      "definition": "a place where small children are looked after",
+      "sentence": "Babies sleep peacefully in the hospital nursery."
+    },
+    {
+      "index": 71,
+      "word": "yawning",
+      "definition": "opening the mouth wide because you are tired",
+      "sentence": "Tom kept yawning right through the long maths lesson."
+    },
+    {
+      "index": 72,
+      "word": "warmest",
+      "definition": "hottest of a group",
+      "sentence": "January is usually our warmest month of the year."
+    },
+    {
+      "index": 73,
+      "word": "dangerous",
+      "definition": "able to cause harm",
+      "sentence": "Crossing the road without looking is dangerous."
+    },
+    {
+      "index": 74,
+      "word": "heavily",
+      "definition": "with a lot of weight or force",
+      "sentence": "It rained heavily during last night's storm."
+    },
+    {
+      "index": 75,
+      "word": "sample",
+      "definition": "a small piece used to show what the rest is like",
+      "sentence": "The researcher took a small sample of soil for testing."
+    },
+    {
+      "index": 76,
+      "word": "bridge",
+      "definition": "a structure built to cross over a road or river",
+      "sentence": "The old wooden bridge crosses the creek behind our house."
+    },
+    {
+      "index": 77,
+      "word": "penguin",
+      "definition": "a black-and-white seabird that cannot fly",
+      "sentence": "A small penguin waddled along the beach at dusk."
+    },
+    {
+      "index": 78,
+      "word": "claws",
+      "definition": "sharp curved nails on an animal's foot",
+      "sentence": "The eagle gripped the branch with its sharp claws."
+    },
+    {
+      "index": 79,
+      "word": "burrows",
+      "definition": "holes dug in the ground by small animals",
+      "sentence": "Rabbits dig deep burrows under the hedges."
+    },
+    {
+      "index": 80,
+      "word": "surprised",
+      "definition": "caught off guard by something unexpected",
+      "sentence": "Everyone was surprised by the unexpected announcement."
+    },
+    {
+      "index": 81,
+      "word": "since",
+      "definition": "from a particular time in the past until now",
+      "sentence": "I have not seen my cousin since the holidays."
+    },
+    {
+      "index": 82,
+      "word": "label",
+      "definition": "a small piece of paper or fabric attached to something",
+      "sentence": "Always read the warning label on cleaning products."
+    },
+    {
+      "index": 83,
+      "word": "prey",
+      "definition": "an animal hunted for food by another animal",
+      "sentence": "Owls hunt for prey under the cover of darkness."
+    },
+    {
+      "index": 84,
+      "word": "identifies",
+      "definition": "recognises and names something",
+      "sentence": "This app identifies bird calls automatically."
+    },
+    {
+      "index": 85,
+      "word": "particles",
+      "definition": "very tiny pieces of something",
+      "sentence": "Tiny dust particles floated in the sunlight by the window."
+    },
+    {
+      "index": 86,
+      "word": "journals",
+      "definition": "notebooks where you record your thoughts",
+      "sentence": "Scientists keep journals of every experiment they run."
+    },
+    {
+      "index": 87,
+      "word": "funniest",
+      "definition": "most amusing",
+      "sentence": "That was the funniest joke I have heard all year."
+    },
+    {
+      "index": 88,
+      "word": "sketches",
+      "definition": "quick rough drawings",
+      "sentence": "His sketches will be displayed in the school art show."
+    },
+    {
+      "index": 89,
+      "word": "alligators",
+      "definition": "large reptiles with strong jaws",
+      "sentence": "We saw two alligators sleeping in the river."
+    },
+    {
+      "index": 90,
+      "word": "crystal",
+      "definition": "a clear hard mineral with flat sides",
+      "sentence": "The cave was full of glittering crystal formations."
+    },
+    {
+      "index": 91,
+      "word": "performance",
+      "definition": "the act of presenting a show or task",
+      "sentence": "Her performance in the concert received a huge applause."
+    },
+    {
+      "index": 92,
+      "word": "athletes",
+      "definition": "people who play sports at a high level",
+      "sentence": "The athletes warmed up before the race began."
+    },
+    {
+      "index": 93,
+      "word": "consumption",
+      "definition": "the act of using or eating something",
+      "sentence": "Water consumption rises in summer."
+    },
+    {
+      "index": 94,
+      "word": "cupboard",
+      "definition": "a piece of furniture with shelves and doors",
+      "sentence": "Please put the clean plates back in the cupboard."
+    },
+    {
+      "index": 95,
+      "word": "fitness",
+      "definition": "the state of being physically healthy",
+      "sentence": "Daily exercise has improved my fitness this term."
+    },
+    {
+      "index": 96,
+      "word": "swollen",
+      "definition": "puffed up from injury or illness",
+      "sentence": "His ankle was red and swollen after the fall."
+    },
+    {
+      "index": 97,
+      "word": "peaceful",
+      "definition": "calm and quiet",
+      "sentence": "The garden is so peaceful in the early morning."
+    },
+    {
+      "index": 98,
+      "word": "pumpkin",
+      "definition": "a large orange round vegetable",
+      "sentence": "Mum is making pumpkin soup for tonight's dinner."
+    },
+    {
+      "index": 99,
+      "word": "community",
+      "definition": "a group of people who live in the same area",
+      "sentence": "Our community is raising money for the local hospital."
+    },
+    {
+      "index": 100,
+      "word": "climb",
+      "definition": "to go up using your hands and feet",
+      "sentence": "We will climb the small hill before lunchtime."
+    },
+    {
+      "index": 101,
+      "word": "deafening",
+      "definition": "extremely loud",
+      "sentence": "The sound of the jet taking off was deafening."
+    },
+    {
+      "index": 102,
+      "word": "disappointed",
+      "definition": "sad because something didn't go as hoped",
+      "sentence": "I was disappointed when the trip got cancelled."
+    },
+    {
+      "index": 103,
+      "word": "length",
+      "definition": "how long something is",
+      "sentence": "What is the length of the playground in metres?"
+    },
+    {
+      "index": 104,
+      "word": "valuable",
+      "definition": "worth a lot of money or important to you",
+      "sentence": "These coins are extremely valuable to collectors."
+    },
+    {
+      "index": 105,
+      "word": "tournament",
+      "definition": "a competition with several rounds",
+      "sentence": "Our school won the under-13 chess tournament."
+    },
+    {
+      "index": 106,
+      "word": "explanation",
+      "definition": "a statement that makes something clear",
+      "sentence": "The teacher gave a clear explanation of the problem."
+    },
+    {
+      "index": 107,
+      "word": "address",
+      "definition": "the details of where someone lives",
+      "sentence": "Please write your address on the form."
+    },
+    {
+      "index": 108,
+      "word": "attachment",
+      "definition": "something joined or added to another thing",
+      "sentence": "I sent the photo as an email attachment."
+    },
+    {
+      "index": 109,
+      "word": "secluded",
+      "definition": "quiet and hidden away",
+      "sentence": "The cabin was tucked away in a secluded valley."
+    },
+    {
+      "index": 110,
+      "word": "exceeding",
+      "definition": "going beyond a limit",
+      "sentence": "Drivers risk a fine for exceeding the speed limit."
+    },
+    {
+      "index": 111,
+      "word": "automatic",
+      "definition": "working by itself without a person controlling it",
+      "sentence": "The doors at the supermarket are automatic."
+    },
+    {
+      "index": 112,
+      "word": "substantial",
+      "definition": "large in size or amount",
+      "sentence": "We had a substantial breakfast before the long bushwalk."
+    },
+    {
+      "index": 113,
+      "word": "successful",
+      "definition": "having achieved what was wanted",
+      "sentence": "Their backyard cake stall was very successful."
+    },
+    {
+      "index": 114,
+      "word": "precision",
+      "definition": "being exact and careful",
+      "sentence": "Surgeons work with great precision and care."
+    },
+    {
+      "index": 115,
+      "word": "determined",
+      "definition": "refusing to give up",
+      "sentence": "She was determined to finish the puzzle before bedtime."
+    },
+    {
+      "index": 116,
+      "word": "extra",
+      "definition": "more than what is usual",
+      "sentence": "I packed an extra jumper in case it got cold."
+    },
+    {
+      "index": 117,
+      "word": "environment",
+      "definition": "the natural world around us",
+      "sentence": "We must look after our environment for future generations."
+    },
+    {
+      "index": 118,
+      "word": "height",
+      "definition": "how tall something is",
+      "sentence": "Please measure the height of the doorway carefully."
+    },
+    {
+      "index": 119,
+      "word": "queue",
+      "definition": "a line of people waiting their turn",
+      "sentence": "There was a long queue outside the new bakery."
+    },
+    {
+      "index": 120,
+      "word": "possible",
+      "definition": "able to happen",
+      "sentence": "It is possible to learn a new language at any age."
+    },
+    {
+      "index": 121,
+      "word": "moisture",
+      "definition": "small amounts of water in the air or on a surface",
+      "sentence": "Plants need moisture in the soil to grow strong."
+    },
+    {
+      "index": 122,
+      "word": "technological",
+      "definition": "relating to technology",
+      "sentence": "Phones have changed thanks to rapid technological progress."
+    },
+    {
+      "index": 123,
+      "word": "groceries",
+      "definition": "food and other goods bought at a shop",
+      "sentence": "Mum carried the groceries inside from the car."
+    },
+    {
+      "index": 124,
+      "word": "helicopter",
+      "definition": "a flying machine with spinning blades on top",
+      "sentence": "A helicopter circled above the bushfire all afternoon."
+    },
+    {
+      "index": 125,
+      "word": "salmon",
+      "definition": "a pink-fleshed fish from cold rivers and seas",
+      "sentence": "We grilled salmon fillets on the barbecue last night."
+    },
+    {
+      "index": 126,
+      "word": "beginning",
+      "definition": "the first part of something",
+      "sentence": "The beginning of the film was the best part."
+    },
+    {
+      "index": 127,
+      "word": "library",
+      "definition": "a place full of books to borrow or read",
+      "sentence": "I borrowed three books from the school library yesterday."
+    },
+    {
+      "index": 128,
+      "word": "impatience",
+      "definition": "not being willing to wait",
+      "sentence": "His impatience grew as the queue barely moved."
+    },
+    {
+      "index": 129,
+      "word": "message",
+      "definition": "information sent from one person to another",
+      "sentence": "I left a message on her voicemail."
+    },
+    {
+      "index": 130,
+      "word": "principle",
+      "definition": "a basic rule or belief",
+      "sentence": "Honesty is an important principle in our family."
+    },
+    {
+      "index": 131,
+      "word": "volunteer",
+      "definition": "someone who helps without being paid",
+      "sentence": "I volunteer at the local animal shelter on weekends."
+    },
+    {
+      "index": 132,
+      "word": "uncle",
+      "definition": "the brother of your mother or father",
+      "sentence": "My uncle is teaching me how to fish."
+    },
+    {
+      "index": 133,
+      "word": "garbage",
+      "definition": "rubbish or waste",
+      "sentence": "Please put the garbage out before bedtime."
+    },
+    {
+      "index": 134,
+      "word": "gossip",
+      "definition": "casual talk about other people's lives",
+      "sentence": "The gossip about the new student spread quickly."
+    },
+    {
+      "index": 135,
+      "word": "awkwardly",
+      "definition": "in a clumsy or uncomfortable way",
+      "sentence": "He held the heavy box awkwardly under one arm."
+    },
+    {
+      "index": 136,
+      "word": "marathon",
+      "definition": "a very long running race",
+      "sentence": "Running a marathon takes months of careful training."
+    },
+    {
+      "index": 137,
+      "word": "climate",
+      "definition": "the usual weather of a place over many years",
+      "sentence": "Australia has a warm and dry climate in many places."
+    },
+    {
+      "index": 138,
+      "word": "pneumonia",
+      "definition": "a serious illness in the lungs",
+      "sentence": "Grandpa was hospitalised with pneumonia last winter."
+    },
+    {
+      "index": 139,
+      "word": "antiseptic",
+      "definition": "a liquid that kills germs on cuts",
+      "sentence": "Dad cleaned the cut with antiseptic before the bandage."
+    },
+    {
+      "index": 140,
+      "word": "trouble",
+      "definition": "problems or difficulty",
+      "sentence": "If you are in trouble, ring this number straight away."
+    },
+    {
+      "index": 141,
+      "word": "grown",
+      "definition": "fully developed",
+      "sentence": "How tall you have grown since last summer!"
+    },
+    {
+      "index": 142,
+      "word": "depot",
+      "definition": "a building where buses or trains are kept",
+      "sentence": "Our school bus is parked at the depot overnight."
+    },
+    {
+      "index": 143,
+      "word": "cylinder",
+      "definition": "a round tube-shaped object",
+      "sentence": "A can of soup is shaped like a cylinder."
+    },
+    {
+      "index": 144,
+      "word": "unacceptable",
+      "definition": "not good enough; not allowed",
+      "sentence": "Throwing rubbish on the ground is unacceptable behaviour."
+    },
+    {
+      "index": 145,
+      "word": "admitted",
+      "definition": "owned up to something",
+      "sentence": "She admitted that she had taken the last biscuit."
+    },
+    {
+      "index": 146,
+      "word": "sausage",
+      "definition": "a meat product packed in a tube of skin",
+      "sentence": "I had a sausage roll for morning tea."
+    },
+    {
+      "index": 147,
+      "word": "scratches",
+      "definition": "marks made by something sharp",
+      "sentence": "There were a few scratches on the kitchen table."
+    },
+    {
+      "index": 148,
+      "word": "miserable",
+      "definition": "extremely unhappy",
+      "sentence": "Cold rainy weather always makes me feel miserable."
+    },
+    {
+      "index": 149,
+      "word": "circulated",
+      "definition": "passed around from person to person",
+      "sentence": "A funny story circulated around the playground all morning."
+    },
+    {
+      "index": 150,
+      "word": "traditional",
+      "definition": "passed down from earlier times",
+      "sentence": "The dancers wore traditional costumes from their region."
+    },
+    {
+      "index": 151,
+      "word": "kilojoule",
+      "definition": "a unit for measuring energy in food",
+      "sentence": "There are about 100 kilojoules in this small biscuit."
+    },
+    {
+      "index": 152,
+      "word": "accompany",
+      "definition": "to go somewhere with someone",
+      "sentence": "I will accompany my sister to the dentist."
+    },
+    {
+      "index": 153,
+      "word": "surgery",
+      "definition": "a doctor's operation on the body",
+      "sentence": "The vet booked our cat in for surgery on Monday."
+    },
+    {
+      "index": 154,
+      "word": "poisonous",
+      "definition": "able to make something sick or kill it",
+      "sentence": "Some mushrooms in the bush are extremely poisonous."
+    },
+    {
+      "index": 155,
+      "word": "excellent",
+      "definition": "very good indeed",
+      "sentence": "Her painting is in excellent condition."
+    },
+    {
+      "index": 156,
+      "word": "ineffective",
+      "definition": "not producing the desired result",
+      "sentence": "The old umbrella was ineffective against the strong wind."
+    },
+    {
+      "index": 157,
+      "word": "grateful",
+      "definition": "feeling thankful",
+      "sentence": "I am grateful to my friends for their kindness."
+    },
+    {
+      "index": 158,
+      "word": "habitat",
+      "definition": "the natural home of an animal or plant",
+      "sentence": "Cutting down forests destroys the habitat of many animals."
+    },
+    {
+      "index": 159,
+      "word": "reliable",
+      "definition": "can be trusted to work or do the right thing",
+      "sentence": "My old bicycle is still very reliable."
+    },
+    {
+      "index": 160,
+      "word": "thought",
+      "definition": "past tense of 'think'; an idea",
+      "sentence": "I thought I had left my keys on the bench."
+    },
+    {
+      "index": 161,
+      "word": "hiding",
+      "definition": "keeping out of sight",
+      "sentence": "The puppy was hiding under the kitchen table."
+    },
+    {
+      "index": 162,
+      "word": "patients",
+      "definition": "sick people being looked after by a doctor",
+      "sentence": "The doctor saw twenty patients before lunch."
+    },
+    {
+      "index": 163,
+      "word": "obedience",
+      "definition": "following rules or doing what you are told",
+      "sentence": "Our dog is going to obedience classes on Saturdays."
+    },
+    {
+      "index": 164,
+      "word": "symphony",
+      "definition": "a long piece of music for an orchestra",
+      "sentence": "The orchestra performed a famous symphony last night."
+    },
+    {
+      "index": 165,
+      "word": "intelligence",
+      "definition": "the ability to learn and understand",
+      "sentence": "Crows are well known for their intelligence."
+    },
+    {
+      "index": 166,
+      "word": "accept",
+      "definition": "to agree to take something offered",
+      "sentence": "Please accept this gift from our team."
+    },
+    {
+      "index": 167,
+      "word": "sustain",
+      "definition": "to keep going for a long time",
+      "sentence": "These crops cannot sustain another month without rain."
+    },
+    {
+      "index": 168,
+      "word": "version",
+      "definition": "one form of something that exists in several",
+      "sentence": "I bought the latest version of the game last weekend."
+    },
+    {
+      "index": 169,
+      "word": "lizard",
+      "definition": "a small reptile with four legs and a long tail",
+      "sentence": "A small lizard sunned itself on the warm rock."
+    },
+    {
+      "index": 170,
+      "word": "weapon",
+      "definition": "a tool used to harm or fight",
+      "sentence": "A baseball bat is not a toy or a weapon."
+    },
+    {
+      "index": 171,
+      "word": "ankle",
+      "definition": "the joint between the foot and the leg",
+      "sentence": "I twisted my ankle playing basketball at lunchtime."
+    },
+    {
+      "index": 172,
+      "word": "orbit",
+      "definition": "the path one object takes around another in space",
+      "sentence": "The space station follows a low orbit around Earth."
+    },
+    {
+      "index": 173,
+      "word": "immediately",
+      "definition": "right now; without delay",
+      "sentence": "Please come inside immediately, dinner is ready."
+    },
+    {
+      "index": 174,
+      "word": "envelope",
+      "definition": "a paper cover for a letter",
+      "sentence": "Please slip the letter inside the envelope before sealing it."
+    },
+    {
+      "index": 175,
+      "word": "aquatic",
+      "definition": "living in or relating to water",
+      "sentence": "Frogs and turtles are aquatic animals."
+    },
+    {
+      "index": 176,
+      "word": "soldiers",
+      "definition": "people who serve in an army",
+      "sentence": "Soldiers marched in formation through the parade ground."
+    },
+    {
+      "index": 177,
+      "word": "honeycomb",
+      "definition": "the wax pattern of cells where bees store honey",
+      "sentence": "The bees built a perfect honeycomb inside the hive."
+    },
+    {
+      "index": 178,
+      "word": "highway",
+      "definition": "a main road for fast traffic",
+      "sentence": "Trucks rumbled along the highway through the night."
+    },
+    {
+      "index": 179,
+      "word": "disposable",
+      "definition": "made to be thrown away after one use",
+      "sentence": "Try to avoid disposable plastic cups when you can."
+    },
+    {
+      "index": 180,
+      "word": "local",
+      "definition": "belonging to the area near where you live",
+      "sentence": "Many shoppers prefer to buy from local farmers."
+    },
+    {
+      "index": 181,
+      "word": "access",
+      "definition": "the right or way to get into a place or thing",
+      "sentence": "Students need a password to access the website."
+    },
+    {
+      "index": 182,
+      "word": "southern",
+      "definition": "in or towards the south",
+      "sentence": "Many penguins live on southern beaches in Antarctica."
+    },
+    {
+      "index": 183,
+      "word": "pollute",
+      "definition": "to make air, water, or land dirty",
+      "sentence": "Factories must not pollute the local rivers."
+    },
+    {
+      "index": 184,
+      "word": "mountain",
+      "definition": "a very tall raised part of land",
+      "sentence": "We climbed the mountain in early autumn weather."
+    },
+    {
+      "index": 185,
+      "word": "spinach",
+      "definition": "a leafy green vegetable",
+      "sentence": "Add baby spinach leaves to the salad."
+    },
+    {
+      "index": 186,
+      "word": "mischief",
+      "definition": "playful or naughty behaviour",
+      "sentence": "The kittens were up to mischief in the laundry."
+    },
+    {
+      "index": 187,
+      "word": "meant",
+      "definition": "intended or planned",
+      "sentence": "I meant to ring you back yesterday afternoon."
+    },
+    {
+      "index": 188,
+      "word": "announcement",
+      "definition": "a public statement giving news",
+      "sentence": "The announcement about sports day came over the speakers."
+    },
+    {
+      "index": 189,
+      "word": "futuristic",
+      "definition": "looking like something from the future",
+      "sentence": "The car looked sleek and futuristic."
+    },
+    {
+      "index": 190,
+      "word": "lifeguards",
+      "definition": "people who watch over swimmers to keep them safe",
+      "sentence": "Lifeguards watched the swimmers from their tall chairs."
+    },
+    {
+      "index": 191,
+      "word": "reputations",
+      "definition": "the opinions people have about you",
+      "sentence": "Famous chefs build their reputations over many years."
+    },
+    {
+      "index": 192,
+      "word": "dirtier",
+      "definition": "more dirty than something else",
+      "sentence": "My shoes are dirtier than yours after that muddy walk."
+    },
+    {
+      "index": 193,
+      "word": "faulty",
+      "definition": "not working properly",
+      "sentence": "The faulty kettle would not switch off by itself."
+    },
+    {
+      "index": 194,
+      "word": "passengers",
+      "definition": "people travelling in a vehicle",
+      "sentence": "All the passengers fastened their seatbelts before take-off."
+    },
+    {
+      "index": 195,
+      "word": "canyon",
+      "definition": "a deep valley with steep sides",
+      "sentence": "The river had carved a deep canyon over thousands of years."
+    },
+    {
+      "index": 196,
+      "word": "blizzard",
+      "definition": "a severe snowstorm with strong wind",
+      "sentence": "A blizzard kept us inside the cabin all weekend."
+    },
+    {
+      "index": 197,
+      "word": "earn",
+      "definition": "to get money by working",
+      "sentence": "I earn pocket money by mowing the lawn each Saturday."
+    },
+    {
+      "index": 198,
+      "word": "symbols",
+      "definition": "signs that stand for something else",
+      "sentence": "Maps use symbols to show roads, rivers and mountains."
+    },
+    {
+      "index": 199,
+      "word": "whirlpool",
+      "definition": "a fast spinning current of water",
+      "sentence": "A small whirlpool formed where the two streams met."
+    },
+    {
+      "index": 200,
+      "word": "attracts",
+      "definition": "pulls or draws something towards itself",
+      "sentence": "Honey attracts ants almost immediately."
+    },
+    {
+      "index": 201,
+      "word": "received",
+      "definition": "got or accepted something given",
+      "sentence": "I received a lovely card on my birthday."
+    },
+    {
+      "index": 202,
+      "word": "wheelbarrow",
+      "definition": "a small cart with one wheel for carrying loads",
+      "sentence": "Dad pushed a wheelbarrow full of mulch around the garden."
+    },
+    {
+      "index": 203,
+      "word": "angrily",
+      "definition": "in an angry way",
+      "sentence": "He pushed the door angrily and stomped outside."
+    },
+    {
+      "index": 204,
+      "word": "typically",
+      "definition": "usually; in the normal way",
+      "sentence": "School typically finishes at three thirty."
+    },
+    {
+      "index": 205,
+      "word": "average",
+      "definition": "the typical or middle amount",
+      "sentence": "The average rainfall here is below normal this year."
+    },
+    {
+      "index": 206,
+      "word": "variety",
+      "definition": "many different kinds",
+      "sentence": "There is a wide variety of fish in the reef."
+    },
+    {
+      "index": 207,
+      "word": "predictable",
+      "definition": "easy to know in advance",
+      "sentence": "The plot of the movie was sadly very predictable."
+    },
+    {
+      "index": 208,
+      "word": "experience",
+      "definition": "knowledge gained from doing something",
+      "sentence": "Travelling overseas was an unforgettable experience."
+    },
+    {
+      "index": 209,
+      "word": "annoyed",
+      "definition": "a little bit angry",
+      "sentence": "Mum got annoyed when the dog dug up her garden."
+    },
+    {
+      "index": 210,
+      "word": "drafting",
+      "definition": "writing an early version of something",
+      "sentence": "He spent the morning drafting his speech for tomorrow."
+    },
+    {
+      "index": 211,
+      "word": "brochures",
+      "definition": "small booklets that give information about something",
+      "sentence": "We picked up brochures about the national park."
+    },
+    {
+      "index": 212,
+      "word": "graphic",
+      "definition": "clear and detailed; or relating to images",
+      "sentence": "He drew a graphic showing how energy moves through the body."
+    },
+    {
+      "index": 213,
+      "word": "perimeter",
+      "definition": "the distance around the edge of a shape",
+      "sentence": "Calculate the perimeter of the rectangle in centimetres."
+    },
+    {
+      "index": 214,
+      "word": "responsibilities",
+      "definition": "duties and tasks you must take care of",
+      "sentence": "Looking after a pet brings real responsibilities."
+    },
+    {
+      "index": 215,
+      "word": "similar",
+      "definition": "almost the same as something else",
+      "sentence": "Her painting is similar to one I saw in a gallery."
+    },
+    {
+      "index": 216,
+      "word": "overwhelmed",
+      "definition": "feeling there is too much to cope with",
+      "sentence": "I felt overwhelmed by the size of my homework pile."
+    },
+    {
+      "index": 217,
+      "word": "damaged",
+      "definition": "harmed so it doesn't work properly",
+      "sentence": "The storm damaged several trees in our backyard."
+    },
+    {
+      "index": 218,
+      "word": "sketched",
+      "definition": "drew quickly without much detail",
+      "sentence": "She quickly sketched the bird before it flew away."
+    },
+    {
+      "index": 219,
+      "word": "outrageous",
+      "definition": "shocking or way beyond what is acceptable",
+      "sentence": "The price of those shoes is absolutely outrageous."
+    },
+    {
+      "index": 220,
+      "word": "consumed",
+      "definition": "used up or eaten",
+      "sentence": "The campers consumed all the snacks in one evening."
+    },
+    {
+      "index": 221,
+      "word": "sensitive",
+      "definition": "easily affected by things",
+      "sentence": "Babies have very sensitive skin."
+    },
+    {
+      "index": 222,
+      "word": "gases",
+      "definition": "substances like air that have no fixed shape",
+      "sentence": "Some gases have no smell or colour at all."
+    },
+    {
+      "index": 223,
+      "word": "detour",
+      "definition": "a different route taken when the usual one is blocked",
+      "sentence": "We had to take a detour because of the roadworks."
+    },
+    {
+      "index": 224,
+      "word": "crate",
+      "definition": "a wooden or plastic box for carrying things",
+      "sentence": "The shop assistant carried a crate of apples to the back."
+    }
+  ]
+}

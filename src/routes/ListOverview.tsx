@@ -1,4 +1,6 @@
+import { ArrowRight } from 'lucide-react';
 import { Shell } from '@/components/Shell';
+import { Card } from '@/components/ui/card';
 import { getLevel, getYearLabel, type LevelId } from '@/levels';
 import { formatDuration } from '@/lib/format';
 
@@ -16,7 +18,7 @@ export function ListOverview({ levelId }: { levelId: LevelId }) {
           {data.title}
         </h1>
         <p className="mt-3 text-muted-foreground max-w-2xl">
-          Each test reads about 20 words with a five-second pause between each question — plenty of time to write the answer on paper. If your child gets stressed, just pause the audio and help them find what number they are up to.
+          Each test reads about 20 words with a {data.pauseSec}-second pause between each question — plenty of time to write the answer on paper. If your child gets stressed, just pause the audio and help them find what number they are up to.
         </p>
       </section>
 
@@ -24,37 +26,30 @@ export function ListOverview({ levelId }: { levelId: LevelId }) {
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.parts.map((p) => (
             <li key={p.part}>
-              <a
-                href={`/${levelId}/part/${p.part}/`}
-                className="group block rounded-xl border bg-card p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition"
-              >
-                <div className="flex items-baseline justify-between">
-                  <div className="font-display text-3xl font-extrabold tracking-tight">
-                    Part {p.part}
-                  </div>
-                  {p.duration != null && (
-                    <div className="text-xs text-muted-foreground tabular-nums">
-                      {formatDuration(p.duration)}
+              <Card asChild className="group gap-3 px-5 py-5 hover:shadow-md hover:border-primary/40 transition">
+                <a href={`/${levelId}/part/${p.part}/`}>
+                  <div className="flex items-baseline justify-between">
+                    <div className="font-display text-3xl font-extrabold tracking-tight">
+                      Part {p.part}
                     </div>
-                  )}
-                </div>
-                <div className="mt-2 text-sm text-muted-foreground">
-                  Words {p.start}–{p.end}
-                </div>
-                <div className="mt-4 flex items-center gap-2 text-primary font-medium text-sm">
-                  Start
-                  <span
-                    aria-hidden
-                    className="inline-block transition-transform group-hover:translate-x-0.5"
-                  >
-                    →
-                  </span>
-                </div>
-              </a>
+                    {p.duration != null && (
+                      <div className="text-xs text-muted-foreground tabular-nums">
+                        {formatDuration(p.duration)}
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Words {p.start}–{p.end}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-primary font-medium text-sm">
+                    Start
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </div>
+                </a>
+              </Card>
             </li>
           ))}
         </ol>
-
       </section>
     </Shell>
   );

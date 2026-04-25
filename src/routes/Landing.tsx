@@ -7,7 +7,7 @@ export function Landing() {
       <section className="mx-auto max-w-5xl px-5 pt-8 sm:pt-20 pb-24">
         <div className="max-w-2xl">
           <p className="text-sm font-medium tracking-widest uppercase text-primary/80">
-            For Year 3&amp;5 students
+            Listen and spell — Years 3, 5, 7 &amp; 9
           </p>
           <h1 className="mt-3 font-display text-5xl sm:text-6xl font-extrabold leading-[1.02] tracking-tight text-foreground">
             Spelling practice,
@@ -19,10 +19,16 @@ export function Landing() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button asChild size="xl">
-              <a href="/y3-lc/">Year 3 Spelling GO!</a>
+              <a href="/y3-lc/">Year 3</a>
             </Button>
-            <Button asChild size="xl" variant="secondary">
-              <a href="/y5-lc/">Year 5 Spelling GO!</a>
+            <Button asChild size="xl">
+              <a href="/y5-lc/">Year 5</a>
+            </Button>
+            <Button asChild size="xl">
+              <a href="/y7-lc/">Year 7</a>
+            </Button>
+            <Button asChild size="xl">
+              <a href="/y9-lc/">Year 9</a>
             </Button>
           </div>
         </div>

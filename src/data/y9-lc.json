@@ -1,0 +1,1677 @@
+{
+  "id": "y9-lc",
+  "title": "Year 9 Language Conventions",
+  "wordsPerPart": 20,
+  "pauseSec": 5.5,
+  "parts": [
+    {
+      "part": 1,
+      "start": 1,
+      "end": 20,
+      "audio": "/audio/y9-lc/part-01.mp3",
+      "duration": 272,
+      "questionStarts": [
+        0,
+        14.003,
+        26.527,
+        40.556,
+        53.703,
+        68.977,
+        82.491,
+        96.768,
+        112.429,
+        125.628,
+        139.47,
+        153.713,
+        167.901,
+        181.353,
+        196.227,
+        210.234,
+        222.932,
+        236.574,
+        251.202,
+        264.055
+      ]
+    },
+    {
+      "part": 2,
+      "start": 21,
+      "end": 40,
+      "audio": "/audio/y9-lc/part-02.mp3",
+      "duration": 269,
+      "questionStarts": [
+        0,
+        13.518,
+        27.294,
+        41.546,
+        54.804,
+        68.024,
+        82.016,
+        95.305,
+        109.139,
+        122.361,
+        135.296,
+        148.727,
+        163.36,
+        178.036,
+        191.695,
+        205.333,
+        219.726,
+        233.702,
+        247.833,
+        261.027
+      ]
+    },
+    {
+      "part": 3,
+      "start": 41,
+      "end": 60,
+      "audio": "/audio/y9-lc/part-03.mp3",
+      "duration": 275,
+      "questionStarts": [
+        0,
+        14.583,
+        27.814,
+        43.482,
+        57.667,
+        71.464,
+        84.78,
+        99.285,
+        114.373,
+        127.327,
+        140.585,
+        154.327,
+        168.063,
+        181.329,
+        196.027,
+        209.767,
+        224.379,
+        239,
+        253.546,
+        267.313
+      ]
+    },
+    {
+      "part": 4,
+      "start": 61,
+      "end": 80,
+      "audio": "/audio/y9-lc/part-04.mp3",
+      "duration": 277,
+      "questionStarts": [
+        0,
+        13.617,
+        27.623,
+        41.073,
+        56.089,
+        68.863,
+        82.998,
+        96.778,
+        110.405,
+        123.927,
+        137.656,
+        152.079,
+        165.412,
+        179.253,
+        195.683,
+        209.297,
+        223.309,
+        237.852,
+        252.958,
+        266.436
+      ]
+    },
+    {
+      "part": 5,
+      "start": 81,
+      "end": 100,
+      "audio": "/audio/y9-lc/part-05.mp3",
+      "duration": 279,
+      "questionStarts": [
+        0,
+        14.742,
+        31.256,
+        46.198,
+        59.255,
+        73.859,
+        87.788,
+        101.056,
+        114.413,
+        128.387,
+        143.093,
+        156.905,
+        170.193,
+        184.395,
+        200.483,
+        214.467,
+        228.928,
+        241.961,
+        257.9,
+        271.026
+      ]
+    },
+    {
+      "part": 6,
+      "start": 101,
+      "end": 120,
+      "audio": "/audio/y9-lc/part-06.mp3",
+      "duration": 286,
+      "questionStarts": [
+        0,
+        14.318,
+        28.821,
+        43.112,
+        59.516,
+        75.189,
+        90.237,
+        104.74,
+        118.966,
+        132.698,
+        147.322,
+        160.294,
+        174.755,
+        187.403,
+        203.687,
+        219.328,
+        234.397,
+        249.223,
+        263.914,
+        278.455
+      ]
+    },
+    {
+      "part": 7,
+      "start": 121,
+      "end": 140,
+      "audio": "/audio/y9-lc/part-07.mp3",
+      "duration": 279,
+      "questionStarts": [
+        0,
+        13.95,
+        30.124,
+        46.489,
+        60.021,
+        73.418,
+        88.664,
+        102.386,
+        118.134,
+        132.719,
+        146.671,
+        160.336,
+        173.8,
+        187.698,
+        201.188,
+        214.846,
+        228.51,
+        242.127,
+        256.203,
+        270.362
+      ]
+    },
+    {
+      "part": 8,
+      "start": 141,
+      "end": 160,
+      "audio": "/audio/y9-lc/part-08.mp3",
+      "duration": 278,
+      "questionStarts": [
+        0,
+        14.757,
+        29.131,
+        42.267,
+        56.71,
+        71.008,
+        85.047,
+        98.6,
+        112.861,
+        126.385,
+        140.822,
+        155.363,
+        169.129,
+        182.678,
+        197.165,
+        211.655,
+        226.345,
+        239.853,
+        255.546,
+        270.463
+      ]
+    },
+    {
+      "part": 9,
+      "start": 161,
+      "end": 180,
+      "audio": "/audio/y9-lc/part-09.mp3",
+      "duration": 285,
+      "questionStarts": [
+        0,
+        14.034,
+        29.479,
+        44.486,
+        59.308,
+        73.397,
+        87.256,
+        102.252,
+        118.097,
+        132.385,
+        146.012,
+        158.854,
+        172.576,
+        186.657,
+        202.837,
+        217.171,
+        232.261,
+        245.885,
+        260.779,
+        275.495
+      ]
+    },
+    {
+      "part": 10,
+      "start": 181,
+      "end": 200,
+      "audio": "/audio/y9-lc/part-10.mp3",
+      "duration": 288,
+      "questionStarts": [
+        0,
+        14.359,
+        29.311,
+        44.179,
+        59.793,
+        73.161,
+        87.743,
+        101.235,
+        114.712,
+        131.225,
+        144.343,
+        159,
+        172.743,
+        187.287,
+        203.757,
+        218.001,
+        232.282,
+        247.011,
+        261.442,
+        277.209
+      ]
+    },
+    {
+      "part": 11,
+      "start": 201,
+      "end": 224,
+      "audio": "/audio/y9-lc/part-11.mp3",
+      "duration": 334,
+      "questionStarts": [
+        0,
+        13.913,
+        28.187,
+        42.235,
+        56.168,
+        69.57,
+        83.155,
+        97.522,
+        110.901,
+        124.524,
+        137.377,
+        150.702,
+        164.905,
+        180.973,
+        195.178,
+        209.345,
+        223.191,
+        239.627,
+        253.082,
+        268.096,
+        280.847,
+        294.911,
+        310.272,
+        325.684
+      ]
+    }
+  ],
+  "words": [
+    {
+      "index": 1,
+      "word": "video",
+      "definition": "recorded moving images",
+      "sentence": "The whole class watched the educational video together."
+    },
+    {
+      "index": 2,
+      "word": "typically",
+      "definition": "usually; in the normal way",
+      "sentence": "Tropical fruits typically grow in warm climates."
+    },
+    {
+      "index": 3,
+      "word": "orbit",
+      "definition": "the path one object takes around another in space",
+      "sentence": "Satellites in low orbit cross the sky in just minutes."
+    },
+    {
+      "index": 4,
+      "word": "absolutely",
+      "definition": "completely or without any doubt",
+      "sentence": "I am absolutely certain that I posted the letter."
+    },
+    {
+      "index": 5,
+      "word": "instantaneous",
+      "definition": "happening at once",
+      "sentence": "The reaction was instantaneous when she pushed the button."
+    },
+    {
+      "index": 6,
+      "word": "opinion",
+      "definition": "what someone thinks about something",
+      "sentence": "In my opinion, the second book is far better than the first."
+    },
+    {
+      "index": 7,
+      "word": "outrageous",
+      "definition": "shocking or way beyond what is acceptable",
+      "sentence": "The cost of the concert tickets is simply outrageous."
+    },
+    {
+      "index": 8,
+      "word": "renewable",
+      "definition": "able to be replaced or restored naturally",
+      "sentence": "Solar power is one of the most popular renewable energy sources."
+    },
+    {
+      "index": 9,
+      "word": "declare",
+      "definition": "to state something publicly",
+      "sentence": "Travellers must declare any food they bring into Australia."
+    },
+    {
+      "index": 10,
+      "word": "alligators",
+      "definition": "large reptiles with strong jaws",
+      "sentence": "Tourists were warned that alligators lived in the swamp."
+    },
+    {
+      "index": 11,
+      "word": "consignment",
+      "definition": "a batch of goods sent somewhere",
+      "sentence": "A consignment of textbooks arrived this morning."
+    },
+    {
+      "index": 12,
+      "word": "effectively",
+      "definition": "in a way that produces the desired result",
+      "sentence": "We need to use our study time effectively before exams."
+    },
+    {
+      "index": 13,
+      "word": "innocence",
+      "definition": "not being guilty; or simple trust",
+      "sentence": "The young child's innocence made everyone smile."
+    },
+    {
+      "index": 14,
+      "word": "densely",
+      "definition": "packed closely together",
+      "sentence": "The rainforest is densely packed with towering trees."
+    },
+    {
+      "index": 15,
+      "word": "deliberately",
+      "definition": "on purpose; not by accident",
+      "sentence": "She deliberately left her phone at home for the weekend."
+    },
+    {
+      "index": 16,
+      "word": "emptied",
+      "definition": "had everything removed",
+      "sentence": "She emptied the dishwasher before breakfast."
+    },
+    {
+      "index": 17,
+      "word": "buoyant",
+      "definition": "able to float on water",
+      "sentence": "Cork is naturally buoyant and floats easily on water."
+    },
+    {
+      "index": 18,
+      "word": "monitor",
+      "definition": "to watch over closely; or a screen",
+      "sentence": "Hospital staff monitor the patient's heart rate constantly."
+    },
+    {
+      "index": 19,
+      "word": "southern",
+      "definition": "in or towards the south",
+      "sentence": "The southern parts of Australia get colder winters."
+    },
+    {
+      "index": 20,
+      "word": "trauma",
+      "definition": "a serious shock or injury",
+      "sentence": "She received counselling after the trauma of the accident."
+    },
+    {
+      "index": 21,
+      "word": "chaos",
+      "definition": "a state of total confusion",
+      "sentence": "The unexpected announcement caused chaos in the office."
+    },
+    {
+      "index": 22,
+      "word": "format",
+      "definition": "the way something is arranged or presented",
+      "sentence": "The new format of the exam confused some students."
+    },
+    {
+      "index": 23,
+      "word": "evacuate",
+      "definition": "to leave a dangerous place quickly",
+      "sentence": "Residents had to evacuate when the bushfire approached."
+    },
+    {
+      "index": 24,
+      "word": "generally",
+      "definition": "in most cases",
+      "sentence": "Tigers generally hunt alone, not in packs."
+    },
+    {
+      "index": 25,
+      "word": "queue",
+      "definition": "a line of people waiting their turn",
+      "sentence": "The queue for the new ride wrapped around the building."
+    },
+    {
+      "index": 26,
+      "word": "antique",
+      "definition": "very old and often valuable",
+      "sentence": "An antique vase was the centrepiece of the dining room."
+    },
+    {
+      "index": 27,
+      "word": "career",
+      "definition": "the kind of job a person does over their working life",
+      "sentence": "She is considering a career in medical research."
+    },
+    {
+      "index": 28,
+      "word": "misrepresent",
+      "definition": "to give a wrong idea about something",
+      "sentence": "Don't misrepresent the facts in your report."
+    },
+    {
+      "index": 29,
+      "word": "jeopardy",
+      "definition": "danger or risk",
+      "sentence": "His careless behaviour put the project in jeopardy."
+    },
+    {
+      "index": 30,
+      "word": "pumpkin",
+      "definition": "a large orange round vegetable",
+      "sentence": "I made pumpkin soup for our cold winter dinner."
+    },
+    {
+      "index": 31,
+      "word": "magazine",
+      "definition": "a regular publication with articles and pictures",
+      "sentence": "She bought a music magazine from the newsagent."
+    },
+    {
+      "index": 32,
+      "word": "achieved",
+      "definition": "successfully reached or completed",
+      "sentence": "He achieved his lifelong dream of climbing Mount Kosciuszko."
+    },
+    {
+      "index": 33,
+      "word": "occasionally",
+      "definition": "now and then; not often",
+      "sentence": "We occasionally visit my grandparents' farm at Easter."
+    },
+    {
+      "index": 34,
+      "word": "frozen",
+      "definition": "turned solid by cold",
+      "sentence": "The lake stayed frozen for weeks during the cold snap."
+    },
+    {
+      "index": 35,
+      "word": "miserable",
+      "definition": "extremely unhappy",
+      "sentence": "Cold rainy holidays always feel a bit miserable."
+    },
+    {
+      "index": 36,
+      "word": "techniques",
+      "definition": "particular ways of doing something",
+      "sentence": "Painting techniques have evolved over many centuries."
+    },
+    {
+      "index": 37,
+      "word": "identity",
+      "definition": "who someone is",
+      "sentence": "She kept her identity a secret throughout the contest."
+    },
+    {
+      "index": 38,
+      "word": "achievement",
+      "definition": "something earned through effort",
+      "sentence": "Winning the scholarship is a remarkable achievement."
+    },
+    {
+      "index": 39,
+      "word": "community",
+      "definition": "a group of people who live in the same area",
+      "sentence": "Our community pulled together after the floods."
+    },
+    {
+      "index": 40,
+      "word": "received",
+      "definition": "got or accepted something given",
+      "sentence": "She received a glowing report at the end of term."
+    },
+    {
+      "index": 41,
+      "word": "particles",
+      "definition": "very tiny pieces of something",
+      "sentence": "Dust particles drifted in the slanting afternoon light."
+    },
+    {
+      "index": 42,
+      "word": "fulfilling",
+      "definition": "giving a feeling of satisfaction",
+      "sentence": "Teaching young children is a fulfilling career."
+    },
+    {
+      "index": 43,
+      "word": "antiseptic",
+      "definition": "a liquid that kills germs on cuts",
+      "sentence": "She rinsed the wound with antiseptic before bandaging it."
+    },
+    {
+      "index": 44,
+      "word": "eruption",
+      "definition": "the sudden bursting out of something, like lava",
+      "sentence": "An eruption of cheers broke out as the goal was scored."
+    },
+    {
+      "index": 45,
+      "word": "economy",
+      "definition": "the way money and goods move through a country",
+      "sentence": "A strong economy benefits people across the country."
+    },
+    {
+      "index": 46,
+      "word": "commercial",
+      "definition": "relating to business; or a TV advertisement",
+      "sentence": "A long commercial break interrupted the movie."
+    },
+    {
+      "index": 47,
+      "word": "catchment",
+      "definition": "an area where rainwater collects and flows into a river",
+      "sentence": "The reservoir's catchment covers thousands of hectares."
+    },
+    {
+      "index": 48,
+      "word": "approached",
+      "definition": "came near to something or someone",
+      "sentence": "A stranger approached us with a question about directions."
+    },
+    {
+      "index": 49,
+      "word": "annual",
+      "definition": "happening once every year",
+      "sentence": "The annual school fete is held in November."
+    },
+    {
+      "index": 50,
+      "word": "digits",
+      "definition": "the numbers from 0 to 9; or fingers and toes",
+      "sentence": "My phone number contains ten digits in total."
+    },
+    {
+      "index": 51,
+      "word": "stomach",
+      "definition": "the part of the body that digests food",
+      "sentence": "After lunch my stomach felt uncomfortably full."
+    },
+    {
+      "index": 52,
+      "word": "hilarious",
+      "definition": "extremely funny",
+      "sentence": "The comedian's last joke was absolutely hilarious."
+    },
+    {
+      "index": 53,
+      "word": "apprentices",
+      "definition": "people learning a trade by working with an expert",
+      "sentence": "The bakery employs three apprentices each year."
+    },
+    {
+      "index": 54,
+      "word": "beginning",
+      "definition": "the first part of something",
+      "sentence": "From the very beginning, the project faced real challenges."
+    },
+    {
+      "index": 55,
+      "word": "yawning",
+      "definition": "opening the mouth wide because you are tired",
+      "sentence": "I kept yawning throughout the entire late-night film."
+    },
+    {
+      "index": 56,
+      "word": "species",
+      "definition": "a group of similar living things",
+      "sentence": "This rainforest is home to dozens of species of frog."
+    },
+    {
+      "index": 57,
+      "word": "longitude",
+      "definition": "distance east or west on a map measured in degrees",
+      "sentence": "Sydney's longitude is around 151 degrees east."
+    },
+    {
+      "index": 58,
+      "word": "convenient",
+      "definition": "easy to do or use",
+      "sentence": "The bus stop is right outside, which is very convenient."
+    },
+    {
+      "index": 59,
+      "word": "practically",
+      "definition": "almost; or in a sensible way",
+      "sentence": "I had practically finished when the bell rang."
+    },
+    {
+      "index": 60,
+      "word": "theory",
+      "definition": "an idea that explains how something works",
+      "sentence": "Einstein's theory changed how we understand time."
+    },
+    {
+      "index": 61,
+      "word": "benefit",
+      "definition": "something that helps or gives an advantage",
+      "sentence": "Regular exercise is of great benefit to your health."
+    },
+    {
+      "index": 62,
+      "word": "recipients",
+      "definition": "people who receive something",
+      "sentence": "Scholarship recipients were announced at assembly."
+    },
+    {
+      "index": 63,
+      "word": "garbage",
+      "definition": "rubbish or waste",
+      "sentence": "Council collects the garbage every Tuesday morning."
+    },
+    {
+      "index": 64,
+      "word": "optimist",
+      "definition": "a person who expects good things to happen",
+      "sentence": "She is a true optimist who always sees the bright side."
+    },
+    {
+      "index": 65,
+      "word": "weird",
+      "definition": "strange or unusual",
+      "sentence": "It is weird how the weather can change so quickly here."
+    },
+    {
+      "index": 66,
+      "word": "exotic",
+      "definition": "from a faraway country; unusual and interesting",
+      "sentence": "The market sold exotic fruits I had never seen before."
+    },
+    {
+      "index": 67,
+      "word": "exceeding",
+      "definition": "going beyond a limit",
+      "sentence": "The driver was fined for exceeding the speed limit."
+    },
+    {
+      "index": 68,
+      "word": "enigma",
+      "definition": "a mysterious or puzzling thing",
+      "sentence": "Quantum physics remains an enigma to most students."
+    },
+    {
+      "index": 69,
+      "word": "deafening",
+      "definition": "extremely loud",
+      "sentence": "The applause was deafening at the curtain call."
+    },
+    {
+      "index": 70,
+      "word": "habitat",
+      "definition": "the natural home of an animal or plant",
+      "sentence": "Pollution threatens the habitat of many marine species."
+    },
+    {
+      "index": 71,
+      "word": "library",
+      "definition": "a place full of books to borrow or read",
+      "sentence": "The new library has a quiet study area upstairs."
+    },
+    {
+      "index": 72,
+      "word": "record",
+      "definition": "information stored for future use; or to capture sound",
+      "sentence": "She set a new state record in the high jump."
+    },
+    {
+      "index": 73,
+      "word": "frequently",
+      "definition": "often",
+      "sentence": "Trains run frequently between the two stations."
+    },
+    {
+      "index": 74,
+      "word": "recreational",
+      "definition": "done for fun or relaxation",
+      "sentence": "The park has plenty of recreational facilities for families."
+    },
+    {
+      "index": 75,
+      "word": "salmon",
+      "definition": "a pink-fleshed fish from cold rivers and seas",
+      "sentence": "Wild salmon swim upstream to spawn each year."
+    },
+    {
+      "index": 76,
+      "word": "temporary",
+      "definition": "lasting only for a short time",
+      "sentence": "The roadworks are causing only temporary delays."
+    },
+    {
+      "index": 77,
+      "word": "unannounced",
+      "definition": "without warning",
+      "sentence": "An unannounced visit caught the family by surprise."
+    },
+    {
+      "index": 78,
+      "word": "deforestation",
+      "definition": "the cutting down of forests",
+      "sentence": "Deforestation has destroyed many native habitats."
+    },
+    {
+      "index": 79,
+      "word": "sponsored",
+      "definition": "supported with money in exchange for advertising",
+      "sentence": "The team is sponsored by a local accounting firm."
+    },
+    {
+      "index": 80,
+      "word": "experience",
+      "definition": "knowledge gained from doing something",
+      "sentence": "Volunteering gave her valuable experience for her résumé."
+    },
+    {
+      "index": 81,
+      "word": "inevitably",
+      "definition": "bound to happen; unavoidably",
+      "sentence": "Such a complicated plan inevitably ran into problems."
+    },
+    {
+      "index": 82,
+      "word": "facilitate",
+      "definition": "to make something easier",
+      "sentence": "The new app will facilitate online learning for thousands of students."
+    },
+    {
+      "index": 83,
+      "word": "gourmet",
+      "definition": "relating to high-quality food",
+      "sentence": "We treated ourselves to a gourmet meal for the special occasion."
+    },
+    {
+      "index": 84,
+      "word": "quarrel",
+      "definition": "an angry argument",
+      "sentence": "The brothers had a quarrel over who owned the bike."
+    },
+    {
+      "index": 85,
+      "word": "auditorium",
+      "definition": "a large room where audiences watch a performance",
+      "sentence": "The auditorium was packed for the final performance."
+    },
+    {
+      "index": 86,
+      "word": "futuristic",
+      "definition": "looking like something from the future",
+      "sentence": "The concept car looked sleek and futuristic."
+    },
+    {
+      "index": 87,
+      "word": "allocated",
+      "definition": "set aside for a particular purpose",
+      "sentence": "Each student was allocated a locker for the year."
+    },
+    {
+      "index": 88,
+      "word": "negligence",
+      "definition": "failure to take proper care",
+      "sentence": "The accident was caused by sheer negligence."
+    },
+    {
+      "index": 89,
+      "word": "mysteries",
+      "definition": "things that are hard to understand or explain",
+      "sentence": "She loves reading mysteries with surprise endings."
+    },
+    {
+      "index": 90,
+      "word": "incorporated",
+      "definition": "included as part of a whole",
+      "sentence": "The chef incorporated local herbs into the dish."
+    },
+    {
+      "index": 91,
+      "word": "depot",
+      "definition": "a building where buses or trains are kept",
+      "sentence": "The bus pulled into the depot just before midnight."
+    },
+    {
+      "index": 92,
+      "word": "business",
+      "definition": "work done to make money; or a company",
+      "sentence": "My aunt runs a small business from her home office."
+    },
+    {
+      "index": 93,
+      "word": "exaggerated",
+      "definition": "described as bigger or worse than it really is",
+      "sentence": "Her exaggerated stories always had us laughing."
+    },
+    {
+      "index": 94,
+      "word": "imagination",
+      "definition": "the ability to picture things in your mind",
+      "sentence": "Her imagination created entire worlds inside her head."
+    },
+    {
+      "index": 95,
+      "word": "wreckage",
+      "definition": "broken pieces left after destruction",
+      "sentence": "Searchers combed through the wreckage looking for clues."
+    },
+    {
+      "index": 96,
+      "word": "consumed",
+      "definition": "used up or eaten",
+      "sentence": "The hikers consumed every last crumb of food in their packs."
+    },
+    {
+      "index": 97,
+      "word": "elevates",
+      "definition": "lifts something to a higher level",
+      "sentence": "Exercise elevates your heart rate within minutes."
+    },
+    {
+      "index": 98,
+      "word": "reconciliation",
+      "definition": "the act of making peace after a disagreement",
+      "sentence": "After the argument they hoped for a quick reconciliation."
+    },
+    {
+      "index": 99,
+      "word": "offering",
+      "definition": "giving something to someone",
+      "sentence": "The cafe is offering free coffee to teachers all week."
+    },
+    {
+      "index": 100,
+      "word": "environment",
+      "definition": "the natural world around us",
+      "sentence": "Reusing bags helps protect the environment."
+    },
+    {
+      "index": 101,
+      "word": "noxious",
+      "definition": "harmful or poisonous",
+      "sentence": "The chemical produced noxious fumes that filled the room."
+    },
+    {
+      "index": 102,
+      "word": "government",
+      "definition": "the group of people who run a country",
+      "sentence": "The government announced a new policy on renewable energy."
+    },
+    {
+      "index": 103,
+      "word": "vulnerable",
+      "definition": "easily harmed or affected",
+      "sentence": "Newborn lambs are especially vulnerable to cold weather."
+    },
+    {
+      "index": 104,
+      "word": "circumnavigate",
+      "definition": "to travel all the way around something",
+      "sentence": "She was the first in her family to circumnavigate the globe."
+    },
+    {
+      "index": 105,
+      "word": "camouflaged",
+      "definition": "hidden by blending into the surroundings",
+      "sentence": "The chameleon was perfectly camouflaged against the bark."
+    },
+    {
+      "index": 106,
+      "word": "surgery",
+      "definition": "a doctor's operation on the body",
+      "sentence": "The surgery was a complete success and she recovered quickly."
+    },
+    {
+      "index": 107,
+      "word": "radius",
+      "definition": "the distance from the centre of a circle to its edge",
+      "sentence": "Draw a circle with a radius of five centimetres."
+    },
+    {
+      "index": 108,
+      "word": "foreign",
+      "definition": "from another country",
+      "sentence": "Many foreign visitors come to see the Great Barrier Reef."
+    },
+    {
+      "index": 109,
+      "word": "illegally",
+      "definition": "against the law",
+      "sentence": "Cars parked illegally were towed away."
+    },
+    {
+      "index": 110,
+      "word": "routine",
+      "definition": "a regular fixed way of doing things",
+      "sentence": "His morning routine includes a quick run before breakfast."
+    },
+    {
+      "index": 111,
+      "word": "schedule",
+      "definition": "a plan of when things will happen",
+      "sentence": "Check the schedule for the train times."
+    },
+    {
+      "index": 112,
+      "word": "dividing",
+      "definition": "splitting into parts",
+      "sentence": "Dividing chocolate fairly between three friends is tricky."
+    },
+    {
+      "index": 113,
+      "word": "principle",
+      "definition": "a basic rule or belief",
+      "sentence": "He refused to lie on principle."
+    },
+    {
+      "index": 114,
+      "word": "interpreter",
+      "definition": "a person who translates one language into another",
+      "sentence": "An interpreter translated the speech into three languages."
+    },
+    {
+      "index": 115,
+      "word": "conscientious",
+      "definition": "careful to do the right thing",
+      "sentence": "He is a conscientious worker who never cuts corners."
+    },
+    {
+      "index": 116,
+      "word": "vigorous",
+      "definition": "full of strength and energy",
+      "sentence": "A vigorous workout left him both exhausted and energised."
+    },
+    {
+      "index": 117,
+      "word": "previously",
+      "definition": "before now",
+      "sentence": "She had previously served as treasurer for the club."
+    },
+    {
+      "index": 118,
+      "word": "failure",
+      "definition": "not succeeding at something",
+      "sentence": "The failure of the engine left them stranded for hours."
+    },
+    {
+      "index": 119,
+      "word": "agriculture",
+      "definition": "the work of farming the land and raising animals",
+      "sentence": "Australia's economy depends heavily on agriculture."
+    },
+    {
+      "index": 120,
+      "word": "heightened",
+      "definition": "made stronger or more intense",
+      "sentence": "Tensions were heightened during the close finish."
+    },
+    {
+      "index": 121,
+      "word": "building",
+      "definition": "a structure with walls and a roof",
+      "sentence": "The historic building has stood for over a century."
+    },
+    {
+      "index": 122,
+      "word": "transcontinental",
+      "definition": "going across a continent",
+      "sentence": "Their transcontinental journey took almost three weeks."
+    },
+    {
+      "index": 123,
+      "word": "originated",
+      "definition": "started or came from",
+      "sentence": "Pizza originated in Italy long before it became popular here."
+    },
+    {
+      "index": 124,
+      "word": "pillar",
+      "definition": "a tall column that supports a building",
+      "sentence": "A marble pillar held up the corner of the verandah."
+    },
+    {
+      "index": 125,
+      "word": "label",
+      "definition": "a small piece of paper or fabric attached to something",
+      "sentence": "Always check the label for allergy warnings."
+    },
+    {
+      "index": 126,
+      "word": "accomplishment",
+      "definition": "something achieved successfully",
+      "sentence": "Finishing the marathon was a huge personal accomplishment."
+    },
+    {
+      "index": 127,
+      "word": "feint",
+      "definition": "a fake movement to mislead an opponent",
+      "sentence": "The boxer used a clever feint to win the round."
+    },
+    {
+      "index": 128,
+      "word": "subsequent",
+      "definition": "coming after something else",
+      "sentence": "Subsequent chapters explore the same theme more deeply."
+    },
+    {
+      "index": 129,
+      "word": "brochures",
+      "definition": "small booklets that give information about something",
+      "sentence": "Brochures about the new exhibition are at the entrance."
+    },
+    {
+      "index": 130,
+      "word": "substantial",
+      "definition": "large in size or amount",
+      "sentence": "We finished the long hike with a substantial dinner."
+    },
+    {
+      "index": 131,
+      "word": "aisle",
+      "definition": "a passageway between rows of seats or shelves",
+      "sentence": "Please walk slowly down the aisle when carrying drinks."
+    },
+    {
+      "index": 132,
+      "word": "confronted",
+      "definition": "faced something difficult head-on",
+      "sentence": "She confronted the bully with quiet confidence."
+    },
+    {
+      "index": 133,
+      "word": "accompanied",
+      "definition": "went somewhere with someone",
+      "sentence": "She accompanied her grandmother to the appointment."
+    },
+    {
+      "index": 134,
+      "word": "precision",
+      "definition": "being exact and careful",
+      "sentence": "Watchmakers work with extraordinary precision."
+    },
+    {
+      "index": 135,
+      "word": "certain",
+      "definition": "sure about something",
+      "sentence": "I am certain that I locked the door before leaving."
+    },
+    {
+      "index": 136,
+      "word": "several",
+      "definition": "more than two but not many",
+      "sentence": "Several friends came over to celebrate her birthday."
+    },
+    {
+      "index": 137,
+      "word": "bulletin",
+      "definition": "a short news report or notice",
+      "sentence": "Listen to the news bulletin at six o'clock."
+    },
+    {
+      "index": 138,
+      "word": "moisture",
+      "definition": "small amounts of water in the air or on a surface",
+      "sentence": "Plants in dry climates store moisture in their leaves."
+    },
+    {
+      "index": 139,
+      "word": "attendance",
+      "definition": "the act of being present somewhere",
+      "sentence": "Daily attendance is recorded on the class roll."
+    },
+    {
+      "index": 140,
+      "word": "drought",
+      "definition": "a long period without enough rain",
+      "sentence": "Farmers struggled to keep their cattle alive during the drought."
+    },
+    {
+      "index": 141,
+      "word": "noisiest",
+      "definition": "loudest of a group",
+      "sentence": "Cockatoos are some of the noisiest birds in our garden."
+    },
+    {
+      "index": 142,
+      "word": "structural",
+      "definition": "relating to the way something is built",
+      "sentence": "The engineer checked the building for structural damage."
+    },
+    {
+      "index": 143,
+      "word": "canyon",
+      "definition": "a deep valley with steep sides",
+      "sentence": "We hiked along the rim of the canyon at sunrise."
+    },
+    {
+      "index": 144,
+      "word": "laughter",
+      "definition": "the sound and act of laughing",
+      "sentence": "Their laughter could be heard right across the playground."
+    },
+    {
+      "index": 145,
+      "word": "customers",
+      "definition": "people who buy goods or services",
+      "sentence": "The shop's regular customers come back every week."
+    },
+    {
+      "index": 146,
+      "word": "protein",
+      "definition": "a nutrient your body needs to build muscle",
+      "sentence": "Athletes need plenty of protein to repair their muscles."
+    },
+    {
+      "index": 147,
+      "word": "rhythm",
+      "definition": "a regular repeated pattern of sound or movement",
+      "sentence": "I tapped my foot in rhythm with the song."
+    },
+    {
+      "index": 148,
+      "word": "proceed",
+      "definition": "to go forward or continue",
+      "sentence": "The judge asked the lawyer to proceed with her argument."
+    },
+    {
+      "index": 149,
+      "word": "medicinal",
+      "definition": "used for healing or treating illness",
+      "sentence": "Some plants have well-known medicinal uses."
+    },
+    {
+      "index": 150,
+      "word": "nurture",
+      "definition": "to care for and help something grow",
+      "sentence": "Parents nurture their children through love and guidance."
+    },
+    {
+      "index": 151,
+      "word": "exhibition",
+      "definition": "a public display of items to be viewed",
+      "sentence": "The art exhibition runs until the end of next month."
+    },
+    {
+      "index": 152,
+      "word": "circular",
+      "definition": "shaped like a circle",
+      "sentence": "The dining table was a sleek circular shape."
+    },
+    {
+      "index": 153,
+      "word": "amateur",
+      "definition": "a person who does something for fun, not as a job",
+      "sentence": "He plays the violin as a talented amateur."
+    },
+    {
+      "index": 154,
+      "word": "fatigue",
+      "definition": "extreme tiredness",
+      "sentence": "After three days of camping, fatigue set in."
+    },
+    {
+      "index": 155,
+      "word": "forecast",
+      "definition": "a prediction about future weather",
+      "sentence": "The forecast predicts thunderstorms tomorrow afternoon."
+    },
+    {
+      "index": 156,
+      "word": "eclipsed",
+      "definition": "blocked from view by something else",
+      "sentence": "Her younger brother eclipsed her in the maths competition."
+    },
+    {
+      "index": 157,
+      "word": "guard",
+      "definition": "to protect from harm",
+      "sentence": "Two officers were on guard outside the building."
+    },
+    {
+      "index": 158,
+      "word": "complimentary",
+      "definition": "given free, or expressing praise",
+      "sentence": "The cafe gave us complimentary biscuits with our drinks."
+    },
+    {
+      "index": 159,
+      "word": "circulated",
+      "definition": "passed around from person to person",
+      "sentence": "Rumours about the merger circulated through the company."
+    },
+    {
+      "index": 160,
+      "word": "circuit",
+      "definition": "a closed path; or one lap of a track",
+      "sentence": "The runners completed three laps of the circuit."
+    },
+    {
+      "index": 161,
+      "word": "genius",
+      "definition": "a person with great natural ability",
+      "sentence": "Solving the puzzle in seconds was an act of pure genius."
+    },
+    {
+      "index": 162,
+      "word": "counterfeit",
+      "definition": "a fake copy made to deceive",
+      "sentence": "Police seized hundreds of counterfeit notes during the raid."
+    },
+    {
+      "index": 163,
+      "word": "guidance",
+      "definition": "advice that helps you make decisions",
+      "sentence": "The teacher offered guidance on selecting a science topic."
+    },
+    {
+      "index": 164,
+      "word": "biodegradable",
+      "definition": "able to break down naturally and not pollute",
+      "sentence": "These shopping bags are completely biodegradable."
+    },
+    {
+      "index": 165,
+      "word": "damaged",
+      "definition": "harmed so it doesn't work properly",
+      "sentence": "The hailstorm damaged dozens of cars in the street."
+    },
+    {
+      "index": 166,
+      "word": "vague",
+      "definition": "not clear or exact",
+      "sentence": "His memory of that day is rather vague."
+    },
+    {
+      "index": 167,
+      "word": "camouflage",
+      "definition": "colouring or pattern that hides an animal in its surroundings",
+      "sentence": "Many insects use camouflage to hide from predators."
+    },
+    {
+      "index": 168,
+      "word": "ventilated",
+      "definition": "supplied with fresh air",
+      "sentence": "The kitchen needs to be properly ventilated when frying fish."
+    },
+    {
+      "index": 169,
+      "word": "insight",
+      "definition": "a deep understanding of something",
+      "sentence": "Her essay showed real insight into the novel."
+    },
+    {
+      "index": 170,
+      "word": "cinnamon",
+      "definition": "a sweet brown spice from tree bark",
+      "sentence": "Cinnamon adds a warm flavour to baked apples."
+    },
+    {
+      "index": 171,
+      "word": "faulty",
+      "definition": "not working properly",
+      "sentence": "The mechanic replaced the faulty brakes."
+    },
+    {
+      "index": 172,
+      "word": "accommodate",
+      "definition": "to provide space or to fit in with someone's needs",
+      "sentence": "The hotel can accommodate up to two hundred guests."
+    },
+    {
+      "index": 173,
+      "word": "bravery",
+      "definition": "courage in the face of danger",
+      "sentence": "She was awarded a medal for her bravery in the rescue."
+    },
+    {
+      "index": 174,
+      "word": "noticeable",
+      "definition": "easy to see or be aware of",
+      "sentence": "There was a noticeable change in his attitude after the talk."
+    },
+    {
+      "index": 175,
+      "word": "hesitant",
+      "definition": "unsure; pausing before acting",
+      "sentence": "He was hesitant to speak in front of the whole class."
+    },
+    {
+      "index": 176,
+      "word": "announcement",
+      "definition": "a public statement giving news",
+      "sentence": "The announcement of the winners came after a long wait."
+    },
+    {
+      "index": 177,
+      "word": "urban",
+      "definition": "relating to cities and towns",
+      "sentence": "Urban traffic gets noticeably worse during peak hour."
+    },
+    {
+      "index": 178,
+      "word": "overwhelmed",
+      "definition": "feeling there is too much to cope with",
+      "sentence": "She felt overwhelmed by the workload during exam week."
+    },
+    {
+      "index": 179,
+      "word": "journals",
+      "definition": "notebooks where you record your thoughts",
+      "sentence": "Researchers publish their findings in scientific journals."
+    },
+    {
+      "index": 180,
+      "word": "campaign",
+      "definition": "an organised set of actions to achieve a goal",
+      "sentence": "The campaign to clean up local beaches has been a success."
+    },
+    {
+      "index": 181,
+      "word": "preventable",
+      "definition": "able to be stopped from happening",
+      "sentence": "Most household accidents are entirely preventable."
+    },
+    {
+      "index": 182,
+      "word": "angrily",
+      "definition": "in an angry way",
+      "sentence": "She slammed the door angrily and left without a word."
+    },
+    {
+      "index": 183,
+      "word": "democracy",
+      "definition": "a system where people choose their leaders by voting",
+      "sentence": "Australia has been a democracy for over a hundred years."
+    },
+    {
+      "index": 184,
+      "word": "glacier",
+      "definition": "a huge slow-moving river of ice",
+      "sentence": "The glacier had retreated dramatically in the last decade."
+    },
+    {
+      "index": 185,
+      "word": "gnawing",
+      "definition": "biting and chewing on something repeatedly",
+      "sentence": "The dog spent hours gnawing on its new bone."
+    },
+    {
+      "index": 186,
+      "word": "satellite",
+      "definition": "an object that orbits a planet, often man-made",
+      "sentence": "A weather satellite circles the Earth every ninety minutes."
+    },
+    {
+      "index": 187,
+      "word": "lyrics",
+      "definition": "the words of a song",
+      "sentence": "I memorised the lyrics of the entire album."
+    },
+    {
+      "index": 188,
+      "word": "barrier",
+      "definition": "something that blocks the way",
+      "sentence": "A barrier was set up to keep the crowd back."
+    },
+    {
+      "index": 189,
+      "word": "molecule",
+      "definition": "a tiny group of atoms held together",
+      "sentence": "A water molecule contains two hydrogen atoms and one oxygen atom."
+    },
+    {
+      "index": 190,
+      "word": "improvise",
+      "definition": "to make something up as you go",
+      "sentence": "Without a script, the actors had to improvise."
+    },
+    {
+      "index": 191,
+      "word": "system",
+      "definition": "a set of connected things that work together",
+      "sentence": "The new system makes it easier to track absences."
+    },
+    {
+      "index": 192,
+      "word": "moisten",
+      "definition": "to make slightly wet",
+      "sentence": "Moisten the cloth before wiping the screen."
+    },
+    {
+      "index": 193,
+      "word": "hierarchy",
+      "definition": "a system where things are ranked from highest to lowest",
+      "sentence": "There is a clear hierarchy among bees in a hive."
+    },
+    {
+      "index": 194,
+      "word": "strategically",
+      "definition": "in a way carefully planned to win",
+      "sentence": "The chess pieces were placed strategically around the board."
+    },
+    {
+      "index": 195,
+      "word": "acquired",
+      "definition": "got or obtained",
+      "sentence": "Over the years, she acquired a taste for olives."
+    },
+    {
+      "index": 196,
+      "word": "eventually",
+      "definition": "in the end; after a long time",
+      "sentence": "Eventually the storm passed and the sun came out."
+    },
+    {
+      "index": 197,
+      "word": "classify",
+      "definition": "to sort things into groups",
+      "sentence": "Scientists classify animals into different groups."
+    },
+    {
+      "index": 198,
+      "word": "volunteer",
+      "definition": "someone who helps without being paid",
+      "sentence": "Many parents volunteer at our school's annual fete."
+    },
+    {
+      "index": 199,
+      "word": "ordinary",
+      "definition": "normal; not special",
+      "sentence": "It seemed like an ordinary day until the announcement came."
+    },
+    {
+      "index": 200,
+      "word": "significant",
+      "definition": "important or noticeable",
+      "sentence": "The scientists made a significant discovery in the deep ocean."
+    },
+    {
+      "index": 201,
+      "word": "profitable",
+      "definition": "making money",
+      "sentence": "The bakery turned out to be a very profitable business."
+    },
+    {
+      "index": 202,
+      "word": "applauded",
+      "definition": "clapped to show approval",
+      "sentence": "The audience applauded loudly at the end of the speech."
+    },
+    {
+      "index": 203,
+      "word": "traditional",
+      "definition": "passed down from earlier times",
+      "sentence": "The festival features traditional dancing and food."
+    },
+    {
+      "index": 204,
+      "word": "graphic",
+      "definition": "clear and detailed; or relating to images",
+      "sentence": "The report included a graphic comparing the two years."
+    },
+    {
+      "index": 205,
+      "word": "appropriate",
+      "definition": "suitable or right for the situation",
+      "sentence": "Wear appropriate footwear for the bushwalking trip."
+    },
+    {
+      "index": 206,
+      "word": "sufficient",
+      "definition": "enough for what is needed",
+      "sentence": "Bring sufficient water for everyone in the group."
+    },
+    {
+      "index": 207,
+      "word": "flexible",
+      "definition": "able to bend without breaking; willing to change",
+      "sentence": "Try to be flexible if your travel plans change suddenly."
+    },
+    {
+      "index": 208,
+      "word": "whistle",
+      "definition": "a sharp sound made by blowing through pursed lips",
+      "sentence": "The referee blew her whistle to start the match."
+    },
+    {
+      "index": 209,
+      "word": "extinction",
+      "definition": "the dying out of a kind of animal or plant",
+      "sentence": "Several species are on the brink of extinction."
+    },
+    {
+      "index": 210,
+      "word": "fair",
+      "definition": "treating everyone equally; or a place with rides and stalls",
+      "sentence": "The class agreed it was a fair decision."
+    },
+    {
+      "index": 211,
+      "word": "straight",
+      "definition": "without any bends",
+      "sentence": "Walk straight ahead until you reach the traffic lights."
+    },
+    {
+      "index": 212,
+      "word": "platypus",
+      "definition": "a small Australian water animal with a duck-like bill",
+      "sentence": "A platypus is one of only a few mammals that lay eggs."
+    },
+    {
+      "index": 213,
+      "word": "bizarre",
+      "definition": "very strange or odd",
+      "sentence": "The street performer wore a bizarre costume covered in mirrors."
+    },
+    {
+      "index": 214,
+      "word": "involuntary",
+      "definition": "not done on purpose; out of your control",
+      "sentence": "Yawning is mostly an involuntary response."
+    },
+    {
+      "index": 215,
+      "word": "procession",
+      "definition": "an organised line of people moving forward",
+      "sentence": "A long procession wound through the streets at dawn."
+    },
+    {
+      "index": 216,
+      "word": "census",
+      "definition": "an official count of the population",
+      "sentence": "The census happens every five years in Australia."
+    },
+    {
+      "index": 217,
+      "word": "advertisement",
+      "definition": "a notice that promotes a product or service",
+      "sentence": "The advertisement claimed the cream would erase wrinkles overnight."
+    },
+    {
+      "index": 218,
+      "word": "gratefully",
+      "definition": "in a thankful way",
+      "sentence": "She gratefully accepted the help from her neighbours."
+    },
+    {
+      "index": 219,
+      "word": "considerable",
+      "definition": "fairly large in size or amount",
+      "sentence": "They spent a considerable sum on renovating the house."
+    },
+    {
+      "index": 220,
+      "word": "hectares",
+      "definition": "units used to measure large areas of land",
+      "sentence": "The farm covers nearly two hundred hectares."
+    },
+    {
+      "index": 221,
+      "word": "omnivorous",
+      "definition": "eating both plants and animals",
+      "sentence": "Bears are omnivorous, eating both plants and meat."
+    },
+    {
+      "index": 222,
+      "word": "bargains",
+      "definition": "things bought for less than the usual price",
+      "sentence": "The store had genuine bargains during the end-of-season sale."
+    },
+    {
+      "index": 223,
+      "word": "performance",
+      "definition": "the act of presenting a show or task",
+      "sentence": "His performance in the school play earned a standing ovation."
+    },
+    {
+      "index": 224,
+      "word": "disturb",
+      "definition": "to interrupt or upset someone",
+      "sentence": "Please don't disturb the baby while she is sleeping."
+    }
+  ]
+}

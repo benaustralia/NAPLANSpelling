@@ -2,16 +2,20 @@
 
 A small, fast, no-login practice site for NAPLAN Language Conventions spelling
 words. Vite + React 19 + Tailwind 4, packaged with Bun, deployed to Netlify.
-Currently ships Year 3 and Year 5 corpora drawn from publicly released ACARA
-NAPLAN test papers (paper era: 2008–2016).
+Ships Year 3, 5, 7 and 9 corpora drawn from publicly released ACARA NAPLAN
+test papers (paper era: 2008–2016).
 
 URL structure (static, hash-free, no trailing-slash quirks):
-- `/`              — landing page with year-level CTAs
+- `/`              — landing page with year-level CTAs (Y3 / Y5 / Y7 / Y9)
 - `/about/`        — copyright + methodology
 - `/y3-lc/`        — Year 3 LC overview (list of 11 parts)
 - `/y3-lc/part/N/` — Year 3 LC test player for part N (1–11)
 - `/y5-lc/`        — Year 5 LC overview (list of 11 parts)
 - `/y5-lc/part/N/` — Year 5 LC test player for part N (1–11)
+- `/y7-lc/`        — Year 7 LC overview (list of 11 parts)
+- `/y7-lc/part/N/` — Year 7 LC test player for part N (1–11)
+- `/y9-lc/`        — Year 9 LC overview (list of 11 parts)
+- `/y9-lc/part/N/` — Year 9 LC test player for part N (1–11)
 
 Routing is hand-rolled in `src/main.tsx` against `window.location.pathname`
 and a single `ALL_LEVELS` source of truth from `src/levels.ts`.
@@ -26,8 +30,41 @@ matching ("part 1 = a-words") instead of recall.
 **The seed is immutable per level once any audio is rendered.** Changing
 the seed silently re-maps words to different positions in the audio MP3s,
 which breaks every existing audio file. Current seeds: Y3 = 30303, Y5 =
-50505. Add more (Y7/Y9) with new arbitrary seeds — never reuse or change
-an existing one.
+50505, Y7 = 70707, Y9 = 90909. Add new levels with fresh arbitrary seeds —
+never reuse or change an existing one.
+
+## Pause timing tiers (per-level `pauseSec`)
+
+Each level in `scripts/build-data.ts` carries a `pauseSec` field — the
+length of the silent gap inserted between dictated items by
+`scripts/tts-spelling.ts`. **`pauseSec` is immutable once audio for the
+level is rendered** (same rule as `seed`): changing it desynchronises the
+declared gap from the actual MP3s, and re-rendering costs ElevenLabs
+quota.
+
+Tiers, derived from Australian handwriting-speed evidence (Ziviani &
+Watson-Will 1998) plus real student feedback on Y3 audio:
+
+| Tier | Levels | `pauseSec` | Rationale |
+|------|--------|-----------|-----------|
+| 0 (future) | Y2-bridge / learning support | 9.0–10.0 | Y2 LPM ~30% slower than Y3 |
+| 1 | Y3, Y5 | **7.5** | Matches existing Y3/Y5 audio; comfortable for Y3 mean writer, mildly generous for Y5 |
+| 2 | Y7, Y9 | **5.5** | Y7/Y9 LPM 2–2.5× Y3, longer words partly offset; splits Y7/Y9 fairly |
+
+Within-tier variance between students (~30%) is expected — the per-
+question prev/next buttons (see "Future feature ideas") are the right
+place to absorb that, not a finer tier split.
+
+`scripts/tts-spelling.ts` reads `pauseSec` from the level's built JSON
+(`src/data/<id>.json`). The legacy `PAUSE_SECONDS` env var still works as
+an ad-hoc override for experiments but emits a warning when it disagrees
+with the locked level value — never use it to render a published corpus.
+
+**Rendering Y7/Y9 in future**: just add the entries to the `LEVELS` table
+in `scripts/build-data.ts` with `pauseSec: 5.5` (Tier 2). The render
+script picks it up automatically from the built JSON and the warning
+system protects against accidental env-driven mismatches — no env flag
+gymnastics required.
 
 ## Numbering convention
 
@@ -63,10 +100,15 @@ For each level (id format `y{year}-lc`):
 
 Adding a new level (e.g. `y7-lc`):
 - Drop the CSV + sentences.json under `public/data/y7-lc/`.
-- Add `'y7-lc'` to the `LEVELS` array in `scripts/build-data.ts`.
+- Add `'y7-lc'` to the `LEVELS` array in `scripts/build-data.ts` with a
+  fresh `seed` and the tier-appropriate `pauseSec` (Y7/Y9 = 5.5, see
+  "Pause timing tiers"). Both fields become immutable the moment audio
+  is rendered, so pick deliberately.
 - Add a `<id>.d.ts` mirror of the existing ones.
 - Import + register in `src/levels.ts` (`ALL_LEVELS` and `LEVELS` map).
-- Run `bun run scripts/tts-spelling.ts y7-lc` then `bun run scripts/build-data.ts`.
+- Run `bun run scripts/build-data.ts` first (so the level JSON exists
+  with its `pauseSec`), then `bun run scripts/tts-spelling.ts y7-lc`,
+  then `bun run scripts/build-data.ts` again to refresh durations.
 
 ## Source: ACARA NAPLAN past-paper answer keys
 
@@ -75,16 +117,24 @@ blob under a stable URL pattern:
 
 ```
 https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/
-  assessment-and-reporting-publications/naplan-{YYYY}-yr-{3|5}-paper-test-answers.pdf
+  assessment-and-reporting-publications/naplan-{YYYY}-yr-{3|5|7|9}-paper-test-answers.pdf
 ```
 
-The Year 5 set (9 PDFs) has been downloaded into `source-pdfs/y5/`. The
-spelling answers live in the right-hand "Language Conventions" column of
-those PDFs, questions 1–25. Questions beyond 25 are grammar/punctuation
-multiple-choice (a/b/c/d) and are not spelling.
+The Year 5/7/9 sets (9 PDFs each) have been downloaded into
+`source-pdfs/y{5,7,9}/`. The spelling answers live in the right-hand
+"Language Conventions" column of those PDFs, questions 1–25. Questions
+beyond 25 are grammar/punctuation multiple-choice (a/b/c/d) and are not
+spelling.
 
-Year 5 dedupes to **222 unique spelling words** (225 occurrences across 9
-years; 3 repeats: `climb`, `shoulder`, `nursery`).
+Dedupe counts per level (225 occurrences each across 9 years):
+- Year 5: **222** unique spelling words (3 repeats: `climb`, `shoulder`, `nursery`)
+- Year 7: **224** unique (1 repeat)
+- Year 9: **224** unique (1 repeat)
+
+`scripts/extract-spelling.ts` parses the LC column from `pdftotext -layout`
+output (handles multi-line wraps that occur when an answer is too long for
+the column). `scripts/dedupe-y79.ts` produces the alphabetised word lists
+that became `public/data/y{7,9}-lc/words.csv`.
 
 ## Audio rendering with ElevenLabs
 
@@ -116,7 +166,11 @@ Defaults (overridable via env):
 - `ELEVENLABS_SPEED` — `0.75` (set via `voice_settings.speed`, not ffmpeg
   post-processing — the playback rate is baked into the rendered MP3 so the
   `<audio>` element plays at native speed)
-- `PAUSE_SECONDS` — `7.5`
+- `PAUSE_SECONDS` — **legacy override**. The canonical source is the
+  level's `pauseSec` field in `scripts/build-data.ts`. Setting this env
+  forces a different gap and emits a warning; only use for one-off
+  experiments, never to render a published corpus. See "Pause timing
+  tiers" above.
 
 Usage:
 ```bash
@@ -151,15 +205,88 @@ if set).
 ## Build scripts
 
 - `scripts/build-data.ts` — reads the per-level CSV + sentences.json,
-  probes audio durations with ffprobe, writes `src/data/<id>.json`. Runs
-  during `dev` and `build` via `prebuild`. Generalised to iterate over the
-  `LEVELS` array — add new levels there.
+  probes audio durations with ffprobe, runs silencedetect to bake the
+  per-part `questionStarts` array, writes `src/data/<id>.json`. Runs
+  during `dev` and `build` via `prebuild`. Generalised to iterate over
+  the `LEVELS` array — add new levels there.
 - `scripts/build-qrcodes.ts` — uses `bunx qrcode` to render an SVG QR for
   every level overview + every part, plus a printable contact-sheet. Output
   goes to `public/codes/<level-id>/`.
+- `scripts/build-pdfs.ts` — see "Printable PDFs" below.
 - `scripts/inline-css.ts` — post-build step that inlines the Tailwind CSS
   bundle into `index.html`, removing the separate `.css` HTTP request.
 - `scripts/tts-spelling.ts` — see "Audio rendering" above.
+- `scripts/extract-spelling.ts` + `scripts/dedupe-y79.ts` — provenance
+  scripts used to build the Y7/Y9 corpora from `source-pdfs/y{7,9}/`.
+  Not part of the regular build pipeline — only re-run if the source
+  PDFs are updated.
+
+## Printable PDFs
+
+Each part page has a "Download answer sheet" button that links to a
+pre-generated PDF at `/pdfs/<levelId>/part-NN.pdf`. Two pages per PDF —
+the blank answer sheet (page 1) and the answer key (page 2). Generated
+once per content change and committed alongside the MP3s. **Not** part
+of the regular `bun run build` chain (would add ~2 minutes on every
+build for output that almost never changes).
+
+### Why static and not on-the-fly
+
+PDFs are deterministic from the level data, which is locked the moment
+audio is rendered (immutable seed + immutable pauseSec). They never
+need per-user customisation. Pre-generating once and serving as static
+files beats:
+
+- **Browser `window.print()`** — Chrome injects URL/date/page-number into
+  the page margins and ignores `@page { @top-left { content: '' } }`. The
+  only cross-browser-clean way to suppress them is `@page { margin: 0 }`,
+  which sacrifices natural margins.
+- **Server-side PDF generation** — Puppeteer in a Netlify Function would
+  add ~80 MB cold-start, runtime cost, and complexity, for output that's
+  identical for every user.
+
+### How to regenerate
+
+PDFs need to be regenerated whenever the printable content changes —
+realistically that means whenever audio is re-rendered for a level (since
+the part list, durations, etc. could shift), or when `PartPlayer`'s print
+layout itself is edited. Single command:
+
+```bash
+# 1. In one terminal, start the dev server (PDFs are generated against the
+#    live React app, so it must be serving):
+bun run dev
+
+# 2. In another terminal:
+bun run pdfs           # regenerates all 44 PDFs across all 4 levels (~2 min)
+```
+
+`scripts/build-pdfs.ts` drives Chrome headless via the macOS system
+binary at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+— zero npm dep, no Puppeteer install. The `--no-pdf-header-footer` flag
+suppresses Chrome's URL/date/page-number injection, so the PDFs are
+clean. Output: `public/pdfs/<levelId>/part-NN.pdf`.
+
+To regenerate just one level (e.g. after re-rendering Y7 audio at a
+different pauseSec), edit the `LEVELS` array near the top of
+`scripts/build-pdfs.ts` to a single entry and re-run, or just accept the
+~2-minute full pass — it's fast enough that targeted regen is rarely
+worth the bother.
+
+### Other notes
+
+- The print-only DOM (`PrintHeader`, `PrintSheet` in `PartPlayer.tsx`)
+  and the `@media print` block in `src/index.css` still exist as a
+  fallback for users who hit `Ctrl+P` from the browser. They could be
+  removed for ~100 lines of dead code, but the cost is essentially zero
+  to keep them.
+- PDFs are committed to the repo (~5 MB across 44 files). Same convention
+  as the rendered MP3s — stable build outputs that cost real time/quota
+  to produce, so they live in version control rather than being
+  regenerated on every CI build.
+- The on-screen flow does NOT use the print path at all. The button
+  links directly at `/pdfs/<levelId>/part-NN.pdf` with `target="_blank"`,
+  so kids open the PDF in a new tab and print from there.
 
 ## Component map
 
@@ -195,69 +322,29 @@ if set).
 - Print sheet uses two columns; keep page break logic in the
   `PrintSheet` component when editing `PartPlayer.tsx`.
 
-## Future feature ideas (not yet implemented)
+## Implemented features (formerly "future ideas")
 
-### Per-question scrubbing in the audio player
+### Per-question scrubbing in the audio player ✓
 
-Today the player exposes a single Play/Pause button (plus the native
-`<audio controls>` track) — students can't easily jump back to "the word
-before" or skip to "the next word" without dragging the timeline.
+`scripts/build-data.ts` runs `silencedetect=noise=-30dB:d=2` against each
+part's MP3 and bakes a `questionStarts: number[]` array into the level
+JSON (one timestamp per word — word 1 at t=0, word N+1 at the silence_end
+of gap N). Mismatch (e.g. silencedetect returns the wrong count) returns
+`null` and the player gracefully disables prev/next instead of seeking
+wrong.
 
-Proposed: emit prev-question / next-question buttons next to Play/Pause
-that seek the `<audio>` element to known timestamps within the MP3.
+`PartPlayer.tsx` renders three custom transport buttons (⏮ Prev / ▶ Play /
+⏭ Next, lucide icons) plus a `<Progress>` bar and "Word N of M" readout.
+Native `<audio controls>` is hidden — the three buttons are the only
+seek mechanism. Keyboard: `Space` / `←` / `→`. Prev replays the current
+word if >1.5s into it, else jumps back one (iPod convention).
 
-**Data we'd need**: a per-part array of question-start offsets, e.g.
-`questionStarts: [0, 11.4, 22.8, …]` (one entry per word in the part). The
-silence-detection pass already used in this session
-(`ffmpeg -af silencedetect=noise=-30dB:d=2`) reliably finds the ~7.5s gaps
-between word entries — every long silence end marks the start of the next
-question. `scripts/build-data.ts` could run silencedetect against each
-part's MP3 and bake the `questionStarts` array into `src/data/<id>.json`,
-right alongside `duration`.
+### Per-level pause tuning ✓
 
-Then `PartPlayer.tsx`:
-- Add two buttons labelled **`<`** and **`>`** sitting next to Play/Pause.
-  These are the primary student-facing controls — keep them visually
-  prominent (same `size="lg"` as Play/Pause), separate from the native
-  audio scrubber.
-- Compute current question index from `audio.currentTime` and the
-  `questionStarts` array (the largest start-time that is ≤ currentTime).
-- **`>`** (next): seek `audio.currentTime = questionStarts[currentIdx + 1]`.
-  Disable when on the last question of the part.
-- **`<`** (previous): if currentTime is more than ~1.5s into the current
-  question's audio, snap back to `questionStarts[currentIdx]` (i.e. replay
-  the current word). Otherwise seek to
-  `questionStarts[currentIdx - 1]` (the actual previous word). Disable when
-  on the first question of the part.
-- Both buttons should keep the play state — if audio was playing before
-  the seek, it should keep playing from the new position; if paused, stay
-  paused. (`audio.currentTime = X` preserves play state by default.)
-
-Bonus: a small "Question N of M" readout updating live with `timeupdate`,
-plus a small clickable list of question numbers for direct seeking. Useful
-if a child loses their place — they just tap the number they're up to.
-
-**Caveat**: silence detection runs against the rendered MP3, so the
-metadata regenerates whenever audio is re-rendered. Build-data.ts should
-treat this as best-effort — fall back to no buttons if silence detection
-fails or returns the wrong number of segments (sanity check: number of
-detected starts == number of words in the part).
-
-### Per-level pause tuning
-
-Some Year 3 students report the current gap between words is too long.
-The `PAUSE_SECONDS` env in `scripts/tts-spelling.ts` is currently a single
-global default (7.5s, chosen to match the existing Y3 audio). Consider
-making it per-level — e.g. Y3 = 5.5s, Y5 = 7.5s — by adding a `pauseSec`
-field to each `LEVELS` entry in `build-data.ts` and threading it through
-to the render script (or driving the render directly from the LEVELS
-table). Re-rendering Y3 with a shorter pause would also shorten each part
-from ~5 min to ~4 min, which younger kids may find easier to sit through.
-
-If implementing, also update the per-question scrubbing metadata
-(`questionStarts`) since the offsets shift — but since both regenerate
-from the freshly-rendered MP3 via silencedetect, it should "just work"
-provided build-data runs the silence pass after each render.
+Each level entry in `scripts/build-data.ts` carries a `pauseSec` field
+which `tts-spelling.ts` reads from the built JSON. See "Pause timing
+tiers" above for the locked values. Within-tier student variance is the
+prev/next buttons' job, not the tier system's.
 
 ## ACARA copyright
 

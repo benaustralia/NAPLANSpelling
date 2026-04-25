@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import { ALL_LEVELS } from '@/levels';
+import { Button } from '@/components/ui/button';
 
 export function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-dvh flex flex-col">
-      <header className="no-print">
+      <header>
         <div className="mx-auto max-w-5xl px-5 py-4 flex items-center justify-between">
           <a
             href="/"
@@ -12,27 +13,20 @@ export function Shell({ children }: { children: ReactNode }) {
           >
             NAPLAN <span className="text-primary">Spelling</span>
           </a>
-          <nav className="flex items-center gap-1 text-sm">
+          <nav className="flex items-center gap-1">
             {ALL_LEVELS.map((l) => (
-              <a
-                key={l.id}
-                href={`/${l.id}/`}
-                className="px-3 py-1.5 rounded-md hover:bg-secondary text-foreground/80 hover:text-foreground transition"
-              >
-                {l.yearLabel}
-              </a>
+              <Button key={l.id} asChild variant="ghost" size="sm">
+                <a href={`/${l.id}/`}>{l.yearLabel}</a>
+              </Button>
             ))}
-            <a
-              href="/about/"
-              className="px-3 py-1.5 rounded-md hover:bg-secondary text-foreground/80 hover:text-foreground transition"
-            >
-              About
-            </a>
+            <Button asChild variant="ghost" size="sm">
+              <a href="/about/">About</a>
+            </Button>
           </nav>
         </div>
       </header>
       <main className="flex-1">{children}</main>
-      <footer className="no-print">
+      <footer>
         <div className="mx-auto max-w-5xl px-5 py-6 text-xs text-muted-foreground">
           Source papers © ACARA — <a href="/about/" className="underline hover:text-foreground">licence</a>.
         </div>

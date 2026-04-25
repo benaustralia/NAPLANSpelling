@@ -6,7 +6,7 @@ const BASE_URL = process.env.BASE_URL ?? 'https://naplan-spelling.netlify.app';
 const ROOT = process.cwd();
 const OUT_DIR = join(ROOT, 'public/codes');
 
-const LEVELS = ['y3-lc', 'y5-lc'] as const;
+const LEVELS = ['y3-lc', 'y5-lc', 'y7-lc', 'y9-lc'] as const;
 
 await mkdir(OUT_DIR, { recursive: true });
 

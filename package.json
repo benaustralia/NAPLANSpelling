@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build && bun run scripts/inline-css.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
-    "qrcodes": "bun run scripts/build-qrcodes.ts"
+    "qrcodes": "bun run scripts/build-qrcodes.ts",
+    "pdfs": "bun run scripts/build-pdfs.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

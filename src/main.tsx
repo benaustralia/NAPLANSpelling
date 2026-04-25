@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Landing } from '@/routes/Landing';
 import { ListOverview } from '@/routes/ListOverview';
 import { PartPlayer } from '@/routes/PartPlayer';
+import { PartPrintable } from '@/routes/PartPrintable';
 import { About } from '@/routes/About';
 import { NotFound } from '@/routes/NotFound';
 import { ALL_LEVELS } from '@/levels';
@@ -16,6 +17,13 @@ function App() {
 
   for (const { id, data } of ALL_LEVELS) {
     if (path === `/${id}`) return <ListOverview levelId={id} />;
+    const printMatch = path.match(new RegExp(`^/${id}/part/(\\d+)/print$`));
+    if (printMatch) {
+      const n = Number(printMatch[1]);
+      if (Number.isInteger(n) && n >= 1 && n <= data.parts.length) {
+        return <PartPrintable levelId={id} part={n} />;
+      }
+    }
     const m = path.match(new RegExp(`^/${id}/part/(\\d+)$`));
     if (m) {
       const n = Number(m[1]);

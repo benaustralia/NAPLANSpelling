@@ -11,11 +11,13 @@ declare module '@/data/y5-lc.json' {
     end: number;
     audio: string;
     duration: number | null;
+    questionStarts: number[] | null;
   };
   export type WordList = {
     id: 'y5-lc';
     title: string;
     wordsPerPart: number;
+    pauseSec: number;
     parts: Part[];
     words: Word[];
   };

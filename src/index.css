@@ -114,31 +114,3 @@
   min-height: 32px;
 }
 
-@media print {
-  html {
-    background: #fff !important;
-  }
-  .no-print {
-    display: none !important;
-  }
-  .print-only {
-    display: block !important;
-  }
-  /* Empty @top/@bottom margin boxes hide default browser headers/footers
-     in browsers that honour CSS Paged Media. Chrome/Edge still inject the
-     page-number and URL strings unless the user disables "Headers and
-     footers" in the print dialog — see the in-app hint near Print. */
-  @page {
-    margin: 16mm;
-    @top-left { content: ''; }
-    @top-center { content: ''; }
-    @top-right { content: ''; }
-    @bottom-left { content: ''; }
-    @bottom-center { content: ''; }
-    @bottom-right { content: ''; }
-  }
-}
-
-.print-only {
-  display: none;
-}
