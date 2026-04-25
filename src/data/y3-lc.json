@@ -1,0 +1,1346 @@
+{
+  "id": "y3-lc",
+  "title": "Year 3 Language Conventions",
+  "wordsPerPart": 20,
+  "parts": [
+    {
+      "part": 1,
+      "start": 1,
+      "end": 20,
+      "audio": "/audio/y3-lc/part-01.mp3",
+      "duration": 264
+    },
+    {
+      "part": 2,
+      "start": 21,
+      "end": 40,
+      "audio": "/audio/y3-lc/part-02.mp3",
+      "duration": 270
+    },
+    {
+      "part": 3,
+      "start": 41,
+      "end": 60,
+      "audio": "/audio/y3-lc/part-03.mp3",
+      "duration": 276
+    },
+    {
+      "part": 4,
+      "start": 61,
+      "end": 80,
+      "audio": "/audio/y3-lc/part-04.mp3",
+      "duration": 270
+    },
+    {
+      "part": 5,
+      "start": 81,
+      "end": 100,
+      "audio": "/audio/y3-lc/part-05.mp3",
+      "duration": 269
+    },
+    {
+      "part": 6,
+      "start": 101,
+      "end": 120,
+      "audio": "/audio/y3-lc/part-06.mp3",
+      "duration": 279
+    },
+    {
+      "part": 7,
+      "start": 121,
+      "end": 140,
+      "audio": "/audio/y3-lc/part-07.mp3",
+      "duration": 277
+    },
+    {
+      "part": 8,
+      "start": 141,
+      "end": 160,
+      "audio": "/audio/y3-lc/part-08.mp3",
+      "duration": 274
+    },
+    {
+      "part": 9,
+      "start": 161,
+      "end": 180,
+      "audio": "/audio/y3-lc/part-09.mp3",
+      "duration": 279
+    },
+    {
+      "part": 10,
+      "start": 181,
+      "end": 200,
+      "audio": "/audio/y3-lc/part-10.mp3",
+      "duration": 276
+    },
+    {
+      "part": 11,
+      "start": 201,
+      "end": 210,
+      "audio": "/audio/y3-lc/part-11.mp3",
+      "duration": 134
+    }
+  ],
+  "words": [
+    {
+      "index": 1,
+      "word": "jumping",
+      "definition": "pushing off the ground with your legs",
+      "sentence": "The kids were jumping on the trampoline."
+    },
+    {
+      "index": 2,
+      "word": "cracked",
+      "definition": "broken with a line in it",
+      "sentence": "The cup cracked when I dropped it."
+    },
+    {
+      "index": 3,
+      "word": "hose",
+      "definition": "a long tube that water goes through",
+      "sentence": "The garden hose sprays water."
+    },
+    {
+      "index": 4,
+      "word": "neatly",
+      "definition": "tidy and careful",
+      "sentence": "She wrote her name neatly."
+    },
+    {
+      "index": 5,
+      "word": "vegetable",
+      "definition": "a plant we eat like a carrot",
+      "sentence": "A carrot is a healthy vegetable."
+    },
+    {
+      "index": 6,
+      "word": "knee",
+      "definition": "the middle bendy part of your leg",
+      "sentence": "I fell and hurt my knee."
+    },
+    {
+      "index": 7,
+      "word": "blue",
+      "definition": "the colour of a clear sky",
+      "sentence": "The sky is a bright blue."
+    },
+    {
+      "index": 8,
+      "word": "open",
+      "definition": "not closed",
+      "sentence": "The shop is open on Saturday."
+    },
+    {
+      "index": 9,
+      "word": "pick",
+      "definition": "to choose something",
+      "sentence": "Please pick up your toys."
+    },
+    {
+      "index": 10,
+      "word": "wheel",
+      "definition": "a round thing that turns on cars and bikes",
+      "sentence": "A wheel came off the toy car."
+    },
+    {
+      "index": 11,
+      "word": "wrong",
+      "definition": "not correct",
+      "sentence": "I gave the wrong answer."
+    },
+    {
+      "index": 12,
+      "word": "felt",
+      "definition": "noticed something by touch or feeling",
+      "sentence": "I felt the cold wind on my face."
+    },
+    {
+      "index": 13,
+      "word": "planets",
+      "definition": "big round things in space like Earth",
+      "sentence": "There are eight planets in our solar system."
+    },
+    {
+      "index": 14,
+      "word": "wise",
+      "definition": "knowing a lot",
+      "sentence": "My grandma is very wise."
+    },
+    {
+      "index": 15,
+      "word": "glitter",
+      "definition": "tiny shiny sparkly bits",
+      "sentence": "The card had lots of glitter on it."
+    },
+    {
+      "index": 16,
+      "word": "won",
+      "definition": "came first in a game",
+      "sentence": "Our team won the match."
+    },
+    {
+      "index": 17,
+      "word": "huge",
+      "definition": "very big",
+      "sentence": "The elephant is a huge animal."
+    },
+    {
+      "index": 18,
+      "word": "chance",
+      "definition": "a time when something might happen",
+      "sentence": "I didn't get a chance to speak."
+    },
+    {
+      "index": 19,
+      "word": "driving",
+      "definition": "controlling a car as it moves",
+      "sentence": "Dad is driving to work."
+    },
+    {
+      "index": 20,
+      "word": "rain",
+      "definition": "water that falls from clouds",
+      "sentence": "I stood in the warm summer rain."
+    },
+    {
+      "index": 21,
+      "word": "because",
+      "definition": "for the reason that",
+      "sentence": "I was late because I missed the bus."
+    },
+    {
+      "index": 22,
+      "word": "squirts",
+      "definition": "shoots out liquid in a thin stream",
+      "sentence": "The water gun squirts water far."
+    },
+    {
+      "index": 23,
+      "word": "new",
+      "definition": "just made or never used before",
+      "sentence": "I got a new bike for my birthday."
+    },
+    {
+      "index": 24,
+      "word": "beak",
+      "definition": "the hard pointy mouth of a bird",
+      "sentence": "The bird has a sharp beak."
+    },
+    {
+      "index": 25,
+      "word": "directions",
+      "definition": "instructions telling you where to go",
+      "sentence": "I followed the directions to the park."
+    },
+    {
+      "index": 26,
+      "word": "knock",
+      "definition": "to hit something with your hand",
+      "sentence": "Please knock before you come in."
+    },
+    {
+      "index": 27,
+      "word": "brick",
+      "definition": "a hard block used to build walls",
+      "sentence": "Our house is made of red brick."
+    },
+    {
+      "index": 28,
+      "word": "probably",
+      "definition": "very likely",
+      "sentence": "It will probably rain tonight."
+    },
+    {
+      "index": 29,
+      "word": "floating",
+      "definition": "staying on top of water or in the air",
+      "sentence": "A leaf was floating on the water."
+    },
+    {
+      "index": 30,
+      "word": "dry",
+      "definition": "not wet",
+      "sentence": "My towel is nearly dry."
+    },
+    {
+      "index": 31,
+      "word": "animal",
+      "definition": "a living creature that is not a plant",
+      "sentence": "A dog is a friendly animal."
+    },
+    {
+      "index": 32,
+      "word": "lamb",
+      "definition": "a baby sheep",
+      "sentence": "A little lamb stood in the field."
+    },
+    {
+      "index": 33,
+      "word": "stomach",
+      "definition": "the part of your body that holds food",
+      "sentence": "My stomach hurts a little."
+    },
+    {
+      "index": 34,
+      "word": "loose",
+      "definition": "not tight",
+      "sentence": "My tooth is loose."
+    },
+    {
+      "index": 35,
+      "word": "moonlight",
+      "definition": "light that comes from the moon",
+      "sentence": "We walked home in the moonlight."
+    },
+    {
+      "index": 36,
+      "word": "supermarket",
+      "definition": "a big shop that sells food",
+      "sentence": "We bought eggs at the supermarket."
+    },
+    {
+      "index": 37,
+      "word": "slowly",
+      "definition": "not quickly",
+      "sentence": "The snail moved very slowly."
+    },
+    {
+      "index": 38,
+      "word": "spill",
+      "definition": "to let liquid fall out",
+      "sentence": "Try not to spill your milk."
+    },
+    {
+      "index": 39,
+      "word": "stopped",
+      "definition": "did not keep going",
+      "sentence": "The bus stopped at our street."
+    },
+    {
+      "index": 40,
+      "word": "halves",
+      "definition": "two equal parts of something",
+      "sentence": "Cut the apple into two halves."
+    },
+    {
+      "index": 41,
+      "word": "stars",
+      "definition": "tiny lights you see in the night sky",
+      "sentence": "The stars came out at night."
+    },
+    {
+      "index": 42,
+      "word": "calf",
+      "definition": "a baby cow",
+      "sentence": "The calf stayed close to its mother."
+    },
+    {
+      "index": 43,
+      "word": "looked",
+      "definition": "used your eyes to see",
+      "sentence": "She looked under the bed for her shoe."
+    },
+    {
+      "index": 44,
+      "word": "face",
+      "definition": "the front of your head",
+      "sentence": "He had a smile on his face."
+    },
+    {
+      "index": 45,
+      "word": "dragonflies",
+      "definition": "shiny insects with long wings that fly near water",
+      "sentence": "Dragonflies flew over the pond."
+    },
+    {
+      "index": 46,
+      "word": "spot",
+      "definition": "a small round mark",
+      "sentence": "The dog has a black spot on its back."
+    },
+    {
+      "index": 47,
+      "word": "parrot",
+      "definition": "a colourful bird that can copy sounds",
+      "sentence": "The parrot could say my name."
+    },
+    {
+      "index": 48,
+      "word": "kindness",
+      "definition": "being nice to others",
+      "sentence": "Her kindness made me smile."
+    },
+    {
+      "index": 49,
+      "word": "wooden",
+      "definition": "made from wood",
+      "sentence": "The wooden chair was sturdy."
+    },
+    {
+      "index": 50,
+      "word": "skeleton",
+      "definition": "all the bones inside a body",
+      "sentence": "We saw a dinosaur skeleton at the museum."
+    },
+    {
+      "index": 51,
+      "word": "breeze",
+      "definition": "a gentle wind",
+      "sentence": "A cool breeze blew through the window."
+    },
+    {
+      "index": 52,
+      "word": "often",
+      "definition": "many times",
+      "sentence": "We often play in the garden."
+    },
+    {
+      "index": 53,
+      "word": "path",
+      "definition": "a narrow way to walk on",
+      "sentence": "We walked along the quiet path."
+    },
+    {
+      "index": 54,
+      "word": "yellow",
+      "definition": "the colour of a banana or the sun",
+      "sentence": "Bananas turn yellow when they are ripe."
+    },
+    {
+      "index": 55,
+      "word": "third",
+      "definition": "after second and before fourth",
+      "sentence": "I came third in the race."
+    },
+    {
+      "index": 56,
+      "word": "mail",
+      "definition": "letters and parcels delivered to your house",
+      "sentence": "The mail arrived this morning."
+    },
+    {
+      "index": 57,
+      "word": "bear",
+      "definition": "a big furry wild animal",
+      "sentence": "The bear was sleeping in his cave."
+    },
+    {
+      "index": 58,
+      "word": "movement",
+      "definition": "when something moves",
+      "sentence": "The cat saw a small movement in the grass."
+    },
+    {
+      "index": 59,
+      "word": "winner",
+      "definition": "the person who comes first",
+      "sentence": "The winner got a gold medal."
+    },
+    {
+      "index": 60,
+      "word": "clear",
+      "definition": "easy to see through; not cloudy",
+      "sentence": "The water was clear and cold."
+    },
+    {
+      "index": 61,
+      "word": "actor",
+      "definition": "a person who performs in plays or films",
+      "sentence": "The actor was in a new movie."
+    },
+    {
+      "index": 62,
+      "word": "pretty",
+      "definition": "nice to look at",
+      "sentence": "She wore a pretty blue dress."
+    },
+    {
+      "index": 63,
+      "word": "healthy",
+      "definition": "well and not sick",
+      "sentence": "Fruit and vegetables keep me healthy."
+    },
+    {
+      "index": 64,
+      "word": "rocket",
+      "definition": "a tall pointy ship that flies into space",
+      "sentence": "The rocket flew into space."
+    },
+    {
+      "index": 65,
+      "word": "plays",
+      "definition": "games or fun activities",
+      "sentence": "He plays football every Saturday."
+    },
+    {
+      "index": 66,
+      "word": "exit",
+      "definition": "the way out",
+      "sentence": "Take the exit on the left."
+    },
+    {
+      "index": 67,
+      "word": "door",
+      "definition": "what you open to go in or out of a room",
+      "sentence": "I closed the front door."
+    },
+    {
+      "index": 68,
+      "word": "fluffier",
+      "definition": "softer and puffier than before",
+      "sentence": "The new towels are fluffier than the old ones."
+    },
+    {
+      "index": 69,
+      "word": "wrap",
+      "definition": "to cover something with paper",
+      "sentence": "Please wrap my present in pretty paper."
+    },
+    {
+      "index": 70,
+      "word": "corner",
+      "definition": "where two walls or streets meet",
+      "sentence": "The shop is on the corner."
+    },
+    {
+      "index": 71,
+      "word": "properly",
+      "definition": "done in the right way",
+      "sentence": "Please wash your hands properly."
+    },
+    {
+      "index": 72,
+      "word": "gloves",
+      "definition": "things you wear on your hands to keep them warm",
+      "sentence": "I wear gloves when it is cold."
+    },
+    {
+      "index": 73,
+      "word": "tray",
+      "definition": "a flat board for carrying food or drinks",
+      "sentence": "She carried the tray of drinks."
+    },
+    {
+      "index": 74,
+      "word": "chalk",
+      "definition": "white sticks for writing on a blackboard",
+      "sentence": "I drew with chalk on the path."
+    },
+    {
+      "index": 75,
+      "word": "scissors",
+      "definition": "tool with two blades for cutting paper",
+      "sentence": "Please be careful with the scissors."
+    },
+    {
+      "index": 76,
+      "word": "departments",
+      "definition": "different parts of a big shop",
+      "sentence": "The shop has many different departments."
+    },
+    {
+      "index": 77,
+      "word": "nicely",
+      "definition": "in a nice way",
+      "sentence": "She asked nicely for more cake."
+    },
+    {
+      "index": 78,
+      "word": "could",
+      "definition": "was able to",
+      "sentence": "She could run very fast."
+    },
+    {
+      "index": 79,
+      "word": "signal",
+      "definition": "a sign that tells you what to do",
+      "sentence": "The green signal means go."
+    },
+    {
+      "index": 80,
+      "word": "forest",
+      "definition": "a big group of trees",
+      "sentence": "We went for a walk in the forest."
+    },
+    {
+      "index": 81,
+      "word": "nailed",
+      "definition": "fixed something with a nail",
+      "sentence": "He nailed the sign to the wall."
+    },
+    {
+      "index": 82,
+      "word": "growl",
+      "definition": "a deep angry sound like a dog makes",
+      "sentence": "The dog let out a low growl."
+    },
+    {
+      "index": 83,
+      "word": "notice",
+      "definition": "to see or know something",
+      "sentence": "Did you notice the new painting?"
+    },
+    {
+      "index": 84,
+      "word": "building",
+      "definition": "a place like a house or school",
+      "sentence": "That tall building has many windows."
+    },
+    {
+      "index": 85,
+      "word": "gentle",
+      "definition": "soft and kind",
+      "sentence": "The gentle breeze felt nice."
+    },
+    {
+      "index": 86,
+      "word": "swimming",
+      "definition": "moving through water with your arms and legs",
+      "sentence": "I go swimming every Tuesday."
+    },
+    {
+      "index": 87,
+      "word": "promised",
+      "definition": "said they would really do it",
+      "sentence": "He promised to help me."
+    },
+    {
+      "index": 88,
+      "word": "daily",
+      "definition": "every day",
+      "sentence": "I clean my room daily."
+    },
+    {
+      "index": 89,
+      "word": "black",
+      "definition": "the colour of the night sky with no stars",
+      "sentence": "My cat is black and shiny."
+    },
+    {
+      "index": 90,
+      "word": "nice",
+      "definition": "pleasant and kind",
+      "sentence": "That was a nice surprise."
+    },
+    {
+      "index": 91,
+      "word": "special",
+      "definition": "different and important",
+      "sentence": "Today is a special day."
+    },
+    {
+      "index": 92,
+      "word": "loudly",
+      "definition": "in a noisy way",
+      "sentence": "He sneezed loudly."
+    },
+    {
+      "index": 93,
+      "word": "brushes",
+      "definition": "things you use to clean teeth or paint",
+      "sentence": "She brushes her teeth every night."
+    },
+    {
+      "index": 94,
+      "word": "flower",
+      "definition": "the pretty colourful part of a plant",
+      "sentence": "I picked a pretty flower for her."
+    },
+    {
+      "index": 95,
+      "word": "hoping",
+      "definition": "wishing that something will happen",
+      "sentence": "I was hoping it would snow."
+    },
+    {
+      "index": 96,
+      "word": "rows",
+      "definition": "lines of things next to each other",
+      "sentence": "The students sat in neat rows."
+    },
+    {
+      "index": 97,
+      "word": "mirror",
+      "definition": "glass you can see yourself in",
+      "sentence": "I looked at myself in the mirror."
+    },
+    {
+      "index": 98,
+      "word": "insects",
+      "definition": "tiny animals like ants or flies",
+      "sentence": "Ants are tiny insects."
+    },
+    {
+      "index": 99,
+      "word": "edge",
+      "definition": "the side or end of something",
+      "sentence": "Don't stand near the edge."
+    },
+    {
+      "index": 100,
+      "word": "brown",
+      "definition": "the colour of chocolate or tree bark",
+      "sentence": "The dog has brown fur."
+    },
+    {
+      "index": 101,
+      "word": "artist",
+      "definition": "a person who makes pictures or art",
+      "sentence": "The artist painted a beautiful picture."
+    },
+    {
+      "index": 102,
+      "word": "like",
+      "definition": "to enjoy something",
+      "sentence": "I like chocolate ice cream."
+    },
+    {
+      "index": 103,
+      "word": "ribbon",
+      "definition": "a thin strip of cloth or paper",
+      "sentence": "She tied her hair with a blue ribbon."
+    },
+    {
+      "index": 104,
+      "word": "swan",
+      "definition": "a big white bird with a long neck",
+      "sentence": "A white swan swam across the lake."
+    },
+    {
+      "index": 105,
+      "word": "carefully",
+      "definition": "in a way that avoids mistakes or danger",
+      "sentence": "Please carry the glass carefully."
+    },
+    {
+      "index": 106,
+      "word": "dark",
+      "definition": "not light",
+      "sentence": "It was dark inside the cave."
+    },
+    {
+      "index": 107,
+      "word": "bee",
+      "definition": "a flying insect that makes honey",
+      "sentence": "A bee landed on the flower."
+    },
+    {
+      "index": 108,
+      "word": "work",
+      "definition": "the job someone does",
+      "sentence": "My dad goes to work every day."
+    },
+    {
+      "index": 109,
+      "word": "millions",
+      "definition": "very many; a thousand thousands",
+      "sentence": "There are millions of stars in the sky."
+    },
+    {
+      "index": 110,
+      "word": "famous",
+      "definition": "known by lots of people",
+      "sentence": "The singer is very famous."
+    },
+    {
+      "index": 111,
+      "word": "snack",
+      "definition": "a small bit of food between meals",
+      "sentence": "I had an apple as a snack."
+    },
+    {
+      "index": 112,
+      "word": "whales",
+      "definition": "big sea animals that breathe air",
+      "sentence": "Whales swim in the deep ocean."
+    },
+    {
+      "index": 113,
+      "word": "balance",
+      "definition": "to stay steady without falling",
+      "sentence": "She can balance on one foot."
+    },
+    {
+      "index": 114,
+      "word": "roaring",
+      "definition": "making a loud deep sound like a lion",
+      "sentence": "The lion was roaring in the zoo."
+    },
+    {
+      "index": 115,
+      "word": "bunches",
+      "definition": "groups of things tied together",
+      "sentence": "We picked bunches of flowers."
+    },
+    {
+      "index": 116,
+      "word": "nursery",
+      "definition": "a place for very young children",
+      "sentence": "My baby sister goes to the nursery."
+    },
+    {
+      "index": 117,
+      "word": "pushes",
+      "definition": "moves something using strength",
+      "sentence": "He pushes the pram to the park."
+    },
+    {
+      "index": 118,
+      "word": "squeezed",
+      "definition": "pressed something tightly",
+      "sentence": "I squeezed some lemon juice into the glass."
+    },
+    {
+      "index": 119,
+      "word": "machine",
+      "definition": "something with parts that does a job",
+      "sentence": "The washing machine is very noisy."
+    },
+    {
+      "index": 120,
+      "word": "ignored",
+      "definition": "took no notice of",
+      "sentence": "He ignored the loud noise."
+    },
+    {
+      "index": 121,
+      "word": "battery",
+      "definition": "a small box that stores power for toys or torches",
+      "sentence": "My toy needs a new battery."
+    },
+    {
+      "index": 122,
+      "word": "tail",
+      "definition": "the long thin part at the back of an animal",
+      "sentence": "The dog wagged its tail."
+    },
+    {
+      "index": 123,
+      "word": "closely",
+      "definition": "near to something; with careful attention",
+      "sentence": "He looked closely at the bug."
+    },
+    {
+      "index": 124,
+      "word": "grandfather",
+      "definition": "your mum or dad's father",
+      "sentence": "My grandfather tells funny stories."
+    },
+    {
+      "index": 125,
+      "word": "choice",
+      "definition": "picking one thing out of many",
+      "sentence": "Pick your choice from the list."
+    },
+    {
+      "index": 126,
+      "word": "rabbit",
+      "definition": "a small furry animal with long ears",
+      "sentence": "A white rabbit hopped across the grass."
+    },
+    {
+      "index": 127,
+      "word": "sometimes",
+      "definition": "now and then; not always",
+      "sentence": "Sometimes I help with the dishes."
+    },
+    {
+      "index": 128,
+      "word": "around",
+      "definition": "on all sides or in a circle",
+      "sentence": "We walked around the park."
+    },
+    {
+      "index": 129,
+      "word": "feet",
+      "definition": "the parts of your legs you stand on",
+      "sentence": "My feet are sore after running."
+    },
+    {
+      "index": 130,
+      "word": "sign",
+      "definition": "a notice that tells you something",
+      "sentence": "The sign said stop."
+    },
+    {
+      "index": 131,
+      "word": "short",
+      "definition": "not long or tall",
+      "sentence": "My brother is short for his age."
+    },
+    {
+      "index": 132,
+      "word": "helmet",
+      "definition": "a hard hat that keeps your head safe",
+      "sentence": "Wear a helmet when you ride a bike."
+    },
+    {
+      "index": 133,
+      "word": "comfortable",
+      "definition": "feeling nice and relaxed",
+      "sentence": "The bed was soft and comfortable."
+    },
+    {
+      "index": 134,
+      "word": "out",
+      "definition": "away from inside",
+      "sentence": "Please go out and play."
+    },
+    {
+      "index": 135,
+      "word": "seat",
+      "definition": "a place to sit",
+      "sentence": "Take a seat at the front."
+    },
+    {
+      "index": 136,
+      "word": "enjoy",
+      "definition": "to have fun with something",
+      "sentence": "I enjoy playing with my friends."
+    },
+    {
+      "index": 137,
+      "word": "rainbow",
+      "definition": "a curve of colours in the sky",
+      "sentence": "After the rain, a rainbow appeared."
+    },
+    {
+      "index": 138,
+      "word": "thankful",
+      "definition": "happy and grateful for something",
+      "sentence": "I am thankful for my family."
+    },
+    {
+      "index": 139,
+      "word": "goes",
+      "definition": "moves to a place",
+      "sentence": "She goes to school on the bus."
+    },
+    {
+      "index": 140,
+      "word": "eyes",
+      "definition": "the part of your face you see with",
+      "sentence": "She has bright blue eyes."
+    },
+    {
+      "index": 141,
+      "word": "pushed",
+      "definition": "used hands to move something away",
+      "sentence": "She pushed the big red button."
+    },
+    {
+      "index": 142,
+      "word": "limbs",
+      "definition": "arms and legs",
+      "sentence": "The tree has many strong limbs."
+    },
+    {
+      "index": 143,
+      "word": "guess",
+      "definition": "to try to give the right answer",
+      "sentence": "Can you guess my age?"
+    },
+    {
+      "index": 144,
+      "word": "tissues",
+      "definition": "soft paper for blowing your nose",
+      "sentence": "I used some tissues when I had a cold."
+    },
+    {
+      "index": 145,
+      "word": "hungry",
+      "definition": "wanting to eat",
+      "sentence": "I get hungry before dinner."
+    },
+    {
+      "index": 146,
+      "word": "oxygen",
+      "definition": "the gas we need to breathe",
+      "sentence": "We breathe oxygen to stay alive."
+    },
+    {
+      "index": 147,
+      "word": "chew",
+      "definition": "to bite food over and over with your teeth",
+      "sentence": "You should chew your food slowly."
+    },
+    {
+      "index": 148,
+      "word": "locked",
+      "definition": "closed so it cannot be opened",
+      "sentence": "The door was locked tight."
+    },
+    {
+      "index": 149,
+      "word": "thick",
+      "definition": "not thin",
+      "sentence": "The book was very thick."
+    },
+    {
+      "index": 150,
+      "word": "heavier",
+      "definition": "weighing more than something else",
+      "sentence": "This box is heavier than that one."
+    },
+    {
+      "index": 151,
+      "word": "fruit",
+      "definition": "sweet food that grows on trees like apples",
+      "sentence": "An apple is a tasty fruit."
+    },
+    {
+      "index": 152,
+      "word": "might",
+      "definition": "could possibly happen",
+      "sentence": "I might go to the park later."
+    },
+    {
+      "index": 153,
+      "word": "flood",
+      "definition": "when lots of water covers the land",
+      "sentence": "Heavy rain can cause a flood."
+    },
+    {
+      "index": 154,
+      "word": "collect",
+      "definition": "to gather things together",
+      "sentence": "I collect stamps as a hobby."
+    },
+    {
+      "index": 155,
+      "word": "shopping",
+      "definition": "buying things at a shop",
+      "sentence": "Mum went shopping for food."
+    },
+    {
+      "index": 156,
+      "word": "paddling",
+      "definition": "wading or rowing in water",
+      "sentence": "The kids were paddling in the pool."
+    },
+    {
+      "index": 157,
+      "word": "splashes",
+      "definition": "the sound or splat of water hitting something",
+      "sentence": "He made big splashes in the pool."
+    },
+    {
+      "index": 158,
+      "word": "popular",
+      "definition": "liked by lots of people",
+      "sentence": "That book is popular at school."
+    },
+    {
+      "index": 159,
+      "word": "pour",
+      "definition": "to tip liquid out of something",
+      "sentence": "Can you pour me a drink?"
+    },
+    {
+      "index": 160,
+      "word": "chased",
+      "definition": "ran after someone or something",
+      "sentence": "The cat chased the mouse."
+    },
+    {
+      "index": 161,
+      "word": "unable",
+      "definition": "not able to",
+      "sentence": "I was unable to reach the top shelf."
+    },
+    {
+      "index": 162,
+      "word": "juice",
+      "definition": "a drink made from fruit",
+      "sentence": "I drank a glass of orange juice."
+    },
+    {
+      "index": 163,
+      "word": "present",
+      "definition": "a gift you give someone",
+      "sentence": "I gave her a birthday present."
+    },
+    {
+      "index": 164,
+      "word": "honey",
+      "definition": "the sweet food that bees make",
+      "sentence": "I like honey on my toast."
+    },
+    {
+      "index": 165,
+      "word": "barked",
+      "definition": "the sound a dog made",
+      "sentence": "The puppy barked at the postman."
+    },
+    {
+      "index": 166,
+      "word": "disguised",
+      "definition": "dressed up so no one knows who you are",
+      "sentence": "He disguised himself as a pirate."
+    },
+    {
+      "index": 167,
+      "word": "boil",
+      "definition": "to heat water until it bubbles",
+      "sentence": "I boil the water for my noodles."
+    },
+    {
+      "index": 168,
+      "word": "lizard",
+      "definition": "a small animal with scales and four legs",
+      "sentence": "A little lizard ran across the rock."
+    },
+    {
+      "index": 169,
+      "word": "memory",
+      "definition": "something you remember",
+      "sentence": "I have a good memory for names."
+    },
+    {
+      "index": 170,
+      "word": "tunnel",
+      "definition": "a long hole dug under the ground",
+      "sentence": "The train went through the dark tunnel."
+    },
+    {
+      "index": 171,
+      "word": "pillow",
+      "definition": "a soft thing you put your head on in bed",
+      "sentence": "My pillow is soft and white."
+    },
+    {
+      "index": 172,
+      "word": "bread",
+      "definition": "food made from flour that you use for sandwiches",
+      "sentence": "We bought fresh bread from the shop."
+    },
+    {
+      "index": 173,
+      "word": "benches",
+      "definition": "long wooden seats",
+      "sentence": "The park had new wooden benches."
+    },
+    {
+      "index": 174,
+      "word": "little",
+      "definition": "small",
+      "sentence": "The little puppy was sleeping."
+    },
+    {
+      "index": 175,
+      "word": "biscuits",
+      "definition": "small sweet crunchy snacks",
+      "sentence": "Mum baked some chocolate biscuits."
+    },
+    {
+      "index": 176,
+      "word": "sensible",
+      "definition": "using good sense",
+      "sentence": "It was a sensible choice."
+    },
+    {
+      "index": 177,
+      "word": "leaf",
+      "definition": "the flat green part of a plant",
+      "sentence": "A red leaf fell from the tree."
+    },
+    {
+      "index": 178,
+      "word": "frog",
+      "definition": "a small green animal that hops",
+      "sentence": "A green frog jumped into the pond."
+    },
+    {
+      "index": 179,
+      "word": "helps",
+      "definition": "gives a hand with something",
+      "sentence": "My brother helps me with homework."
+    },
+    {
+      "index": 180,
+      "word": "great",
+      "definition": "very good",
+      "sentence": "That was a great game!"
+    },
+    {
+      "index": 181,
+      "word": "bath",
+      "definition": "a big tub of water for washing yourself",
+      "sentence": "I had a warm bath before bed."
+    },
+    {
+      "index": 182,
+      "word": "spider",
+      "definition": "a small creature with eight legs",
+      "sentence": "A little spider spun its web."
+    },
+    {
+      "index": 183,
+      "word": "would",
+      "definition": "a word meaning might do something",
+      "sentence": "I would like more cake please."
+    },
+    {
+      "index": 184,
+      "word": "deep",
+      "definition": "going down a long way",
+      "sentence": "The pool is very deep."
+    },
+    {
+      "index": 185,
+      "word": "white",
+      "definition": "the colour of snow or milk",
+      "sentence": "The snow was fresh and white."
+    },
+    {
+      "index": 186,
+      "word": "sword",
+      "definition": "a long sharp weapon like knights used",
+      "sentence": "The knight carried a long sword."
+    },
+    {
+      "index": 187,
+      "word": "dollars",
+      "definition": "money used in Australia and America",
+      "sentence": "I had five dollars in my pocket."
+    },
+    {
+      "index": 188,
+      "word": "talked",
+      "definition": "said words to someone",
+      "sentence": "We talked on the phone for hours."
+    },
+    {
+      "index": 189,
+      "word": "waited",
+      "definition": "stayed until something happened",
+      "sentence": "We waited for the bus in the rain."
+    },
+    {
+      "index": 190,
+      "word": "spicy",
+      "definition": "tasting hot like chilli",
+      "sentence": "The curry was too spicy for me."
+    },
+    {
+      "index": 191,
+      "word": "lighthouse",
+      "definition": "a tall tower with a big light near the sea",
+      "sentence": "The lighthouse shines over the sea."
+    },
+    {
+      "index": 192,
+      "word": "rainy",
+      "definition": "wet with lots of rain",
+      "sentence": "It is a rainy day today."
+    },
+    {
+      "index": 193,
+      "word": "untied",
+      "definition": "undid a knot or laces",
+      "sentence": "He untied his shoelaces."
+    },
+    {
+      "index": 194,
+      "word": "chatting",
+      "definition": "talking in a friendly way",
+      "sentence": "They were chatting during lunch."
+    },
+    {
+      "index": 195,
+      "word": "cover",
+      "definition": "to put something on top of another thing",
+      "sentence": "Put the cover on the pan."
+    },
+    {
+      "index": 196,
+      "word": "match",
+      "definition": "a small stick that makes fire",
+      "sentence": "I struck a match to light the candle."
+    },
+    {
+      "index": 197,
+      "word": "teaspoon",
+      "definition": "a small spoon for stirring drinks",
+      "sentence": "Add one teaspoon of sugar."
+    },
+    {
+      "index": 198,
+      "word": "button",
+      "definition": "a small round thing you push or do up a shirt with",
+      "sentence": "I pushed the red button."
+    },
+    {
+      "index": 199,
+      "word": "sneeze",
+      "definition": "to suddenly blow air out of your nose",
+      "sentence": "Dust makes me sneeze."
+    },
+    {
+      "index": 200,
+      "word": "multiply",
+      "definition": "to make a number bigger by a certain amount",
+      "sentence": "Two times three is six when you multiply."
+    },
+    {
+      "index": 201,
+      "word": "mouths",
+      "definition": "the part of a face used to eat and talk",
+      "sentence": "The baby birds opened their mouths."
+    },
+    {
+      "index": 202,
+      "word": "technology",
+      "definition": "computers and other modern inventions",
+      "sentence": "New technology helps us learn faster."
+    },
+    {
+      "index": 203,
+      "word": "bowl",
+      "definition": "a round dish you eat soup or cereal from",
+      "sentence": "I ate a bowl of cereal."
+    },
+    {
+      "index": 204,
+      "word": "exactly",
+      "definition": "in a perfectly correct way",
+      "sentence": "It is exactly three o'clock."
+    },
+    {
+      "index": 205,
+      "word": "pleasing",
+      "definition": "making someone happy",
+      "sentence": "The song was very pleasing."
+    },
+    {
+      "index": 206,
+      "word": "large",
+      "definition": "big",
+      "sentence": "The lion has a large mane."
+    },
+    {
+      "index": 207,
+      "word": "learn",
+      "definition": "to find out something new",
+      "sentence": "We learn new things at school."
+    },
+    {
+      "index": 208,
+      "word": "safety",
+      "definition": "being safe from harm",
+      "sentence": "Wear a helmet for your safety."
+    },
+    {
+      "index": 209,
+      "word": "stain",
+      "definition": "a mark that is hard to wash out",
+      "sentence": "There was a stain on his shirt."
+    },
+    {
+      "index": 210,
+      "word": "very",
+      "definition": "a lot",
+      "sentence": "That is a very good idea."
+    }
+  ]
+}

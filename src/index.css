@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: oklch(0.985 0.01 95);
+  --foreground: oklch(0.18 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
+  --primary: oklch(0.55 0.19 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.02 95);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.96 0.01 95);
+  --muted-foreground: oklch(0.48 0.02 260);
+  --accent: oklch(0.9 0.1 75);
+  --accent-foreground: oklch(0.18 0.02 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.01 95);
+  --input: oklch(0.9 0.01 95);
+  --ring: oklch(0.55 0.19 260);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    background:
+      radial-gradient(1200px 800px at 10% 0%, oklch(0.93 0.08 260 / 0.35), transparent 60%),
+      radial-gradient(900px 700px at 90% 10%, oklch(0.93 0.09 75 / 0.35), transparent 55%),
+      radial-gradient(900px 900px at 50% 100%, oklch(0.93 0.08 150 / 0.25), transparent 60%),
+      var(--background);
+    background-attachment: fixed;
+  }
+  body {
+    @apply text-foreground antialiased min-h-dvh font-sans;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+.scroll-thumb-black {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+.scroll-thumb-black::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thumb-black::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-thumb-black::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 999px;
+  min-height: 32px;
+}
+
+@media print {
+  html {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  /* Empty @top/@bottom margin boxes hide default browser headers/footers
+     in browsers that honour CSS Paged Media. Chrome/Edge still inject the
+     page-number and URL strings unless the user disables "Headers and
+     footers" in the print dialog — see the in-app hint near Print. */
+  @page {
+    margin: 16mm;
+    @top-left { content: ''; }
+    @top-center { content: ''; }
+    @top-right { content: ''; }
+    @bottom-left { content: ''; }
+    @bottom-center { content: ''; }
+    @bottom-right { content: ''; }
+  }
+}
+
+.print-only {
+  display: none;
+}

@@ -1,0 +1,12 @@
+node_modules
+dist
+.vite
+.netlify
+.env
+.env.example
+.env.local
+.env.*.local
+.DS_Store
+*.tsbuildinfo
+source-pdfs/
+mayhew-sweeps/
