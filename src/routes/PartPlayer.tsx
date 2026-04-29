@@ -98,7 +98,7 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
       <section className="mx-auto max-w-3xl px-5 pt-8 sm:pt-10 pb-6">
         <div className="flex items-center justify-between text-sm">
           <a href={`/${levelId}/`} className="text-muted-foreground hover:text-foreground">← All parts</a>
-          <span className="text-muted-foreground">{data.title}</span>
+          <span className="font-semibold text-foreground">{data.title}</span>
         </div>
         <h1 className="mt-3 font-display text-5xl sm:text-6xl font-extrabold tracking-tight">Part {partInfo.part}</h1>
         <p className="mt-2 text-muted-foreground">
