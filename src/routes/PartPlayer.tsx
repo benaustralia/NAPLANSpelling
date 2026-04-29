@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CircularProgress } from '@/components/ui/circular-progress';
 import { Progress } from '@/components/ui/progress';
 import { getLevel, type LevelId } from '@/levels';
@@ -111,9 +111,6 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="font-display text-2xl font-bold">Listen</CardTitle>
-            <CardDescription>
-              Write each answer on your answer sheet, numbered {partInfo.start} to {partInfo.end}.
-            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-center gap-3 sm:gap-4">
