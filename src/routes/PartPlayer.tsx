@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
@@ -12,28 +12,6 @@ import { formatDuration } from '@/lib/format';
 // the prev button replays the current word instead of jumping back one
 // (iPod / Spotify convention).
 const REPLAY_THRESHOLD_SEC = 1.5;
-
-function audioSubscriber(audio: HTMLAudioElement | null, events: string[]) {
-  return (cb: () => void) => {
-    if (!audio) return () => {};
-    events.forEach((e) => audio.addEventListener(e, cb));
-    return () => events.forEach((e) => audio.removeEventListener(e, cb));
-  };
-}
-
-function useAudioTime(audio: HTMLAudioElement | null) {
-  return useSyncExternalStore(
-    audioSubscriber(audio, ['timeupdate', 'seeked']),
-    () => audio?.currentTime ?? 0,
-  );
-}
-
-function useAudioPaused(audio: HTMLAudioElement | null) {
-  return useSyncExternalStore(
-    audioSubscriber(audio, ['play', 'pause', 'ended']),
-    () => audio?.paused ?? true,
-  );
-}
 
 function findCurrentIdx(starts: number[] | null | undefined, time: number) {
   if (!starts) return 0;
@@ -52,8 +30,20 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
   const durationLabel = partInfo.duration != null ? formatDuration(partInfo.duration) : null;
 
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const time = useAudioTime(audio);
-  const paused = useAudioPaused(audio);
+  const [time, setTime] = useState(0);
+  const [paused, setPaused] = useState(true);
+
+  useEffect(() => {
+    if (!audio) return;
+    const sync = () => {
+      setTime(audio.currentTime);
+      setPaused(audio.paused);
+    };
+    const events = ['timeupdate', 'seeked', 'play', 'pause', 'ended'];
+    events.forEach((e) => audio.addEventListener(e, sync));
+    sync();
+    return () => events.forEach((e) => audio.removeEventListener(e, sync));
+  }, [audio]);
 
   const questionStarts = partInfo.questionStarts;
   const totalQuestions = questionStarts?.length ?? words.length;
