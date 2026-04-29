@@ -1,13 +1,14 @@
-import { StrictMode } from 'react';
+import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Landing } from '@/routes/Landing';
-import { ListOverview } from '@/routes/ListOverview';
-import { PartPlayer } from '@/routes/PartPlayer';
-import { PartPrintable } from '@/routes/PartPrintable';
-import { About } from '@/routes/About';
-import { NotFound } from '@/routes/NotFound';
 import { ALL_LEVELS } from '@/levels';
 import './index.css';
+
+const ListOverview = lazy(() => import('@/routes/ListOverview').then((m) => ({ default: m.ListOverview })));
+const PartPlayer = lazy(() => import('@/routes/PartPlayer').then((m) => ({ default: m.PartPlayer })));
+const PartPrintable = lazy(() => import('@/routes/PartPrintable').then((m) => ({ default: m.PartPrintable })));
+const About = lazy(() => import('@/routes/About').then((m) => ({ default: m.About })));
+const NotFound = lazy(() => import('@/routes/NotFound').then((m) => ({ default: m.NotFound })));
 
 function App() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -38,6 +39,8 @@ function App() {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Suspense fallback={null}>
+      <App />
+    </Suspense>
   </StrictMode>,
 );

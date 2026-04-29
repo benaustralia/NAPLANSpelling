@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "prebuild": "bun run scripts/build-data.ts",
-    "dev": "bun run scripts/build-data.ts && vite",
+    "prebuild": "bun run scripts/build-data.ts && bun run scripts/build-sitemap.ts",
+    "dev": "bun run scripts/build-data.ts && bun run scripts/build-sitemap.ts && vite",
     "build": "tsc -b && vite build && bun run scripts/inline-css.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
