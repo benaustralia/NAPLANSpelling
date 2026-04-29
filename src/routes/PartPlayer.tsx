@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { CircularProgress } from '@/components/ui/circular-progress';
 import { Progress } from '@/components/ui/progress';
 import { getLevel, type LevelId } from '@/levels';
@@ -109,15 +109,17 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
 
       <section className="mx-auto max-w-3xl px-5 pb-8">
         <Card>
-          <CardHeader className="text-center">
-            <CardTitle className="font-display text-2xl font-bold">Listen</CardTitle>
-          </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <div className="flex items-center justify-center gap-3 sm:gap-4">
               <Button variant="outline" size="icon-xl" onClick={goPrev} disabled={!hasNav} aria-label="Previous word">
                 <SkipBack aria-hidden />
               </Button>
-              <Button size="xl" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'} className="min-w-32">
+              <Button
+                size="xl"
+                onClick={togglePlay}
+                aria-label={playing ? 'Pause' : 'Play'}
+                className={`min-w-32 ${paused && time === 0 ? 'animate-pulse' : ''}`}
+              >
                 {playing ? <Pause aria-hidden /> : <Play aria-hidden />}
                 {playing ? 'Pause' : 'Play'}
               </Button>
