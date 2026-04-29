@@ -1,16 +1,45 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { CircularProgress } from '@/components/ui/circular-progress';
 import { Progress } from '@/components/ui/progress';
 import { getLevel, type LevelId } from '@/levels';
 import { formatDuration } from '@/lib/format';
 
 // If the kid is more than this many seconds into the current word's audio,
-// the prev button replays the current word instead of jumping back one.
-// iPod / Spotify convention.
+// the prev button replays the current word instead of jumping back one
+// (iPod / Spotify convention).
 const REPLAY_THRESHOLD_SEC = 1.5;
+
+function audioSubscriber(audio: HTMLAudioElement | null, events: string[]) {
+  return (cb: () => void) => {
+    if (!audio) return () => {};
+    events.forEach((e) => audio.addEventListener(e, cb));
+    return () => events.forEach((e) => audio.removeEventListener(e, cb));
+  };
+}
+
+function useAudioTime(audio: HTMLAudioElement | null) {
+  return useSyncExternalStore(
+    audioSubscriber(audio, ['timeupdate', 'seeked']),
+    () => audio?.currentTime ?? 0,
+  );
+}
+
+function useAudioPaused(audio: HTMLAudioElement | null) {
+  return useSyncExternalStore(
+    audioSubscriber(audio, ['play', 'pause', 'ended']),
+    () => audio?.paused ?? true,
+  );
+}
+
+function findCurrentIdx(starts: number[] | null | undefined, time: number) {
+  if (!starts) return 0;
+  for (let i = starts.length - 1; i >= 0; i--) if (time >= starts[i]) return i;
+  return 0;
+}
 
 export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }) {
   const data = getLevel(levelId);
@@ -22,81 +51,47 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
   const wordRange = `Words ${partInfo.start}–${partInfo.end}`;
   const durationLabel = partInfo.duration != null ? formatDuration(partInfo.duration) : null;
 
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [currentIdx, setCurrentIdx] = useState(0);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const time = useAudioTime(audio);
+  const paused = useAudioPaused(audio);
 
   const questionStarts = partInfo.questionStarts;
   const totalQuestions = questionStarts?.length ?? words.length;
   const hasNav = questionStarts != null && questionStarts.length === words.length;
 
+  const currentIdx = findCurrentIdx(questionStarts, time);
+  const nextStart = hasNav && currentIdx < questionStarts.length - 1 ? questionStarts[currentIdx + 1] : null;
+  const remainingInGap = nextStart != null ? nextStart - time : 0;
+  const inGap = !paused && remainingInGap > 0 && remainingInGap < data.pauseSec;
+  const gapProgress = inGap ? (remainingInGap / data.pauseSec) * 100 : 0;
+
   function togglePlay() {
-    const a = audioRef.current;
-    if (!a) return;
-    if (a.paused) a.play();
-    else a.pause();
+    if (!audio) return;
+    if (audio.paused) audio.play();
+    else audio.pause();
   }
 
   function seekTo(t: number) {
-    const a = audioRef.current;
-    if (!a) return;
-    a.currentTime = Math.max(0, t);
+    if (audio) audio.currentTime = Math.max(0, t);
   }
 
   function goPrev() {
-    if (!hasNav) return;
-    const a = audioRef.current;
-    if (!a) return;
-    const idx = currentIdx;
-    const elapsedInQuestion = a.currentTime - questionStarts[idx];
-    if (elapsedInQuestion > REPLAY_THRESHOLD_SEC || idx === 0) {
-      seekTo(questionStarts[idx]);
-    } else {
-      seekTo(questionStarts[idx - 1]);
-    }
+    if (!hasNav || !audio) return;
+    const elapsed = audio.currentTime - questionStarts[currentIdx];
+    const target = elapsed > REPLAY_THRESHOLD_SEC || currentIdx === 0
+      ? questionStarts[currentIdx]
+      : questionStarts[currentIdx - 1];
+    seekTo(target);
   }
 
   function goNext() {
-    if (!hasNav) return;
-    if (currentIdx >= questionStarts.length - 1) return;
+    if (!hasNav || currentIdx >= questionStarts.length - 1) return;
     seekTo(questionStarts[currentIdx + 1]);
   }
 
-  // Keep currentIdx in sync with audio time.
-  useEffect(() => {
-    if (!hasNav) return;
-    const a = audioRef.current;
-    if (!a) return;
-    function update() {
-      if (!a) return;
-      const t = a.currentTime;
-      let idx = 0;
-      for (let i = questionStarts!.length - 1; i >= 0; i--) {
-        if (t >= questionStarts![i]) { idx = i; break; }
-      }
-      setCurrentIdx(idx);
-    }
-    function onPlay() { setPlaying(true); }
-    function onPause() { setPlaying(false); }
-    a.addEventListener('timeupdate', update);
-    a.addEventListener('play', onPlay);
-    a.addEventListener('pause', onPause);
-    a.addEventListener('ended', onPause);
-    return () => {
-      a.removeEventListener('timeupdate', update);
-      a.removeEventListener('play', onPlay);
-      a.removeEventListener('pause', onPause);
-      a.removeEventListener('ended', onPause);
-    };
-  }, [hasNav, questionStarts]);
-
-  // Keyboard shortcuts: Space = play/pause, ←/→ = prev/next word.
-  // Skipped when focus is in a button (so Space still activates the focused
-  // button via its own handler) or any input/textarea.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      const target = e.target as HTMLElement | null;
-      const tag = target?.tagName;
+      const tag = (e.target as HTMLElement | null)?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
       if (e.key === ' ') { e.preventDefault(); togglePlay(); }
       else if (e.key === 'ArrowLeft' && hasNav) { e.preventDefault(); goPrev(); }
@@ -106,27 +101,19 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
     return () => window.removeEventListener('keydown', onKey);
   });
 
+  const playing = !paused;
+
   return (
     <Shell>
       <section className="mx-auto max-w-3xl px-5 pt-8 sm:pt-10 pb-6">
         <div className="flex items-center justify-between text-sm">
-          <a href={`/${levelId}/`} className="text-muted-foreground hover:text-foreground">
-            ← All parts
-          </a>
+          <a href={`/${levelId}/`} className="text-muted-foreground hover:text-foreground">← All parts</a>
           <span className="text-muted-foreground">{data.title}</span>
         </div>
-
-        <h1 className="mt-3 font-display text-5xl sm:text-6xl font-extrabold tracking-tight">
-          Part {partInfo.part}
-        </h1>
+        <h1 className="mt-3 font-display text-5xl sm:text-6xl font-extrabold tracking-tight">Part {partInfo.part}</h1>
         <p className="mt-2 text-muted-foreground">
           {wordRange}
-          {durationLabel && (
-            <>
-              {' | '}
-              <span className="tabular-nums">{durationLabel}</span>
-            </>
-          )}
+          {durationLabel && <>{' | '}<span className="tabular-nums">{durationLabel}</span></>}
         </p>
       </section>
 
@@ -140,59 +127,40 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-center gap-3 sm:gap-4">
-              <Button
-                variant="outline"
-                size="icon-xl"
-                onClick={goPrev}
-                disabled={!hasNav}
-                aria-label="Previous word"
-              >
+              <Button variant="outline" size="icon-xl" onClick={goPrev} disabled={!hasNav} aria-label="Previous word">
                 <SkipBack aria-hidden />
               </Button>
-              <Button
-                size="xl"
-                onClick={togglePlay}
-                aria-label={playing ? 'Pause' : 'Play'}
-                className="min-w-32"
-              >
+              <Button size="xl" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'} className="min-w-32">
                 {playing ? <Pause aria-hidden /> : <Play aria-hidden />}
                 {playing ? 'Pause' : 'Play'}
               </Button>
-              <Button
-                variant="outline"
-                size="icon-xl"
-                onClick={goNext}
-                disabled={!hasNav || currentIdx >= totalQuestions - 1}
-                aria-label="Next word"
-              >
+              <Button variant="outline" size="icon-xl" onClick={goNext} disabled={!hasNav || currentIdx >= totalQuestions - 1} aria-label="Next word">
                 <SkipForward aria-hidden />
               </Button>
             </div>
 
             <div className="mt-5 text-center" role="status" aria-live="polite">
-              <p className="text-sm text-muted-foreground">
-                {hasNav ? (
-                  <>
-                    Word{' '}
-                    <span className="tabular-nums font-semibold text-foreground">
-                      {partInfo.start + currentIdx}
-                    </span>{' '}
-                    of {partInfo.start + totalQuestions - 1}
-                  </>
-                ) : (
-                  <>{wordRange}</>
-                )}
-              </p>
-              {hasNav && (
-                <Progress
-                  className="mt-3 mx-auto max-w-md"
-                  value={((currentIdx + 1) / totalQuestions) * 100}
+              <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
+                <p>
+                  {hasNav ? (
+                    <>Word{' '}
+                      <span className="tabular-nums font-semibold text-foreground">{partInfo.start + currentIdx}</span>
+                      {' '}of {partInfo.start + totalQuestions - 1}
+                    </>
+                  ) : <>{wordRange}</>}
+                </p>
+                <CircularProgress
+                  value={gapProgress}
+                  size={20}
+                  strokeWidth={3}
                   aria-hidden
+                  className={`transition-opacity duration-200 ${inGap ? 'opacity-100' : 'opacity-0'}`}
                 />
-              )}
+              </div>
+              {hasNav && <Progress className="mt-3 mx-auto max-w-md" value={((currentIdx + 1) / totalQuestions) * 100} aria-hidden />}
             </div>
 
-            <audio ref={audioRef} preload="none" src={audioSrc}>
+            <audio ref={setAudio} preload="none" src={audioSrc}>
               Sorry, your browser can&rsquo;t play audio. <a href={audioSrc}>Download the MP3.</a>
             </audio>
           </CardContent>
@@ -202,19 +170,13 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
           <div className="justify-self-start">
             {prevPart && (
               <Button asChild variant="outline" size="sm">
-                <a href={`/${levelId}/part/${prevPart}/`}>
-                  <ChevronLeft aria-hidden /> Part {prevPart}
-                </a>
+                <a href={`/${levelId}/part/${prevPart}/`}><ChevronLeft aria-hidden /> Part {prevPart}</a>
               </Button>
             )}
           </div>
           <div className="justify-self-center">
             <Button asChild variant="secondary">
-              <a
-                href={`/pdfs/${levelId}/part-${String(partInfo.part).padStart(2, '0')}.pdf`}
-                target="_blank"
-                rel="noopener"
-              >
+              <a href={`/pdfs/${levelId}/part-${String(partInfo.part).padStart(2, '0')}.pdf`} target="_blank" rel="noopener">
                 <FileDown aria-hidden /> Worksheet
               </a>
             </Button>
@@ -222,15 +184,12 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
           <div className="justify-self-end">
             {nextPart && (
               <Button asChild variant="outline" size="sm">
-                <a href={`/${levelId}/part/${nextPart}/`}>
-                  Part {nextPart} <ChevronRight aria-hidden />
-                </a>
+                <a href={`/${levelId}/part/${nextPart}/`}>Part {nextPart} <ChevronRight aria-hidden /></a>
               </Button>
             )}
           </div>
         </div>
       </section>
-
     </Shell>
   );
 }

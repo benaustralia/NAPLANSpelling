@@ -10,3 +10,4 @@ dist
 *.tsbuildinfo
 source-pdfs/
 mayhew-sweeps/
+.playwright-mcp/
