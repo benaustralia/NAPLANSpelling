@@ -4,7 +4,9 @@
  *
  * Usage:
  *   1. In one terminal: `bun run dev`  (must be serving on :5173)
- *   2. In another:      `bun run scripts/build-pdfs.ts`
+ *   2. In another:      `bun run scripts/build-pdfs.ts`            (all levels)
+ *                       `bun run scripts/build-pdfs.ts y7-lc`      (one level)
+ *                       `bun run scripts/build-pdfs.ts y7-lc 1`    (one part)
  *
  * Output: public/pdfs/<levelId>/part-NN.pdf — ready to be served as static
  * downloads. PDFs are deterministic from the level data (which is locked
@@ -20,7 +22,17 @@ import { spawnSync } from 'node:child_process';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:5173';
-const LEVELS = ['y3-lc', 'y5-lc', 'y7-lc', 'y9-lc'];
+const ALL_LEVELS = ['y3-lc', 'y5-lc', 'y7-lc', 'y9-lc'];
+
+// Optional positional filters: `<levelId> [partNumber]` to regenerate just one
+// level or a single part (e.g. after re-rendering one part's audio/sentence).
+const [levelFilter, partFilter] = process.argv.slice(2);
+const LEVELS = levelFilter ? ALL_LEVELS.filter((id) => id === levelFilter) : ALL_LEVELS;
+if (levelFilter && LEVELS.length === 0) {
+  console.error(`Unknown level "${levelFilter}". Known: ${ALL_LEVELS.join(', ')}`);
+  process.exit(1);
+}
+const partNum = partFilter ? Number(partFilter) : null;
 
 const probe = spawnSync('curl', ['-sS', '-o', '/dev/null', '-w', '%{http_code}', BASE_URL + '/'], { encoding: 'utf-8' });
 if (probe.stdout.trim() !== '200') {
@@ -36,7 +48,8 @@ for (const id of LEVELS) {
   };
   const outDir = join('public/pdfs', id);
   await mkdir(outDir, { recursive: true });
-  for (const p of data.parts) {
+  const parts = partNum ? data.parts.filter((p) => p.part === partNum) : data.parts;
+  for (const p of parts) {
     const nn = String(p.part).padStart(2, '0');
     const out = join(outDir, `part-${nn}.pdf`);
     const url = `${BASE_URL}/${id}/part/${p.part}/print/`;

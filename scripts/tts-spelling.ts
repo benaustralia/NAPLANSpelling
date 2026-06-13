@@ -2,7 +2,6 @@
 // Per-word format: "Number {n}. {WORD}. {sentence} {WORD}."
 // See CLAUDE.md → "Audio rendering with ElevenLabs" for the full rationale.
 
-import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 import { $ } from 'bun';
 import { mkdtemp, rm, writeFile, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -38,16 +37,32 @@ if (pauseOverride !== null && pauseOverride !== level.pauseSec) {
 const audioDir = `public/audio/${levelId}`;
 await $`mkdir -p ${audioDir}`.quiet();
 
-const eleven = new ElevenLabsClient({ apiKey });
-
+// NB: call the ElevenLabs REST endpoint directly with fetch rather than the
+// `@elevenlabs/elevenlabs-js` SDK. Under Bun the SDK's streaming convert() hangs
+// indefinitely on the first request (100% CPU, no connection established). The
+// raw HTTP API works fine. Body keys are snake_case here (vs the SDK's camelCase).
 async function tts(text: string, outPath: string) {
-  const stream = await eleven.textToSpeech.convert(voiceId, {
-    text,
-    modelId,
-    outputFormat: 'mp3_44100_128',
-    voiceSettings: { stability: 0.5, similarityBoost: 0.75, style: 0, useSpeakerBoost: true, speed },
-  });
-  await Bun.write(outPath, new Response(stream));
+  const res = await fetch(
+    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
+    {
+      method: 'POST',
+      headers: {
+        'xi-api-key': apiKey!,
+        'Content-Type': 'application/json',
+        Accept: 'audio/mpeg',
+      },
+      body: JSON.stringify({
+        text,
+        model_id: modelId,
+        voice_settings: { stability: 0.5, similarity_boost: 0.75, style: 0, use_speaker_boost: true, speed },
+      }),
+      signal: AbortSignal.timeout(60_000),
+    },
+  );
+  if (!res.ok) {
+    throw new Error(`ElevenLabs TTS failed (${res.status}): ${await res.text()}`);
+  }
+  await Bun.write(outPath, await res.arrayBuffer());
 }
 
 async function renderPart(p: Part) {
