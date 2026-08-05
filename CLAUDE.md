@@ -220,9 +220,24 @@ bun run build         # tsc + vite build + inline-css; outputs to dist/
 bun run qrcodes       # regenerates QR codes for printable hand-out
 ```
 
-Deploys to Netlify on push (see `netlify.toml`). The public URL is
-`https://naplan-spelling.netlify.app/` (also configured to a custom domain
-if set).
+Deploys to Netlify on push to `main` (see `netlify.toml` for the build
+command/publish dir). The public URL is `https://naplan-spelling.netlify.app/`
+(also configured to a custom domain if set).
+
+**Repo linkage (as of 2026-08-05)**: the Netlify site (`naplan-spelling`) is
+linked to `github.com/benaustralia/NAPLANSpelling` via the Netlify GitHub
+App, with auto-publishing on for `main`. This wasn't always true — the site
+was originally deployed via manual `Netlify Drop`/CLI uploads with no Git
+connection at all (`build_settings: {}`, no webhook), so pushes silently
+didn't deploy for several commits until this was fixed. If deploys ever go
+stale again, check `netlify api getSite --data '{"site_id": "<id>"}'` for an
+empty `build_settings` object, or run `netlify sites:list` and check whether
+`naplan-spelling` is missing the `repo:` line that every other linked site
+shows — that's the tell. The fix requires the Netlify GitHub App to have
+access to this repo (GitHub → Settings → Applications → Installed GitHub
+Apps → Netlify → Configure → add the repo under "Only select
+repositories"), then re-linking from the Netlify dashboard (Project
+configuration → Build & deploy → Link repository).
 
 ## Build scripts
 
