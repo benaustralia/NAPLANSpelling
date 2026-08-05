@@ -9,7 +9,7 @@ export function Shell({ children }: { children: ReactNode }) {
         <div className="mx-auto max-w-5xl px-5 py-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <a
             href="/"
-            className="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-foreground"
+            className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground"
           >
             NAPLAN <span className="text-primary">Spelling</span>
           </a>
