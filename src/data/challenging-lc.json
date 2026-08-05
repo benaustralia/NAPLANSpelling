@@ -1,0 +1,1293 @@
+{
+  "id": "challenging-lc",
+  "title": "Challenging Language Conventions",
+  "wordsPerPart": 20,
+  "pauseSec": 5.5,
+  "parts": [
+    {
+      "part": 1,
+      "start": 1,
+      "end": 20,
+      "audio": "/audio/challenging-lc/part-01.mp3",
+      "duration": 321,
+      "questionStarts": [
+        0,
+        16.72,
+        33.354,
+        52.156,
+        66.25,
+        81.688,
+        96.474,
+        112.531,
+        128.192,
+        146.127,
+        162.546,
+        177.952,
+        191.911,
+        208.675,
+        226.329,
+        241.18,
+        258.901,
+        276.429,
+        292.001,
+        307.243
+      ]
+    },
+    {
+      "part": 2,
+      "start": 21,
+      "end": 40,
+      "audio": "/audio/challenging-lc/part-02.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 3,
+      "start": 41,
+      "end": 60,
+      "audio": "/audio/challenging-lc/part-03.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 4,
+      "start": 61,
+      "end": 80,
+      "audio": "/audio/challenging-lc/part-04.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 5,
+      "start": 81,
+      "end": 100,
+      "audio": "/audio/challenging-lc/part-05.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 6,
+      "start": 101,
+      "end": 120,
+      "audio": "/audio/challenging-lc/part-06.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 7,
+      "start": 121,
+      "end": 140,
+      "audio": "/audio/challenging-lc/part-07.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 8,
+      "start": 141,
+      "end": 160,
+      "audio": "/audio/challenging-lc/part-08.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 9,
+      "start": 161,
+      "end": 180,
+      "audio": "/audio/challenging-lc/part-09.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 10,
+      "start": 181,
+      "end": 197,
+      "audio": "/audio/challenging-lc/part-10.mp3",
+      "duration": null,
+      "questionStarts": null
+    }
+  ],
+  "words": [
+    {
+      "index": 1,
+      "word": "mandible",
+      "definition": "the lower jawbone in humans and many animals, or a mouthpart used for biting in insects",
+      "sentence": "The ant gripped the crumb firmly between its powerful mandible and carried it back to the nest."
+    },
+    {
+      "index": 2,
+      "word": "obedience",
+      "definition": "compliance with an order, request, or law; the quality of obeying",
+      "sentence": "The dog's obedience training paid off when it sat instantly at its owner's command."
+    },
+    {
+      "index": 3,
+      "word": "iridescent",
+      "definition": "showing shifting rainbow-like colours that change depending on the angle viewed",
+      "sentence": "Oil spilled on the wet road formed an iridescent film that shimmered purple and green in the sunlight."
+    },
+    {
+      "index": 4,
+      "word": "reign",
+      "definition": "the period during which a monarch or ruler holds power",
+      "sentence": "Queen Victoria's reign lasted over sixty years."
+    },
+    {
+      "index": 5,
+      "word": "climatic",
+      "definition": "relating to climate or weather patterns over time",
+      "sentence": "Rising sea levels are one of the most visible climatic effects of global warming."
+    },
+    {
+      "index": 6,
+      "word": "debris",
+      "definition": "scattered fragments of something destroyed or discarded",
+      "sentence": "Workers spent weeks clearing debris from the collapsed building site."
+    },
+    {
+      "index": 7,
+      "word": "sufficient",
+      "definition": "enough for a particular purpose",
+      "sentence": "There was sufficient food left over to feed the whole family for another two days."
+    },
+    {
+      "index": 8,
+      "word": "embarrassed",
+      "definition": "feeling self-conscious, ashamed, or awkward",
+      "sentence": "He was embarrassed when he realised he'd been wearing his shirt inside out all day."
+    },
+    {
+      "index": 9,
+      "word": "gynaecology",
+      "definition": "the branch of medicine dealing with the health of the female reproductive system",
+      "sentence": "After years of study, she specialised in gynaecology and opened a clinic for women's health."
+    },
+    {
+      "index": 10,
+      "word": "misogyny",
+      "definition": "dislike of, contempt for, or ingrained prejudice against women",
+      "sentence": "The essay examined how misogyny appeared in advertising throughout the twentieth century."
+    },
+    {
+      "index": 11,
+      "word": "separate",
+      "definition": "forming a distinct unit; not joined or shared",
+      "sentence": "The twins insisted on having separate bedrooms as soon as they were old enough."
+    },
+    {
+      "index": 12,
+      "word": "precise",
+      "definition": "exact and accurate",
+      "sentence": "The surgeon's precise incision left barely a scar."
+    },
+    {
+      "index": 13,
+      "word": "molten",
+      "definition": "melted, especially describing rock or metal made liquid by intense heat",
+      "sentence": "Molten lava crept slowly down the volcano's slope, glowing red against the night sky."
+    },
+    {
+      "index": 14,
+      "word": "brevity",
+      "definition": "the quality of expressing something in few words",
+      "sentence": "The judges praised the brevity of her speech after enduring hours of rambling entries."
+    },
+    {
+      "index": 15,
+      "word": "fuchsia",
+      "definition": "a vivid purplish-pink colour, named after the flower",
+      "sentence": "She dyed the ends of her hair a bright fuchsia for the festival."
+    },
+    {
+      "index": 16,
+      "word": "reminiscent",
+      "definition": "tending to remind one of something else; similar in a way that evokes memory",
+      "sentence": "The smell of fresh bread was reminiscent of Sunday mornings at his grandmother's house."
+    },
+    {
+      "index": 17,
+      "word": "occasionally",
+      "definition": "sometimes, but not often; from time to time",
+      "sentence": "We occasionally walk to school instead of catching the bus, usually when the weather is nice."
+    },
+    {
+      "index": 18,
+      "word": "intrigue",
+      "definition": "the arousing of curiosity or interest; secret plotting or scheming",
+      "sentence": "Rumours of hidden treasure added a sense of intrigue to the abandoned mansion."
+    },
+    {
+      "index": 19,
+      "word": "rancour",
+      "definition": "bitter, long-lasting resentment",
+      "sentence": "Years after the divorce, there was still rancour between the two families."
+    },
+    {
+      "index": 20,
+      "word": "stationery",
+      "definition": "writing materials such as paper, pens, and envelopes",
+      "sentence": "She bought new stationery, including a notebook and a set of coloured pens, before the school term started."
+    },
+    {
+      "index": 21,
+      "word": "obsessive",
+      "definition": "showing an excessive or unhealthy preoccupation with something",
+      "sentence": "Her obsessive attention to detail meant she checked the essay for errors a dozen times."
+    },
+    {
+      "index": 22,
+      "word": "purest",
+      "definition": "most free from impurities or contamination; most unmixed",
+      "sentence": "The spring at the mountain's base produced the purest water in the region."
+    },
+    {
+      "index": 23,
+      "word": "observation",
+      "definition": "the act of watching something carefully, or a comment based on what has been noticed",
+      "sentence": "Her observation that the tide was rising faster than usual turned out to be correct."
+    },
+    {
+      "index": 24,
+      "word": "misconstrue",
+      "definition": "to interpret something incorrectly, often unintentionally",
+      "sentence": "She worried her joke would be misconstrued as a genuine insult, so she quickly explained herself."
+    },
+    {
+      "index": 25,
+      "word": "wraith",
+      "definition": "a ghost or ghostlike figure, especially one seen before or after death",
+      "sentence": "According to local legend, a wraith wandered the old battlefield at midnight."
+    },
+    {
+      "index": 26,
+      "word": "notoriety",
+      "definition": "the state of being famous or well known, typically for something negative",
+      "sentence": "The escaped prisoner gained notoriety after his face appeared on news broadcasts nationwide."
+    },
+    {
+      "index": 27,
+      "word": "rigorous",
+      "definition": "extremely thorough, careful, and demanding",
+      "sentence": "The medication underwent rigorous testing before it was approved for public use."
+    },
+    {
+      "index": 28,
+      "word": "temporary",
+      "definition": "lasting for only a limited time",
+      "sentence": "The bridge closure was only temporary while repairs were carried out."
+    },
+    {
+      "index": 29,
+      "word": "litigious",
+      "definition": "prone to taking legal disputes to court; overly ready to sue",
+      "sentence": "The company gained a reputation for being litigious after suing three suppliers in one year."
+    },
+    {
+      "index": 30,
+      "word": "gauge",
+      "definition": "an instrument for measuring the amount, level, or rate of something, or to estimate something",
+      "sentence": "The pilot checked the fuel gauge twice before deciding they had enough to reach the airport."
+    },
+    {
+      "index": 31,
+      "word": "brusque",
+      "definition": "abrupt or blunt in manner or speech",
+      "sentence": "The nurse's brusque tone made the frightened patient feel even more anxious."
+    },
+    {
+      "index": 32,
+      "word": "manoeuvre",
+      "definition": "a movement or series of movements requiring skill and care, or to perform such a movement",
+      "sentence": "The truck driver had to manoeuvre carefully to reverse the trailer into the narrow loading dock."
+    },
+    {
+      "index": 33,
+      "word": "incorporate",
+      "definition": "to include something as part of a whole",
+      "sentence": "The architect agreed to incorporate solar panels into the final design of the house."
+    },
+    {
+      "index": 34,
+      "word": "obnoxious",
+      "definition": "extremely unpleasant or rude in a way that provokes strong dislike",
+      "sentence": "His obnoxious comments about other people's cooking made him unwelcome at family dinners."
+    },
+    {
+      "index": 35,
+      "word": "acquire",
+      "definition": "to obtain or gain possession of something",
+      "sentence": "The company hoped to acquire the smaller start-up before its rivals did."
+    },
+    {
+      "index": 36,
+      "word": "redemption",
+      "definition": "the act of being saved from error, sin, or failure",
+      "sentence": "After years of poor decisions, the championship win felt like redemption for the whole team."
+    },
+    {
+      "index": 37,
+      "word": "incompetent",
+      "definition": "lacking the skill or ability to perform a task successfully",
+      "sentence": "The new intern was so incompetent at filing that important documents kept going missing."
+    },
+    {
+      "index": 38,
+      "word": "wondrous",
+      "definition": "inspiring a feeling of wonder or amazement",
+      "sentence": "The aurora painted a wondrous display of green and violet across the night sky."
+    },
+    {
+      "index": 39,
+      "word": "dungeon",
+      "definition": "a dark underground cell used to imprison people, typically in a castle",
+      "sentence": "The prisoners were kept chained in the castle's damp dungeon."
+    },
+    {
+      "index": 40,
+      "word": "waive",
+      "definition": "to voluntarily give up a right, claim, or requirement",
+      "sentence": "The university agreed to waive the application fee for students facing financial hardship."
+    },
+    {
+      "index": 41,
+      "word": "vicious",
+      "definition": "cruel and violent in behaviour",
+      "sentence": "The vicious dog lunged at the fence whenever a stranger walked past."
+    },
+    {
+      "index": 42,
+      "word": "annihilate",
+      "definition": "to destroy something completely",
+      "sentence": "The invading army threatened to annihilate any city that resisted."
+    },
+    {
+      "index": 43,
+      "word": "interrogate",
+      "definition": "to question someone closely and formally, often to get information",
+      "sentence": "Detectives began to interrogate the suspect within an hour of the robbery."
+    },
+    {
+      "index": 44,
+      "word": "scintillate",
+      "definition": "to sparkle or shine with flashes of light, or to be brilliantly clever",
+      "sentence": "The diamonds seemed to scintillate under the gallery's bright spotlights."
+    },
+    {
+      "index": 45,
+      "word": "accumulate",
+      "definition": "to gradually gather or build up over time",
+      "sentence": "Dust began to accumulate on the shelves after months of neglect."
+    },
+    {
+      "index": 46,
+      "word": "tournament",
+      "definition": "a series of contests between competitors for an overall prize",
+      "sentence": "Sixteen teams entered the regional tournament, but only one would lift the trophy."
+    },
+    {
+      "index": 47,
+      "word": "purist",
+      "definition": "a person who insists on strict adherence to traditional rules or standards",
+      "sentence": "As a purist, he refused to watch any film adaptation that changed the ending of the novel."
+    },
+    {
+      "index": 48,
+      "word": "complementary",
+      "definition": "combining well with something else to enhance or complete it",
+      "sentence": "The chef paired the fish with a complementary lemon and herb sauce."
+    },
+    {
+      "index": 49,
+      "word": "irrelevant",
+      "definition": "not connected to or important for the matter at hand",
+      "sentence": "The judge ruled that the witness's comment about the weather was irrelevant to the case."
+    },
+    {
+      "index": 50,
+      "word": "conscious",
+      "definition": "awake and aware of one's surroundings, or deliberately aware of something",
+      "sentence": "The patient remained conscious throughout the entire procedure."
+    },
+    {
+      "index": 51,
+      "word": "therapeutic",
+      "definition": "having a healing or beneficial effect on the body or mind",
+      "sentence": "Gardening proved therapeutic for him after a stressful year at work."
+    },
+    {
+      "index": 52,
+      "word": "voila",
+      "definition": "an exclamation used to draw attention to something achieved or revealed, especially with a flourish",
+      "sentence": "She folded the paper twice more and, voila, produced a perfect origami crane."
+    },
+    {
+      "index": 53,
+      "word": "psychic",
+      "definition": "relating to supposed abilities beyond normal senses, such as predicting the future",
+      "sentence": "The carnival tent advertised a psychic who claimed to read palms and predict fortunes."
+    },
+    {
+      "index": 54,
+      "word": "colloquial",
+      "definition": "used in ordinary or familiar conversation rather than formal writing",
+      "sentence": "The essay lost marks for using colloquial expressions instead of formal language."
+    },
+    {
+      "index": 55,
+      "word": "acquainted",
+      "definition": "having some knowledge of something or having met someone before",
+      "sentence": "After a week at the new school, he was already acquainted with most of his classmates."
+    },
+    {
+      "index": 56,
+      "word": "accidentally",
+      "definition": "by chance, without intention",
+      "sentence": "She accidentally deleted the file when she meant to rename it."
+    },
+    {
+      "index": 57,
+      "word": "temperamental",
+      "definition": "having moods that change unpredictably",
+      "sentence": "The old engine was temperamental and often refused to start on cold mornings."
+    },
+    {
+      "index": 58,
+      "word": "dominant",
+      "definition": "having the most power, influence, or prominence",
+      "sentence": "The lion was the dominant male in the pride, controlling access to the best territory."
+    },
+    {
+      "index": 59,
+      "word": "resurrect",
+      "definition": "to bring back to life or into use after a long absence",
+      "sentence": "The band decided to resurrect their old songs for the reunion tour."
+    },
+    {
+      "index": 60,
+      "word": "persuade",
+      "definition": "to convince someone to do or believe something",
+      "sentence": "It took twenty minutes to persuade her to come to the party."
+    },
+    {
+      "index": 61,
+      "word": "occurrence",
+      "definition": "an instance of something happening",
+      "sentence": "The power outage was an isolated occurrence, not a sign of a wider fault."
+    },
+    {
+      "index": 62,
+      "word": "mischievous",
+      "definition": "showing a playful desire to cause trouble in a way that is not usually meant seriously",
+      "sentence": "The mischievous puppy hid one shoe from every pair in the house."
+    },
+    {
+      "index": 63,
+      "word": "draught",
+      "definition": "a current of cool air flowing through an enclosed space",
+      "sentence": "A cold draught crept under the door and chilled the whole room."
+    },
+    {
+      "index": 64,
+      "word": "sabotage",
+      "definition": "deliberate destruction or obstruction intended to cause damage",
+      "sentence": "Investigators suspected sabotage after finding the machinery had been deliberately damaged."
+    },
+    {
+      "index": 65,
+      "word": "unconscious",
+      "definition": "not awake and not aware of one's surroundings",
+      "sentence": "He was unconscious for several minutes after hitting his head on the pavement."
+    },
+    {
+      "index": 66,
+      "word": "occasions",
+      "definition": "particular events, times, or instances when something happens",
+      "sentence": "The good china was only brought out for special occasions like birthdays and weddings."
+    },
+    {
+      "index": 67,
+      "word": "obsessed",
+      "definition": "unable to stop thinking about someone or something; preoccupied to an excessive degree",
+      "sentence": "Ever since the museum trip, he has been obsessed with ancient Egyptian history."
+    },
+    {
+      "index": 68,
+      "word": "fascinating",
+      "definition": "extremely interesting, capturing full attention",
+      "sentence": "The documentary about deep-sea creatures was absolutely fascinating."
+    },
+    {
+      "index": 69,
+      "word": "population",
+      "definition": "the total number of people or organisms living in a particular area",
+      "sentence": "The town's population doubled after the new factory opened."
+    },
+    {
+      "index": 70,
+      "word": "rein",
+      "definition": "a long strap used to control and guide a horse",
+      "sentence": "She pulled gently on the rein to steer the horse away from the fence."
+    },
+    {
+      "index": 71,
+      "word": "inconsequential",
+      "definition": "not important or significant; having little or no effect",
+      "sentence": "Compared to the exam results, the small stain on his shirt seemed entirely inconsequential."
+    },
+    {
+      "index": 72,
+      "word": "furnace",
+      "definition": "a large enclosed structure used to generate intense heat, especially for melting metal or heating a building",
+      "sentence": "The blacksmith fed more coal into the furnace until the metal inside glowed orange."
+    },
+    {
+      "index": 73,
+      "word": "realistically",
+      "definition": "in a way that is practical and reflects how things actually are",
+      "sentence": "Realistically, the team couldn't finish the project by Friday given how far behind they were."
+    },
+    {
+      "index": 74,
+      "word": "fluorescent",
+      "definition": "emitting a bright, glowing light, often produced by certain lamps or pigments",
+      "sentence": "The office was lit by rows of humming fluorescent tubes overhead."
+    },
+    {
+      "index": 75,
+      "word": "minions",
+      "definition": "followers or subordinates who carry out orders, often without question",
+      "sentence": "The villain barked commands at his minions, who scrambled to obey without question."
+    },
+    {
+      "index": 76,
+      "word": "lieutenant",
+      "definition": "a junior officer rank in the armed forces or police, or a deputy to a senior official",
+      "sentence": "The lieutenant briefed the soldiers on their orders before dawn."
+    },
+    {
+      "index": 77,
+      "word": "vulnerable",
+      "definition": "exposed to the possibility of being harmed or attacked",
+      "sentence": "Without a helmet, cyclists are far more vulnerable to serious head injuries."
+    },
+    {
+      "index": 78,
+      "word": "longevity",
+      "definition": "a long duration of life or existence",
+      "sentence": "Scientists studied the diet of the island's residents to understand their remarkable longevity."
+    },
+    {
+      "index": 79,
+      "word": "accommodation",
+      "definition": "lodging or living quarters provided for someone",
+      "sentence": "The tour package included flights and three nights' accommodation in the city centre."
+    },
+    {
+      "index": 80,
+      "word": "ricochet",
+      "definition": "to rebound off a surface at an angle after hitting it",
+      "sentence": "The bullet hit the rock and made the shot ricochet harmlessly into the dirt."
+    },
+    {
+      "index": 81,
+      "word": "camouflage",
+      "definition": "colouring or a pattern that disguises something by blending it with its surroundings",
+      "sentence": "The stick insect's camouflage made it almost invisible against the twig."
+    },
+    {
+      "index": 82,
+      "word": "physically",
+      "definition": "in relation to the body, as opposed to mentally or emotionally",
+      "sentence": "The climb was physically exhausting, leaving his legs shaking for hours afterwards."
+    },
+    {
+      "index": 83,
+      "word": "desperation",
+      "definition": "a state of despair leading to reckless or urgent action",
+      "sentence": "In sheer desperation, he sold his car to cover the medical bills."
+    },
+    {
+      "index": 84,
+      "word": "cylinder",
+      "definition": "a solid or hollow object with straight sides and circular ends",
+      "sentence": "The engine's power comes from six pistons moving inside their cylinders."
+    },
+    {
+      "index": 85,
+      "word": "mediaeval",
+      "definition": "relating to the Middle Ages, roughly the 5th to 15th centuries in Europe",
+      "sentence": "The mediaeval castle still had its original stone towers and a deep moat around the walls."
+    },
+    {
+      "index": 86,
+      "word": "conscience",
+      "definition": "an inner sense of right and wrong that guides behaviour",
+      "sentence": "His conscience wouldn't let him keep the wallet he'd found on the train."
+    },
+    {
+      "index": 87,
+      "word": "narcissist",
+      "definition": "a person with an excessive sense of their own importance and a need for admiration",
+      "sentence": "The narcissist spent the entire dinner talking only about his own achievements."
+    },
+    {
+      "index": 88,
+      "word": "annoyance",
+      "definition": "a feeling of mild anger or irritation",
+      "sentence": "The dripping tap became a constant annoyance during the night."
+    },
+    {
+      "index": 89,
+      "word": "necessary",
+      "definition": "required to be done, achieved, or present; essential",
+      "sentence": "Packing a raincoat is necessary when hiking in a region known for sudden storms."
+    },
+    {
+      "index": 90,
+      "word": "unnecessary",
+      "definition": "not needed; more than is required",
+      "sentence": "Bringing three suitcases for a weekend trip seemed completely unnecessary."
+    },
+    {
+      "index": 91,
+      "word": "awkwardly",
+      "definition": "in a clumsy or embarrassing manner",
+      "sentence": "He shuffled awkwardly across the stage after tripping on the curtain."
+    },
+    {
+      "index": 92,
+      "word": "quiescent",
+      "definition": "in a state of inactivity or dormancy",
+      "sentence": "The volcano had been quiescent for three centuries before it suddenly erupted."
+    },
+    {
+      "index": 93,
+      "word": "hesitance",
+      "definition": "a reluctance or slowness to act because of uncertainty or doubt",
+      "sentence": "Her hesitance before signing the contract showed she still had questions about the terms."
+    },
+    {
+      "index": 94,
+      "word": "changeable",
+      "definition": "likely to change often or unpredictably",
+      "sentence": "The weather in the mountains is so changeable that hikers pack for every season."
+    },
+    {
+      "index": 95,
+      "word": "exhilarating",
+      "definition": "extremely exciting and invigorating",
+      "sentence": "The skydive was the most exhilarating experience of her entire life."
+    },
+    {
+      "index": 96,
+      "word": "miniature",
+      "definition": "very small, or a small-scale copy or version of something",
+      "sentence": "He built a miniature replica of the Titanic that fit neatly on his desk."
+    },
+    {
+      "index": 97,
+      "word": "appearance",
+      "definition": "the way someone or something looks to others",
+      "sentence": "He changed his appearance dramatically by shaving off his beard."
+    },
+    {
+      "index": 98,
+      "word": "imaginable",
+      "definition": "able to be imagined or conceived; possible to think of",
+      "sentence": "The chef offered every flavour of ice cream imaginable, from mango to liquorice."
+    },
+    {
+      "index": 99,
+      "word": "hallucinate",
+      "definition": "to perceive something that is not actually present, usually due to illness, exhaustion, or drugs",
+      "sentence": "After three days without sleep, the exhausted hiker began to hallucinate shapes moving in the fog."
+    },
+    {
+      "index": 100,
+      "word": "effervescent",
+      "definition": "bubbly and lively, or literally giving off bubbles of gas",
+      "sentence": "She dropped the tablet into the glass and watched it turn effervescent."
+    },
+    {
+      "index": 101,
+      "word": "complimentary",
+      "definition": "expressing praise, or given free of charge",
+      "sentence": "Guests at the hotel received a complimentary breakfast each morning."
+    },
+    {
+      "index": 102,
+      "word": "telekinesis",
+      "definition": "the supposed ability to move objects using only the mind",
+      "sentence": "In the film, the character used telekinesis to lift the car off the ground without touching it."
+    },
+    {
+      "index": 103,
+      "word": "guaranteed",
+      "definition": "promised or assured to happen or be true without doubt",
+      "sentence": "The manufacturer guaranteed the laptop battery would last at least two years before needing replacement."
+    },
+    {
+      "index": 104,
+      "word": "humanitarian",
+      "definition": "concerned with promoting human welfare and reducing suffering",
+      "sentence": "The charity sent humanitarian aid, including food, blankets, and medicine, to the flood victims."
+    },
+    {
+      "index": 105,
+      "word": "prevalence",
+      "definition": "the extent to which something is widespread or common",
+      "sentence": "The prevalence of smartphones has changed how teenagers communicate."
+    },
+    {
+      "index": 106,
+      "word": "obscure",
+      "definition": "not well known, or difficult to understand or see clearly",
+      "sentence": "The historian uncovered an obscure diary that no one had read in over a century."
+    },
+    {
+      "index": 107,
+      "word": "explanatory",
+      "definition": "serving to explain or clarify something",
+      "sentence": "The manual included an explanatory diagram to show how the parts fit together."
+    },
+    {
+      "index": 108,
+      "word": "desperate",
+      "definition": "feeling or showing a hopeless sense of urgency or need",
+      "sentence": "The stranded hikers sent a desperate message before their phone battery died."
+    },
+    {
+      "index": 109,
+      "word": "privileged",
+      "definition": "having special rights, advantages, or access that others lack",
+      "sentence": "Growing up in a wealthy suburb, she was privileged in ways she didn't fully appreciate until later."
+    },
+    {
+      "index": 110,
+      "word": "esteem",
+      "definition": "respect and admiration felt for someone",
+      "sentence": "The retiring professor was held in high esteem by generations of former students."
+    },
+    {
+      "index": 111,
+      "word": "exaggerate",
+      "definition": "to represent something as larger, better, or worse than it really is",
+      "sentence": "He tends to exaggerate his fishing stories every time he tells them."
+    },
+    {
+      "index": 112,
+      "word": "archaeology",
+      "definition": "the study of human history through the excavation of sites and artefacts",
+      "sentence": "Her passion for archaeology began after visiting an ancient dig site in Egypt."
+    },
+    {
+      "index": 113,
+      "word": "appropriate",
+      "definition": "suitable or fitting for a particular situation",
+      "sentence": "Jeans and a t-shirt were not appropriate for the formal dinner."
+    },
+    {
+      "index": 114,
+      "word": "inconsolable",
+      "definition": "unable to be comforted; extremely upset",
+      "sentence": "The toddler was inconsolable after her balloon slipped from her hand and drifted into the sky."
+    },
+    {
+      "index": 115,
+      "word": "peculiar",
+      "definition": "strange or unusual",
+      "sentence": "There was something peculiar about the way the dog kept staring at the empty corner."
+    },
+    {
+      "index": 116,
+      "word": "wrought",
+      "definition": "shaped or fashioned, especially metal worked by hammering; also used to describe something caused or brought about",
+      "sentence": "The blacksmith wrought the iron gate by hand over several weeks."
+    },
+    {
+      "index": 117,
+      "word": "mathematician",
+      "definition": "a person who is an expert in or studies mathematics",
+      "sentence": "The young mathematician solved the equation that had puzzled her classmates for weeks."
+    },
+    {
+      "index": 118,
+      "word": "beige",
+      "definition": "a pale sandy or light brown colour",
+      "sentence": "The walls were painted a soft beige to match the timber floors."
+    },
+    {
+      "index": 119,
+      "word": "kaleidoscope",
+      "definition": "a tube-shaped toy that creates changing, colourful patterns using mirrors and loose coloured pieces; also a constantly changing pattern",
+      "sentence": "She twisted the kaleidoscope slowly, watching the coloured glass fragments form a new pattern each time."
+    },
+    {
+      "index": 120,
+      "word": "appreciated",
+      "definition": "recognised the value or significance of something",
+      "sentence": "The teacher appreciated the effort her students had put into the project."
+    },
+    {
+      "index": 121,
+      "word": "pessimistic",
+      "definition": "expecting the worst outcome",
+      "sentence": "Her pessimistic outlook meant she assumed the trip would be cancelled before it even began."
+    },
+    {
+      "index": 122,
+      "word": "carcasses",
+      "definition": "the dead bodies of animals",
+      "sentence": "Vultures circled above the carcasses left behind after the drought."
+    },
+    {
+      "index": 123,
+      "word": "euphoric",
+      "definition": "feeling intense happiness or excitement",
+      "sentence": "The crowd was euphoric after their team scored the winning goal in the final second."
+    },
+    {
+      "index": 124,
+      "word": "colossal",
+      "definition": "extremely large in size, extent, or degree",
+      "sentence": "Rebuilding after the flood was a colossal task that took the town two years."
+    },
+    {
+      "index": 125,
+      "word": "accelerating",
+      "definition": "increasing in speed or rate over time",
+      "sentence": "The cyclist felt the bike accelerating as the road tipped downhill."
+    },
+    {
+      "index": 126,
+      "word": "plateau",
+      "definition": "a flat area of high land, or a period where progress levels off",
+      "sentence": "After weeks of steady gains, her fitness seemed to reach a plateau."
+    },
+    {
+      "index": 127,
+      "word": "rhythm",
+      "definition": "a strong, regular repeated pattern of sound or movement",
+      "sentence": "The drummer kept a steady rhythm that the whole crowd could dance to."
+    },
+    {
+      "index": 128,
+      "word": "resuscitate",
+      "definition": "to revive someone from unconsciousness or apparent death",
+      "sentence": "Paramedics worked for several minutes to resuscitate the man before his pulse returned."
+    },
+    {
+      "index": 129,
+      "word": "judicial",
+      "definition": "relating to courts of law, judges, or the administration of justice",
+      "sentence": "The judicial system requires that every accused person receive a fair trial."
+    },
+    {
+      "index": 130,
+      "word": "courageous",
+      "definition": "showing bravery in the face of danger or difficulty",
+      "sentence": "The firefighter made a courageous dash back into the burning building to save the dog."
+    },
+    {
+      "index": 131,
+      "word": "thoroughly",
+      "definition": "in a complete and careful way, leaving nothing out",
+      "sentence": "She thoroughly checked every page of the contract before signing it."
+    },
+    {
+      "index": 132,
+      "word": "recognisable",
+      "definition": "able to be identified as familiar or known",
+      "sentence": "Even in disguise, his distinctive limp made him instantly recognisable."
+    },
+    {
+      "index": 133,
+      "word": "lacerate",
+      "definition": "to tear or cut flesh roughly, causing a deep wound",
+      "sentence": "The barbed wire fence lacerated his arm as he climbed over it in the dark."
+    },
+    {
+      "index": 134,
+      "word": "correspond",
+      "definition": "to match or be similar to something, or to communicate by exchanging letters",
+      "sentence": "The two witnesses' accounts of the accident did not correspond at all."
+    },
+    {
+      "index": 135,
+      "word": "ubiquitous",
+      "definition": "found everywhere; extremely widespread",
+      "sentence": "Smartphones have become so ubiquitous that few people remember life without them."
+    },
+    {
+      "index": 136,
+      "word": "benevolent",
+      "definition": "kind and generous, wishing to do good to others",
+      "sentence": "The benevolent old man donated most of his fortune to the local orphanage."
+    },
+    {
+      "index": 137,
+      "word": "intriguing",
+      "definition": "arousing great curiosity or interest",
+      "sentence": "The scientist found the strange rock formations so intriguing that she cancelled her flight home to study them."
+    },
+    {
+      "index": 138,
+      "word": "luminescent",
+      "definition": "giving off light without significant heat, especially by a chemical or biological process",
+      "sentence": "The luminescent jellyfish glowed a soft blue as it drifted through the dark water."
+    },
+    {
+      "index": 139,
+      "word": "delicious",
+      "definition": "having a highly pleasant taste or smell",
+      "sentence": "The aroma of the delicious stew filled the whole kitchen."
+    },
+    {
+      "index": 140,
+      "word": "nonchalant",
+      "definition": "calm and relaxed in a way that suggests a lack of concern or interest",
+      "sentence": "Despite failing the test, he gave a nonchalant shrug and said he'd study harder next time."
+    },
+    {
+      "index": 141,
+      "word": "racquet",
+      "definition": "a bat with strings stretched across a frame, used in games like tennis",
+      "sentence": "She restrung her racquet before the tournament began."
+    },
+    {
+      "index": 142,
+      "word": "futile",
+      "definition": "having no useful result; pointless despite effort",
+      "sentence": "Bailing water from the sinking rowboat with a cup proved futile once the hull cracked open."
+    },
+    {
+      "index": 143,
+      "word": "belligerence",
+      "definition": "hostile or aggressive behaviour, readiness to fight",
+      "sentence": "His belligerence during the meeting made it impossible to reach any agreement."
+    },
+    {
+      "index": 144,
+      "word": "dependency",
+      "definition": "the state of relying on someone or something for support",
+      "sentence": "The nation's dependency on imported oil left it vulnerable to price shocks."
+    },
+    {
+      "index": 145,
+      "word": "efficient",
+      "definition": "achieving maximum productivity with minimum wasted effort or resources",
+      "sentence": "The new engine was far more efficient, using half the fuel of the old model."
+    },
+    {
+      "index": 146,
+      "word": "definitely",
+      "definition": "without doubt, certainly",
+      "sentence": "She was definitely the fastest runner in the entire competition."
+    },
+    {
+      "index": 147,
+      "word": "ghoul",
+      "definition": "an evil spirit or ghost, especially one said to rob graves and feed on corpses",
+      "sentence": "In the old legend, a ghoul was said to haunt the cemetery gates after midnight."
+    },
+    {
+      "index": 148,
+      "word": "environment",
+      "definition": "the surrounding conditions or natural world in which something exists",
+      "sentence": "Factories were fined for dumping waste that damaged the local environment."
+    },
+    {
+      "index": 149,
+      "word": "buoy",
+      "definition": "a floating marker anchored in water to guide or warn ships",
+      "sentence": "Swimmers were told not to go past the yellow buoy near the shore."
+    },
+    {
+      "index": 150,
+      "word": "vertebrates",
+      "definition": "animals that have a backbone or spinal column",
+      "sentence": "Fish, birds, and mammals are all classified as vertebrates."
+    },
+    {
+      "index": 151,
+      "word": "molecule",
+      "definition": "the smallest unit of a substance that still has all its chemical properties, made of two or more atoms bonded together",
+      "sentence": "A single molecule of water is made up of two hydrogen atoms and one oxygen atom."
+    },
+    {
+      "index": 152,
+      "word": "malaria",
+      "definition": "a serious infectious disease spread by mosquitoes, causing fever and chills",
+      "sentence": "Travellers to the region are advised to take tablets that help prevent malaria."
+    },
+    {
+      "index": 153,
+      "word": "baulk",
+      "definition": "to hesitate or refuse to proceed because of a difficulty or fear",
+      "sentence": "Most buyers baulk at a price tag that high."
+    },
+    {
+      "index": 154,
+      "word": "personally",
+      "definition": "from one's own perspective, as opposed to on behalf of others",
+      "sentence": "Personally, I thought the film was overrated, even though critics praised it."
+    },
+    {
+      "index": 155,
+      "word": "incandescent",
+      "definition": "emitting light as a result of being heated; glowing intensely",
+      "sentence": "The filament inside the old incandescent bulb glowed white-hot when the switch was flicked on."
+    },
+    {
+      "index": 156,
+      "word": "nuisance",
+      "definition": "a person, thing, or situation that causes annoyance or inconvenience",
+      "sentence": "The car alarm going off every night became a real nuisance for the whole street."
+    },
+    {
+      "index": 157,
+      "word": "kayaking",
+      "definition": "the sport or activity of paddling a small, narrow boat propelled with a double-bladed paddle",
+      "sentence": "We spent Saturday kayaking down the river, dodging rocks and paddling hard through the rapids."
+    },
+    {
+      "index": 158,
+      "word": "decomposed",
+      "definition": "broken down or rotted through natural biological processes",
+      "sentence": "The fallen leaves had decomposed into rich soil by the following spring."
+    },
+    {
+      "index": 159,
+      "word": "indecipherable",
+      "definition": "impossible to read or understand because it is unclear or in an unfamiliar code",
+      "sentence": "The doctor's handwriting on the prescription was so indecipherable that the pharmacist had to call and ask."
+    },
+    {
+      "index": 160,
+      "word": "skulduggery",
+      "definition": "underhanded or dishonest behaviour or dealings",
+      "sentence": "The auditors uncovered years of financial skulduggery hidden behind falsified receipts."
+    },
+    {
+      "index": 161,
+      "word": "liquefy",
+      "definition": "to make or become liquid, typically through heating or pressure",
+      "sentence": "Ice cubes left on the counter will liquefy within an hour on a hot day."
+    },
+    {
+      "index": 162,
+      "word": "psychology",
+      "definition": "the scientific study of the mind and behaviour",
+      "sentence": "She enrolled in a psychology course to understand why people make irrational decisions."
+    },
+    {
+      "index": 163,
+      "word": "desiccate",
+      "definition": "to remove moisture from something thoroughly, to dry out completely",
+      "sentence": "The intense desert heat can desiccate a body within hours."
+    },
+    {
+      "index": 164,
+      "word": "grandeur",
+      "definition": "impressive beauty or dignity of appearance, especially on a large scale",
+      "sentence": "Visitors stood silent, awed by the grandeur of the marble staircase and gilded ceilings."
+    },
+    {
+      "index": 165,
+      "word": "guillotine",
+      "definition": "a device with a heavy blade used historically for beheading condemned prisoners",
+      "sentence": "During the French Revolution, crowds gathered in the square to watch the guillotine fall."
+    },
+    {
+      "index": 166,
+      "word": "scimitar",
+      "definition": "a curved, single-edged sword traditionally associated with the Middle East",
+      "sentence": "The museum displayed a jewelled scimitar once carried by a Persian cavalry officer."
+    },
+    {
+      "index": 167,
+      "word": "column",
+      "definition": "a vertical structural support, or a section of a page arranged in a vertical strip",
+      "sentence": "Each marble column supported the weight of the ancient temple's roof."
+    },
+    {
+      "index": 168,
+      "word": "persuasive",
+      "definition": "effective at convincing people",
+      "sentence": "His persuasive argument won over even the most sceptical members of the committee."
+    },
+    {
+      "index": 169,
+      "word": "haemoglobin",
+      "definition": "the protein in red blood cells that carries oxygen around the body",
+      "sentence": "Low haemoglobin levels in her blood test explained why she felt tired and breathless."
+    },
+    {
+      "index": 170,
+      "word": "wilful",
+      "definition": "deliberate and stubbornly determined to have one's own way",
+      "sentence": "His wilful refusal to apologise dragged the argument out for weeks."
+    },
+    {
+      "index": 171,
+      "word": "consequently",
+      "definition": "as a result, therefore",
+      "sentence": "The bridge was closed for repairs; consequently, traffic was diverted through the town."
+    },
+    {
+      "index": 172,
+      "word": "sovereign",
+      "definition": "a supreme ruler, or having supreme power and independence",
+      "sentence": "The nation had been a sovereign state since gaining independence in 1960."
+    },
+    {
+      "index": 173,
+      "word": "adrenaline",
+      "definition": "a hormone released in response to stress or excitement that increases heart rate and energy",
+      "sentence": "A surge of adrenaline hit her as the roller coaster plunged over the first drop."
+    },
+    {
+      "index": 174,
+      "word": "oscillate",
+      "definition": "to swing or move repeatedly between two positions",
+      "sentence": "The pendulum continued to oscillate long after the clockmaker had stopped watching it."
+    },
+    {
+      "index": 175,
+      "word": "magnificent",
+      "definition": "extremely beautiful, elaborate, or impressive",
+      "sentence": "From the summit, the view of the valley below was absolutely magnificent."
+    },
+    {
+      "index": 176,
+      "word": "leisure",
+      "definition": "free time available for rest, relaxation, or hobbies",
+      "sentence": "After the exams finished, she finally had leisure to read novels for pleasure again."
+    },
+    {
+      "index": 177,
+      "word": "competence",
+      "definition": "the ability to do something successfully or efficiently",
+      "sentence": "Her competence at handling emergencies reassured the entire surgical team."
+    },
+    {
+      "index": 178,
+      "word": "psychiatrist",
+      "definition": "a medical doctor who diagnoses and treats mental illness",
+      "sentence": "The psychiatrist prescribed medication after several sessions of talking through his symptoms."
+    },
+    {
+      "index": 179,
+      "word": "naivety",
+      "definition": "a lack of experience, wisdom, or judgement; being too trusting or innocent",
+      "sentence": "His naivety about business deals meant he almost signed a contract without reading the fine print."
+    },
+    {
+      "index": 180,
+      "word": "aisle",
+      "definition": "a passage between rows of seats or shelves",
+      "sentence": "He grabbed a trolley and headed down the cereal aisle."
+    },
+    {
+      "index": 181,
+      "word": "benefited",
+      "definition": "gained an advantage or improvement from something",
+      "sentence": "The whole town benefited from the new hospital that opened last year."
+    },
+    {
+      "index": 182,
+      "word": "deficient",
+      "definition": "lacking a necessary quality or amount of something",
+      "sentence": "Doctors found his diet deficient in iron and prescribed a supplement."
+    },
+    {
+      "index": 183,
+      "word": "brilliance",
+      "definition": "exceptional intelligence, skill, or intense brightness",
+      "sentence": "The scientist's brilliance was obvious from her elegant solution to the problem."
+    },
+    {
+      "index": 184,
+      "word": "facilities",
+      "definition": "buildings, equipment, or services provided for a particular purpose",
+      "sentence": "The new sports centre offers excellent facilities, including an indoor pool and gym."
+    },
+    {
+      "index": 185,
+      "word": "tsunami",
+      "definition": "a large, destructive sea wave caused by an underwater earthquake or disturbance",
+      "sentence": "The undersea earthquake triggered a tsunami that reached the coast within an hour."
+    },
+    {
+      "index": 186,
+      "word": "proposition",
+      "definition": "a statement or suggestion put forward for consideration",
+      "sentence": "The company's proposition was simple: invest now and profits would follow within a year."
+    },
+    {
+      "index": 187,
+      "word": "insanity",
+      "definition": "the state of being seriously mentally ill; extreme foolishness or irrationality",
+      "sentence": "Driving at that speed in the icy rain was pure insanity, the instructor warned."
+    },
+    {
+      "index": 188,
+      "word": "helium",
+      "definition": "a light, colourless, non-flammable gas used to fill balloons and airships",
+      "sentence": "The party balloon floated to the ceiling because it was filled with helium instead of air."
+    },
+    {
+      "index": 189,
+      "word": "moult",
+      "definition": "to shed old feathers, skin, hair, or fur periodically to make way for new growth",
+      "sentence": "Every spring the parrot would moult, leaving small feathers scattered across the bottom of its cage."
+    },
+    {
+      "index": 190,
+      "word": "noticeable",
+      "definition": "easily seen or noticed; clearly apparent",
+      "sentence": "There was a noticeable improvement in her handwriting after weeks of daily practice."
+    },
+    {
+      "index": 191,
+      "word": "silhouette",
+      "definition": "the dark outline of a person or object seen against a lighter background",
+      "sentence": "At sunset, only the silhouette of the lighthouse remained visible against the orange sky."
+    },
+    {
+      "index": 192,
+      "word": "blase",
+      "definition": "unimpressed or indifferent, especially through familiarity",
+      "sentence": "After his tenth flight that year, he felt completely blase about air travel."
+    },
+    {
+      "index": 193,
+      "word": "stationary",
+      "definition": "not moving; staying in one place",
+      "sentence": "The traffic was completely stationary for almost an hour after the accident."
+    },
+    {
+      "index": 194,
+      "word": "phosphorescent",
+      "definition": "giving off light without heat, especially after absorbing light",
+      "sentence": "The phosphorescent stars on his ceiling glowed softly long after the lamp was switched off."
+    },
+    {
+      "index": 195,
+      "word": "responsibility",
+      "definition": "a duty or obligation to deal with something",
+      "sentence": "As team captain, it was her responsibility to organise the training schedule."
+    },
+    {
+      "index": 196,
+      "word": "opaque",
+      "definition": "not able to be seen through; not transparent",
+      "sentence": "Frosted glass is opaque enough that no one could see into the bathroom."
+    },
+    {
+      "index": 197,
+      "word": "irresponsible",
+      "definition": "not showing a proper sense of care or duty; reckless",
+      "sentence": "Leaving the campfire burning overnight was an irresponsible thing to do in dry bushland."
+    }
+  ]
+}

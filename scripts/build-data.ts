@@ -25,6 +25,8 @@ const LEVELS: Level[] = [
   { id: 'y5-lc', title: 'Year 5 Language Conventions', seed: 50505, pauseSec: 7.5 },
   { id: 'y7-lc', title: 'Year 7 Language Conventions', seed: 70707, pauseSec: 5.5 },
   { id: 'y9-lc', title: 'Year 9 Language Conventions', seed: 90909, pauseSec: 5.5 },
+  { id: 'difficult-lc', title: 'Difficult Language Conventions', seed: 111222, pauseSec: 5.5 },
+  { id: 'challenging-lc', title: 'Challenging Language Conventions', seed: 333444, pauseSec: 5.5 },
 ];
 
 function mulberry32(seed: number) {

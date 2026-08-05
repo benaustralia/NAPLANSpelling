@@ -7,7 +7,7 @@ export function Landing() {
       <section className="mx-auto max-w-5xl px-5 pt-8 sm:pt-20 pb-24">
         <div className="max-w-2xl">
           <p className="text-sm font-medium tracking-widest uppercase text-primary/80">
-            Listen and spell — Years 3, 5, 7 &amp; 9
+            Listen and spell — Years 3, 5, 7 &amp; 9, plus Difficult &amp; Challenging
           </p>
           <h1 className="mt-3 font-display text-5xl sm:text-6xl font-extrabold leading-[1.02] tracking-tight text-foreground">
             Spelling practice,
@@ -15,7 +15,7 @@ export function Landing() {
             the old school way.
           </h1>
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
-            Short five minute spelling tests of about twenty words each — covers all NAPLAN Language Conventions past exam paper spelling. Press play, listen, write the answers on paper — then check them.
+            Short five minute spelling tests of about twenty words each — covers all NAPLAN Language Conventions past exam paper spelling, plus two extra levels of harder words for strong spellers. Press play, listen, write the answers on paper — then check them.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button asChild size="xl">
@@ -29,6 +29,12 @@ export function Landing() {
             </Button>
             <Button asChild size="xl">
               <a href="/y9-lc/">Year 9</a>
+            </Button>
+            <Button asChild size="xl">
+              <a href="/difficult-lc/">Difficult</a>
+            </Button>
+            <Button asChild size="xl">
+              <a href="/challenging-lc/">Challenging</a>
             </Button>
           </div>
         </div>

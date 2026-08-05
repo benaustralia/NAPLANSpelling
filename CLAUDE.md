@@ -3,19 +3,25 @@
 A small, fast, no-login practice site for NAPLAN Language Conventions spelling
 words. Vite + React 19 + Tailwind 4, packaged with Bun, deployed to Netlify.
 Ships Year 3, 5, 7 and 9 corpora drawn from publicly released ACARA NAPLAN
-test papers (paper era: 2008–2016).
+test papers (paper era: 2008–2016), plus two harder levels — Difficult and
+Challenging — sourced from the ACARA NAPLAN Writing Marking Guide for
+students who've outgrown the Year 9 list (see "Source" sections below).
 
 URL structure (static, hash-free, no trailing-slash quirks):
-- `/`              — landing page with year-level CTAs (Y3 / Y5 / Y7 / Y9)
-- `/about/`        — copyright + methodology
-- `/y3-lc/`        — Year 3 LC overview (list of 11 parts)
-- `/y3-lc/part/N/` — Year 3 LC test player for part N (1–11)
-- `/y5-lc/`        — Year 5 LC overview (list of 11 parts)
-- `/y5-lc/part/N/` — Year 5 LC test player for part N (1–11)
-- `/y7-lc/`        — Year 7 LC overview (list of 11 parts)
-- `/y7-lc/part/N/` — Year 7 LC test player for part N (1–11)
-- `/y9-lc/`        — Year 9 LC overview (list of 11 parts)
-- `/y9-lc/part/N/` — Year 9 LC test player for part N (1–11)
+- `/`                     — landing page with level CTAs (Y3 / Y5 / Y7 / Y9 / Difficult / Challenging)
+- `/about/`               — copyright + methodology
+- `/y3-lc/`               — Year 3 LC overview (list of 11 parts)
+- `/y3-lc/part/N/`        — Year 3 LC test player for part N (1–11)
+- `/y5-lc/`               — Year 5 LC overview (list of 11 parts)
+- `/y5-lc/part/N/`        — Year 5 LC test player for part N (1–11)
+- `/y7-lc/`               — Year 7 LC overview (list of 11 parts)
+- `/y7-lc/part/N/`        — Year 7 LC test player for part N (1–11)
+- `/y9-lc/`               — Year 9 LC overview (list of 11 parts)
+- `/y9-lc/part/N/`        — Year 9 LC test player for part N (1–11)
+- `/difficult-lc/`          — Difficult overview (list of 17 parts)
+- `/difficult-lc/part/N/`   — Difficult test player for part N (1–17)
+- `/challenging-lc/`        — Challenging overview (list of 10 parts)
+- `/challenging-lc/part/N/` — Challenging test player for part N (1–10)
 
 Routing is hand-rolled in `src/main.tsx` against `window.location.pathname`
 and a single `ALL_LEVELS` source of truth from `src/levels.ts`.
@@ -30,8 +36,9 @@ matching ("part 1 = a-words") instead of recall.
 **The seed is immutable per level once any audio is rendered.** Changing
 the seed silently re-maps words to different positions in the audio MP3s,
 which breaks every existing audio file. Current seeds: Y3 = 30303, Y5 =
-50505, Y7 = 70707, Y9 = 90909. Add new levels with fresh arbitrary seeds —
-never reuse or change an existing one.
+50505, Y7 = 70707, Y9 = 90909, Difficult = 111222, Challenging = 333444.
+Add new levels with fresh arbitrary seeds — never reuse or change an
+existing one.
 
 ## Pause timing tiers (per-level `pauseSec`)
 
@@ -49,7 +56,7 @@ Watson-Will 1998) plus real student feedback on Y3 audio:
 |------|--------|-----------|-----------|
 | 0 (future) | Y2-bridge / learning support | 9.0–10.0 | Y2 LPM ~30% slower than Y3 |
 | 1 | Y3, Y5 | **7.5** | Matches existing Y3/Y5 audio; comfortable for Y3 mean writer, mildly generous for Y5 |
-| 2 | Y7, Y9 | **5.5** | Y7/Y9 LPM 2–2.5× Y3, longer words partly offset; splits Y7/Y9 fairly |
+| 2 | Y7, Y9, Difficult, Challenging | **5.5** | Y7/Y9 LPM 2–2.5× Y3, longer words partly offset; splits Y7/Y9 fairly. Difficult/Challenging students are at least as fast as Y9 writers, so they join the same tier rather than getting a new one |
 
 Within-tier variance between students (~30%) is expected — the per-
 question prev/next buttons (see "Future feature ideas") are the right
@@ -82,7 +89,9 @@ common source of confusion ("the audio says 21 but my sheet says 1").
 
 ## Per-level data flow
 
-For each level (id format `y{year}-lc`):
+For each level (id format `y{year}-lc` for NAPLAN year levels, or a short
+difficulty slug like `difficult-lc` / `challenging-lc` for levels above
+Year 9 that aren't tied to a NAPLAN year):
 
 1. `public/data/<id>/words.csv` — `word,definition` (header row); one entry
    per spelling word in the order they should be tested. Definitions are
@@ -135,6 +144,19 @@ Dedupe counts per level (225 occurrences each across 9 years):
 output (handles multi-line wraps that occur when an answer is too long for
 the column). `scripts/dedupe-y79.ts` produces the alphabetised word lists
 that became `public/data/y{7,9}-lc/words.csv`.
+
+## Source: ACARA NAPLAN Writing Marking Guide (Difficult / Challenging)
+
+Unlike Y3/Y5/Y7/Y9, the `difficult-lc` and `challenging-lc` word lists are
+**not** drawn from the past-paper LC answer keys above — there is no NAPLAN
+year level beyond 9 to source from. Instead they come from the ACARA NAPLAN
+Writing Marking Guide, a separate ACARA publication, supplied directly as
+`spelling-lists/difficult.csv` and `spelling-lists/challenging.csv` (334 and
+197 words respectively). Definitions and illustrative sentences for both
+lists were authored to match the site's existing style (short, natural,
+kid-friendly for Difficult; genuinely advanced but still concrete for
+Challenging) rather than extracted from the source PDF, since the Writing
+Marking Guide doesn't provide definitions or example sentences.
 
 ## Audio rendering with ElevenLabs
 

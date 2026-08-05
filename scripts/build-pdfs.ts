@@ -22,7 +22,7 @@ import { spawnSync } from 'node:child_process';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:5173';
-const ALL_LEVELS = ['y3-lc', 'y5-lc', 'y7-lc', 'y9-lc'];
+const ALL_LEVELS = ['y3-lc', 'y5-lc', 'y7-lc', 'y9-lc', 'difficult-lc', 'challenging-lc'];
 
 // Optional positional filters: `<levelId> [partNumber]` to regenerate just one
 // level or a single part (e.g. after re-rendering one part's audio/sentence).
