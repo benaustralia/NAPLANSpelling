@@ -17,23 +17,23 @@ export function Landing() {
           <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
             Short five minute spelling tests of about twenty words each — covers all NAPLAN Language Conventions past exam paper spelling, plus two extra levels of harder words for strong spellers. Press play, listen, write the answers on paper — then check them.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild size="xl">
+          <div className="mt-7 grid grid-cols-2 gap-3">
+            <Button asChild size="xl" className="w-full">
               <a href="/y3-lc/">Year 3</a>
             </Button>
-            <Button asChild size="xl">
+            <Button asChild size="xl" className="w-full">
               <a href="/y5-lc/">Year 5</a>
             </Button>
-            <Button asChild size="xl">
+            <Button asChild size="xl" className="w-full">
               <a href="/y7-lc/">Year 7</a>
             </Button>
-            <Button asChild size="xl">
+            <Button asChild size="xl" className="w-full">
               <a href="/y9-lc/">Year 9</a>
             </Button>
-            <Button asChild size="xl">
+            <Button asChild size="xl" className="w-full">
               <a href="/difficult-lc/">Difficult</a>
             </Button>
-            <Button asChild size="xl">
+            <Button asChild size="xl" className="w-full">
               <a href="/challenging-lc/">Challenging</a>
             </Button>
           </div>
