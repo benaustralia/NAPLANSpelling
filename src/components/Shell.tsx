@@ -6,14 +6,14 @@ export function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-dvh flex flex-col">
       <header>
-        <div className="mx-auto max-w-5xl px-5 py-4 flex items-center justify-between">
+        <div className="mx-auto max-w-5xl px-5 py-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <a
             href="/"
             className="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-foreground"
           >
             NAPLAN <span className="text-primary">Spelling</span>
           </a>
-          <nav className="flex items-center gap-1">
+          <nav className="flex flex-wrap items-center gap-1">
             {ALL_LEVELS.map((l) => (
               <Button key={l.id} asChild variant="ghost" size="sm">
                 <a href={`/${l.id}/`}>{l.yearLabel}</a>
