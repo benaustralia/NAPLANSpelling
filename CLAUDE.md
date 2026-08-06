@@ -7,6 +7,11 @@ test papers (paper era: 2008–2016), plus two harder levels — Difficult and
 Challenging — sourced from the ACARA NAPLAN Writing Marking Guide for
 students who've outgrown the Year 9 list (see "Source" sections below).
 
+**Check `Plan.md` at repo root for active/in-progress work** (e.g. the
+Clerk Production promotion) before assuming a fresh conversation has full
+context — it tracks phase-by-phase progress and open items that don't
+live anywhere else.
+
 URL structure (static, hash-free, no trailing-slash quirks):
 - `/`                     — landing page with level CTAs (Y3 / Y5 / Y7 / Y9 / Difficult / Challenging)
 - `/about/`               — copyright + methodology
