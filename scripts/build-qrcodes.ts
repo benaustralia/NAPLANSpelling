@@ -2,7 +2,7 @@ import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
-const BASE_URL = process.env.BASE_URL ?? 'https://naplan-spelling.netlify.app';
+const BASE_URL = process.env.BASE_URL ?? 'https://spelling.naplanstyle.com';
 const ROOT = process.cwd();
 const OUT_DIR = join(ROOT, 'public/codes');
 

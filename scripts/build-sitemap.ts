@@ -1,7 +1,7 @@
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const BASE = 'https://naplan-spelling.netlify.app';
+const BASE = 'https://spelling.naplanstyle.com';
 const dataDir = './src/data';
 
 const files = (await readdir(dataDir)).filter((f) => f.endsWith('.json'));

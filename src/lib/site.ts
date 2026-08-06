@@ -1,1 +1,1 @@
-export const SITE_URL = 'https://naplan-spelling.netlify.app';
+export const SITE_URL = 'https://spelling.naplanstyle.com';

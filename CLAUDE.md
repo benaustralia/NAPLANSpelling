@@ -221,8 +221,10 @@ bun run qrcodes       # regenerates QR codes for printable hand-out
 ```
 
 Deploys to Netlify on push to `main` (see `netlify.toml` for the build
-command/publish dir). The public URL is `https://naplan-spelling.netlify.app/`
-(also configured to a custom domain if set).
+command/publish dir). The public URL is `https://spelling.naplanstyle.com/`
+(a subdomain of the "NAPLAN Style" umbrella site at naplanstyle.com — see
+"Custom domain" below), with `https://naplan-spelling.netlify.app/` still
+live and serving directly as a fallback (no redirect between the two).
 
 **Repo linkage (as of 2026-08-05)**: the Netlify site (`naplan-spelling`) is
 linked to `github.com/benaustralia/NAPLANSpelling` via the Netlify GitHub
@@ -238,6 +240,19 @@ access to this repo (GitHub → Settings → Applications → Installed GitHub
 Apps → Netlify → Configure → add the repo under "Only select
 repositories"), then re-linking from the Netlify dashboard (Project
 configuration → Build & deploy → Link repository).
+
+**Custom domain (as of 2026-08-06)**: `spelling.naplanstyle.com` is set as
+the Netlify site's primary custom domain (Let's Encrypt cert provisioned).
+`naplanstyle.com` itself is a separate, broader "NAPLAN Style" product
+hosted on **Vercel**, with its own **separate Clerk application** — not
+this site, not the same login. DNS for `naplanstyle.com` lives on **AWS
+Route 53** (registrar: Amazon Registrar), not Netlify DNS or Cloudflare —
+the subdomain is a plain CNAME record (`spelling` → `naplan-spelling.
+netlify.app`) added there. If HTTPS ever needs re-provisioning and Netlify
+returns `"certificate parameter is required when updating an existing
+certificate"`, that's a stuck cert state — remove the custom domain from
+Netlify's Domain management and re-add it fresh (DNS doesn't need
+touching, only the Netlify-side domain record).
 
 ## Build scripts
 
