@@ -97,7 +97,18 @@ async function handler(req: Request): Promise<Response> {
     properties: {
       answers: {
         type: 'array',
-        items: { anyOf: [{ type: 'string' }, { type: 'null' }] },
+        items: {
+          type: 'object',
+          properties: {
+            text: { anyOf: [{ type: 'string' }, { type: 'null' }] },
+            confident: {
+              type: 'boolean',
+              description: 'False if the handwriting is unclear or ambiguous, even when a best guess is given in "text".',
+            },
+          },
+          required: ['text', 'confident'],
+          additionalProperties: false,
+        },
         description: `Exactly ${n} entries, one per numbered question, in ascending order.`,
       },
     },
@@ -110,7 +121,8 @@ async function handler(req: Request): Promise<Response> {
 Rules:
 - Return exactly ${n} entries in "answers", one per question, in ascending question-number order.
 - Transcribe only what is actually written on the page — do not guess or correct spelling.
-- If an answer is blank, illegible, or crossed out with nothing else legible written, use null for that entry.
+- If an answer is blank, illegible, or crossed out with nothing else legible written, use null for "text".
+- Set "confident" to false whenever the handwriting is unclear or ambiguous — even if you're still providing your best guess in "text". Set it to true only when you're sure of the transcription.
 - Ignore the printed question numbers themselves; only transcribe the handwritten answer next to each number.`;
 
   let response: Anthropic.Message;
@@ -148,7 +160,7 @@ Rules:
     return jsonResponse(502, { error: 'no_text_response' });
   }
 
-  let parsed: { answers: Array<string | null> };
+  let parsed: { answers: Array<{ text: string | null; confident: boolean }> };
   try {
     parsed = JSON.parse(textBlock.text);
   } catch {
@@ -162,12 +174,74 @@ Rules:
     });
   }
 
+  const transcribed: Array<string | null> = parsed.answers.map((a) => a?.text ?? null);
+
+  // Low-confidence retry — see Plan.md "Phase 6 — Polish". Haiku flags
+  // handwriting it wasn't sure about; only those specific questions get a
+  // second look from Sonnet 5, keeping the common (high-confidence) case at
+  // Haiku's cost. Best-effort: a retry hiccup falls back to Haiku's guess
+  // rather than failing the whole request.
+  const lowConfidenceIdx = parsed.answers.reduce<number[]>((acc, a, i) => {
+    if (a?.confident === false) acc.push(i);
+    return acc;
+  }, []);
+
+  if (lowConfidenceIdx.length > 0) {
+    const retryNumbers = lowConfidenceIdx.map((i) => expectedWords[i].index);
+    const retrySchema = {
+      type: 'object',
+      properties: {
+        answers: {
+          type: 'array',
+          items: { anyOf: [{ type: 'string' }, { type: 'null' }] },
+          description: `Exactly ${retryNumbers.length} entries, one per listed question number, in the same order given.`,
+        },
+      },
+      required: ['answers'],
+      additionalProperties: false,
+    };
+    const retryPrompt = `This is the same handwritten spelling test answer sheet. Look very carefully at just these specific question numbers: ${retryNumbers.join(', ')}. Transcribe exactly what the student wrote for each one, in the same order as listed.
+
+Rules:
+- Return exactly ${retryNumbers.length} entries in "answers", one per listed question number, in the same order given.
+- Transcribe only what is actually written — do not guess or correct spelling.
+- If an answer is blank, illegible, or crossed out with nothing else legible written, use null for that entry.`;
+
+    try {
+      const retryResponse = await anthropic.messages.create({
+        model: 'claude-sonnet-5',
+        max_tokens: 1024,
+        output_config: { format: { type: 'json_schema', schema: retrySchema } },
+        messages: [
+          {
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: media as 'image/jpeg', data: base64Data } },
+              { type: 'text', text: retryPrompt },
+            ],
+          },
+        ],
+      });
+      const retryText = retryResponse.content.find((b): b is Anthropic.TextBlock => b.type === 'text');
+      if (retryResponse.stop_reason !== 'refusal' && retryText) {
+        const retryParsed = JSON.parse(retryText.text) as { answers: Array<string | null> };
+        if (Array.isArray(retryParsed.answers) && retryParsed.answers.length === retryNumbers.length) {
+          lowConfidenceIdx.forEach((idx, j) => {
+            transcribed[idx] = retryParsed.answers[j] ?? null;
+          });
+        }
+      }
+    } catch (err) {
+      console.error('mark-answers sonnet retry failed:', err);
+    }
+  }
+
   let score = 0;
   const results = expectedWords.map((w, i) => {
-    const transcribed = parsed.answers[i];
-    const correct = transcribed != null && normalize(transcribed) === normalize(w.word);
+    const t = transcribed[i];
+    const correct = t != null && normalize(t) === normalize(w.word);
     if (correct) score++;
-    return { index: w.index, word: w.word, transcribed: transcribed ?? null, correct };
+    return { index: w.index, word: w.word, transcribed: t, correct };
   });
 
   await recordAttempt({ userId, levelId, part, score, total: n });

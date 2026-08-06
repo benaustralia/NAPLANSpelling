@@ -214,12 +214,31 @@ phase boundaries. Build one, stop, review, move on.
   pick up the result) — same login-creation limitation noted in Phases 3–4. **You'll
   need to click through this one yourself.**
 
-- [ ] **Phase 6 — Polish (optional, defer freely)** (was Phase 5, trimmed)
+- [x] **Phase 6 — Polish (optional, defer freely)** (was Phase 5, trimmed)
   If handwriting proves messy in testing, a low-confidence retry path escalating
   just those words to Sonnet 5. (The abuse-guard item that used to live here is
   already covered by Phase 2's login requirement.)
   *Build at: default model, medium effort.* Lower stakes, can sit indefinitely without
   blocking anything.
+
+  **Built:** Haiku's structured-output schema now returns `{ text, confident }`
+  per answer instead of a bare string, with the prompt instructing it to set
+  `confident: false` whenever the handwriting is ambiguous — even if it's still
+  giving a best guess. Any indices flagged low-confidence trigger one extra
+  Sonnet 5 call against the same photo, asking only about those specific
+  question numbers (not a full re-transcription), and its answers overwrite
+  Haiku's for just those indices. Best-effort: a retry failure (rate limit,
+  parse mismatch) falls back to Haiku's original guess rather than failing the
+  request — same pattern as `recordAttempt`/`completePairing` elsewhere in this
+  function. The common, high-confidence case pays zero extra cost; the retry
+  only fires on genuinely messy handwriting.
+  *Build at: default model, medium effort.*
+
+  **Verified:** `bun run typecheck` and `bun run build` clean; `netlify dev`
+  confirmed the function loads with no syntax errors and still 401s without a
+  session. **Not verified:** an actual low-confidence photo triggering the
+  Sonnet retry end-to-end — that needs a real messy-handwriting photo through
+  the signed-in flow, same limitation as the phases above.
 
 ## Reference: domain registrar
 
