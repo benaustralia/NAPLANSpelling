@@ -183,12 +183,36 @@ phase boundaries. Build one, stop, review, move on.
   something to fake even against a dev instance) and no QR/polling UI exists yet
   to click through — both belong to Phase 5.
 
-- [ ] **Phase 5 — Desktop integration** (was Phase 4)
+- [x] **Phase 5 — Desktop integration** (was Phase 4)
   Wire into the actual product: "Mark my answers" entry point on the part player, the
   QR/code display, polling + result rendering, plus the plain "or upload directly"
   fallback input on the same screen.
   *Build at: default model, medium-high effort.* Design-system-consistent UI work,
   same bar as the header/water-level polish already done.
+
+  **Built:** `PartPlayer.tsx` gets a "Mark my answers" button (lazy-loads
+  `MarkPanel.tsx` on click, so the far more common audio-only page load doesn't pay
+  for the capture/QR/Clerk code path — same pattern as `Shell.tsx`'s `AccountMenu`
+  split). `MarkPanel.tsx` shows a QR code (new `pairing-qr.mts` function, `qrcode`
+  npm package rendering SVG server-side so no QR library ships to the client)
+  alongside the pairing code as text, polls `get-pairing.mts` every 2s, and renders
+  the shared result view once status flips to `done`. Below that, a plain "upload a
+  photo from this computer" fallback reuses the same `mark-answers` call with no
+  pairing code. Extracted `Mark.tsx`'s inline capture button and result list into
+  `src/components/CaptureFlow.tsx` and `src/components/MarkResult.tsx` so both the
+  phone page and the new desktop panel share one contract instead of drifting.
+  *Build at: default model, medium-high effort.*
+
+  **Verified:** `bun run typecheck` and `bun run build` clean (`MarkPanel` and
+  `MarkResult` land in their own lazy chunks, confirmed in the build output).
+  `netlify dev` smoke-tested directly: `create-pairing` → `pairing-qr` (200,
+  `image/svg+xml`, confirmed the SVG actually renders) → `get-pairing` (`pending`)
+  round-trip works, `pairing-qr` 400s on missing params, `mark-answers` still 401s
+  without a session (unaffected by the refactor), `/y3-lc/part/1/` still 200s.
+  **Not verified:** an actual signed-in click-through (open a part page, click "Mark
+  my answers", scan the QR on a phone, submit a real photo, watch the desktop panel
+  pick up the result) — same login-creation limitation noted in Phases 3–4. **You'll
+  need to click through this one yourself.**
 
 - [ ] **Phase 6 — Polish (optional, defer freely)** (was Phase 5, trimmed)
   If handwriting proves messy in testing, a low-confidence retry path escalating

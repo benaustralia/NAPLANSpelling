@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { Camera, ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,6 +7,11 @@ import { Progress } from '@/components/ui/progress';
 import { WaterLevel } from '@/components/ui/water-level';
 import { getLevel, type LevelId } from '@/levels';
 import { formatDuration } from '@/lib/format';
+
+// Lazy: pulled in only once a student opens the marking panel, so the far
+// more common audio-practice page load doesn't pay for the capture/QR/Clerk
+// code path.
+const MarkPanel = lazy(() => import('@/components/MarkPanel').then((m) => ({ default: m.MarkPanel })));
 
 // If the kid is more than this many seconds into the current word's audio,
 // the prev button replays the current word instead of jumping back one
@@ -32,6 +37,7 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [time, setTime] = useState(0);
   const [paused, setPaused] = useState(true);
+  const [showMark, setShowMark] = useState(false);
 
   useEffect(() => {
     if (!audio) return;
@@ -185,6 +191,22 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
             )}
           </div>
         </div>
+
+        <div className="mt-6 flex justify-center">
+          {!showMark && (
+            <Button variant="secondary" onClick={() => setShowMark(true)}>
+              <Camera aria-hidden /> Mark my answers
+            </Button>
+          )}
+        </div>
+
+        {showMark && (
+          <div className="mt-6 mx-auto max-w-md">
+            <Suspense fallback={<p className="text-center text-sm text-muted-foreground">Loading…</p>}>
+              <MarkPanel levelId={levelId} part={part} />
+            </Suspense>
+          </div>
+        )}
       </section>
     </Shell>
   );
