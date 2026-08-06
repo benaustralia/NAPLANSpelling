@@ -124,14 +124,65 @@ phase boundaries. Build one, stop, review, move on.
     get created and emailed by Clerk without it, you just don't get a copy.
   - [ ] Nobody's actually been sent the `/join/` link yet — onboarding hasn't
     started for the 25 families.
-  - [ ] **Not yet promoted to Clerk Production.** Everything above is on Clerk's
-    Development instance — separate keys, separate Restricted-mode/invite list,
-    separate (shared/test) OAuth credentials from Production. Before this goes
-    live on Netlify: create/verify the Production instance (needs a verified
-    domain), add real Google/Microsoft OAuth credentials (shared dev credentials
-    are dev-only), redo Restricted mode + re-invite students, and swap in
-    Production keys. Tackle this alongside Phase 5 (desktop integration/deploy),
-    not before.
+  - [ ] **Clerk Production promotion — in progress (started 2026-08-06).**
+    Everything below is on Clerk's Production instance now, separate from the
+    Development instance/keys used everywhere above.
+    - [x] **Custom domain**: site now lives at `spelling.naplanstyle.com`
+      (Netlify primary custom domain, Let's Encrypt cert live). Context: Ben is
+      building a broader "NAPLAN Style" product at `naplanstyle.com` — a
+      **separate Next.js app on Vercel with its own separate Clerk
+      application**, not this one, no shared login. DNS for `naplanstyle.com`
+      is on **AWS Route 53** (registrar: Amazon Registrar), not Cloudflare —
+      Ben adds records manually via the Route 53 console (no AWS CLI/API
+      access configured for Claude in this environment; a scoped IAM key was
+      discussed but judged not worth the setup friction mid-task). `SITE_URL`
+      (`src/lib/site.ts`) and the QR/sitemap generator scripts now default to
+      `spelling.naplanstyle.com`; `naplan-spelling.netlify.app` keeps serving
+      directly with no redirect, so existing printed QR codes/PDFs referencing
+      it still work — see CLAUDE.md's "Custom domain" note for the full
+      troubleshooting history (stuck-certificate bug, fixed by removing and
+      re-adding the domain in Netlify).
+    - [x] **Production instance created**, cloned from Development's
+      auth/theme settings. Domain entered as `spelling.naplanstyle.com` and
+      explicitly set as a **"Secondary application"** (not primary) — Clerk's
+      own domain-setup UI asks this because it detected the root domain
+      `naplanstyle.com`. "Primary" would have claimed `clerk.naplanstyle.com` +
+      `@naplanstyle.com`, which collides with `naplanstyle.com`'s own separate
+      Clerk app. "Secondary" scopes everything under our subdomain instead
+      (`clerk.spelling.naplanstyle.com`, `@spelling.naplanstyle.com`) — zero
+      collision risk. Confirmed directly in Clerk's own UI copy that a
+      subdomain is explicitly supported as the production domain ("Include the
+      subdomain, if applicable").
+    - [x] **DNS verified**: all 5 required CNAMEs added to the `naplanstyle.com`
+      Route 53 zone and confirmed by Clerk (`clerk.spelling`, `accounts.spelling`,
+      `clkmail.spelling`, `clk._domainkey.spelling`, `clk2._domainkey.spelling`,
+      all pointing at `*.clerk.services`/`*.0gcj8v7tcpn8.clerk.services` hosts —
+      see Clerk dashboard → Configure → Domains for exact current values if
+      re-verifying). SSL certs for the Frontend API and Account Portal were
+      issuing as of 2026-08-06 (Clerk's own estimate: minutes, up to 24h).
+    - [ ] **Google OAuth production credentials** — not started. Needs a
+      Google Cloud Console OAuth consent screen (External, default
+      openid/email/profile scopes, no verification review needed) + an OAuth
+      2.0 Web application Client ID with Authorized Redirect URI exactly
+      `https://clerk.spelling.naplanstyle.com/v1/oauth_callback`. Paste the
+      resulting Client ID + Secret directly into Clerk (Configure → SSO
+      connections → Google) — **do this in your own browser, not by relaying
+      the Client Secret through Claude in chat** (same secrets-hygiene reason
+      as the Anthropic/Clerk API key rotation earlier: chat transcripts
+      persist).
+    - [ ] **Microsoft OAuth production credentials** — not started. Same
+      pattern, via Azure/Entra ID app registration instead of Google Cloud
+      Console. Redirect URI will be shown on Clerk's Microsoft SSO connection
+      page once you're there (same format, different provider).
+    - [ ] **Production publishable/secret keys not yet swapped into
+      Netlify** — the live site is still running against the Development
+      Clerk instance's keys. Don't swap until OAuth is configured (Production
+      Google/Microsoft sign-in won't work without it, and email/password
+      still works fine on Development in the meantime so there's no rush).
+    - [ ] **Restricted mode + re-invite the 25 families under Production** —
+      not started. Production has its own separate user/invite list from
+      Development; nobody currently invited under Development carries over
+      automatically.
 
 - [x] **Phase 3 — Mobile capture page** (was Phase 2)
   New route `/mark/{levelId}/part/{part}/` (chosen over a literal `/mark/{code}/` —
