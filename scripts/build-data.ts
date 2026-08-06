@@ -2,6 +2,16 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import ffmpegInstaller from '@ffmpeg-installer/ffmpeg';
+import ffprobeInstaller from '@ffprobe-installer/ffprobe';
+
+// Netlify's build image has no system ffmpeg/ffprobe, which silently made
+// probeDuration/detectQuestionStarts return null for every part in
+// production (no error — spawnSync just reports a non-zero/absent status).
+// These installer packages ship portable static binaries so the build
+// behaves the same in CI as it does locally.
+const FFMPEG_PATH = ffmpegInstaller.path;
+const FFPROBE_PATH = ffprobeInstaller.path;
 
 const ROOT = process.cwd();
 const WORDS_PER_PART = 20;
@@ -65,7 +75,7 @@ function parseCsv(csv: string) {
 function probeDuration(mp3: string): number | null {
   if (!existsSync(mp3)) return null;
   const result = spawnSync(
-    'ffprobe',
+    FFPROBE_PATH,
     ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=noprint_wrappers=1:nokey=1', mp3],
     { encoding: 'utf8' },
   );
@@ -85,7 +95,7 @@ function probeDuration(mp3: string): number | null {
 function detectQuestionStarts(mp3: string, expected: number): number[] | null {
   if (!existsSync(mp3)) return null;
   const result = spawnSync(
-    'ffmpeg',
+    FFMPEG_PATH,
     ['-hide_banner', '-nostats', '-i', mp3, '-af', 'silencedetect=noise=-30dB:d=2', '-f', 'null', '-'],
     { encoding: 'utf8' },
   );

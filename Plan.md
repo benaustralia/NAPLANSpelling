@@ -1,0 +1,214 @@
+# Photo marking — build plan
+
+Goal: let a student's handwritten spelling answers get marked from a photo, without
+turning this into a NAPLAN-style typed test simulator (deliberately ruled out — see
+Decisions below).
+
+## Decisions
+
+- **Primary flow is desktop + phone handoff, not "upload a file."** The student takes
+  the test on a desktop; the photo of the paper answer sheet is taken on a phone
+  (usually a parent's, not necessarily the student's own device). Relying on cloud
+  photo sync between the two devices is too slow/fiddly to be the default path, even
+  when it's technically the same person's devices.
+- **QR code, not a native app.** Desktop shows a QR code + short pairing code linking
+  to a plain mobile web page on this same site. No app install, no App Store, no
+  separate codebase — a camera-capable file input in a normal mobile browser does the
+  job.
+- **Keep a plain "upload directly" fallback** on the same desktop screen, for anyone
+  who already has the photo reachable from the desktop (synced, emailed to self, etc).
+  Free to include — reuses the same marking function.
+- **Marking is OCR + deterministic string match, not AI judgment.** The correct
+  spelling for every word already lives in the site's existing data
+  (`public/data/<level>/words.csv` → built JSON). The model's only job is transcribing
+  what's handwritten; comparing transcription to the known-correct word is plain code.
+- **Runtime OCR model: Claude Haiku 4.5** (`claude-haiku-4-5`). Confirmed vision-capable,
+  standard resolution tier (1568 visual-token cap regardless of photo size). Estimated
+  cost ≈ **$0.003/photo** (image + short prompt + ~20-word structured JSON output) —
+  roughly 10× cheaper than Sonnet 5 or Opus 5 for this task, which is well inside
+  Haiku's tier (simple, well-defined extraction, not deep reasoning). Use
+  `output_config.format` (structured outputs) to get a clean JSON array back instead of
+  parsing prose.
+- **This is the site's first backend dependency.** Everything else is a static
+  Netlify deploy (100GB bandwidth / 300 build min, legacy free tier, confirmed via
+  `netlify api getSite`). The marking function is the one endpoint with a real
+  per-call cost.
+- **AI marking requires login; the rest of the site stays anonymous.** Login is
+  opt-in, not required to use the site at all — audio practice, PDFs, everything
+  that exists today stays open to anyone. But the photo-marking flow specifically is
+  gated behind a signed-in session, both because it's the one endpoint with a real
+  per-call cost (this doubles as the abuse guard that was going to be Phase 5) and
+  because progress tracking only makes sense tied to an account.
+- **Auth: Clerk, restricted to a whitelist.** Chosen over a custom passcode
+  scheme because it's a known quantity (session handling, sign-in UI components)
+  and over Neon Auth because it isn't actually simpler, just a different vendor
+  tightly coupled to Neon's database.
+- **Whitelist mechanism: Restricted mode + manual invites, not Allowlist.**
+  Clerk's pattern-matched email Allowlist is a **paid Pro feature** — discovered
+  when actually configuring it, not before. Free **Restricted mode** does the
+  same job for this use case: public sign-up is fully disabled, and only
+  students invited one-by-one (or created manually) via the Clerk dashboard can
+  get in. Costs a manual invite step per student instead of pasting a list, but
+  zero ongoing cost.
+- **Sign-in methods: email, Google, and Microsoft, all three.** Considered
+  going social-only (Google/Microsoft) to simplify for kids, but kept email as
+  a fallback for any student without one of those accounts. Note either way:
+  Clerk ends up storing the student's email regardless of which method they
+  sign in with (it's how the invite-matching works) — the method choice
+  doesn't change *whether* Clerk holds student PII, only how they prove it's
+  them. If avoiding a third party ever holding student emails becomes the
+  priority, that's what the passcode alternative above would have avoided —
+  a bigger swap at this point, not a setting.
+- **Progress storage: Neon Postgres, the user's own account** — not Netlify's
+  built-in Neon marketplace extension, so it stays under the user's own Neon
+  billing/management rather than Netlify's. Netlify Functions talk to it via
+  `@neondatabase/serverless` (HTTP-based driver, no persistent connection pool to
+  manage from a serverless function).
+- **Progress record shape stays minimal**: one row per marked attempt —
+  `user_id, level_id, part, score, total, created_at`. No streaks/badges/manual
+  self-report; if that's wanted later it's an additive schema change, not a
+  redesign.
+
+## Phases
+
+Each phase leaves the repo in a working, non-broken state — nothing half-wired across
+phase boundaries. Build one, stop, review, move on.
+
+- [x] **Phase 1 — Marking function (backend core)**
+  Netlify Function: takes a photo + level/part identifier, calls Haiku 4.5 with
+  structured output to transcribe ~20 words, compares each against the known-correct
+  spelling, returns a score + per-word result as JSON. No UI yet — testable directly
+  with `curl` / a sample image.
+  *Build at: default model, high effort.* Real judgment calls: prompt design for
+  accurate transcription, structured-output schema, error handling, matching logic.
+
+- [x] **Phase 2 — Auth + progress storage foundation**
+  Clerk wired into the React app (allowlist-restricted sign-in, opt-in — the rest of
+  the site stays reachable without an account). A Neon Postgres schema for mark
+  attempts. `mark-answers` updated to require a valid Clerk session and to write an
+  attempt record after scoring (best-effort — a DB hiccup shouldn't block the score
+  reaching the student). A minimal `/progress/` page reading that history back. No
+  camera UI yet — this is the plumbing everything else gates on.
+  *Build at: default model, high effort.* Real judgment calls: token verification in
+  a Netlify Function, graceful degradation before Clerk/Neon env vars exist,
+  best-effort vs. fatal error handling for the DB write.
+
+  **Progress so far:**
+  - [x] Code written: `src/lib/auth.ts`, `ClerkProvider` wired into `main.tsx`
+    (dynamically imported, only when configured), `AccountMenu.tsx` (lazy chunk,
+    keeps Clerk's SDK weight off anonymous page loads), `netlify/functions/_shared.mts`,
+    `mark-answers.mts` gated on a valid session, `get-progress.mts`,
+    `src/routes/Progress.tsx`, `db/schema.sql`.
+  - [x] Clerk application created ("NAPLAN Spelling", Development instance).
+    Publishable + secret key are in `.env.local` (secret key went from the
+    Clerk dashboard's clipboard copy straight into the file — never displayed).
+  - [x] Restricted mode enabled (free) — sign-up disabled site-wide until invited.
+  - [x] Sign-in methods enabled: Email, Google, Microsoft (all via Clerk's shared
+    dev-only OAuth credentials — fine for now, production needs custom credentials,
+    see below).
+  - [x] Neon: project `naplan-spelling` created (`neonctl`, org `Ben`), `db/schema.sql`
+    run against it, pooled `DATABASE_URL` set in `.env.local`. Insert/select
+    round-trip verified directly with `psql`.
+  - [x] Self-service onboarding, built in place of manual one-by-one Clerk-dashboard
+    invites (25 families expected): public `/join/` page (name + email + optional
+    level) → `netlify/functions/request-invite.mts` → `clerkClient.invitations.
+    createInvitation({ notify: true })` (Clerk sends the actual invite email) →
+    best-effort owner notification via Resend (`notifyOwner` in `_shared.mts`,
+    no-ops until `RESEND_API_KEY` / `RESEND_FROM_EMAIL` / `OWNER_NOTIFY_EMAIL` are
+    set). Honeypot field is the only spam defense — proportionate for a link
+    shared privately, not a public CAPTCHA-worthy surface. Verified end-to-end
+    against the real Clerk Development instance (invite created, duplicate
+    detected, honeypot short-circuits, test invitation revoked after).
+  - [ ] Resend not yet set up — `RESEND_API_KEY`/`RESEND_FROM_EMAIL`/
+    `OWNER_NOTIFY_EMAIL` are blank in `.env.local`. Not blocking: invites still
+    get created and emailed by Clerk without it, you just don't get a copy.
+  - [ ] Nobody's actually been sent the `/join/` link yet — onboarding hasn't
+    started for the 25 families.
+  - [ ] **Not yet promoted to Clerk Production.** Everything above is on Clerk's
+    Development instance — separate keys, separate Restricted-mode/invite list,
+    separate (shared/test) OAuth credentials from Production. Before this goes
+    live on Netlify: create/verify the Production instance (needs a verified
+    domain), add real Google/Microsoft OAuth credentials (shared dev credentials
+    are dev-only), redo Restricted mode + re-invite students, and swap in
+    Production keys. Tackle this alongside Phase 5 (desktop integration/deploy),
+    not before.
+
+- [x] **Phase 3 — Mobile capture page** (was Phase 2)
+  New route `/mark/{levelId}/part/{part}/` (chosen over a literal `/mark/{code}/` —
+  there's no pairing relay yet to resolve an opaque code against, so the page is
+  addressed the same way every other level/part route is; Phase 4's QR can point
+  straight at this URL, or wrap it behind a short code if that's still wanted once
+  the relay exists). Bare mobile-first page (`src/routes/Mark.tsx`): camera-capture
+  file input (`capture="environment"`), client-side downscale/re-encode to JPEG
+  before upload (`src/lib/image.ts` — phone photos are several MB raw, well past
+  what's sane to ship to a Netlify Function, and Haiku only sees ~1568 tokens'
+  worth of the image regardless), calls `mark-answers` directly, renders a
+  score + per-word right/wrong breakdown. Gated on Phase 2's auth via
+  `SignedIn`/`SignedOut` (same pattern as `/progress/`).
+  *Build at: default model, medium-high effort.* Mostly UI wiring against an
+  already-defined contract, matched to the site's existing visual language.
+
+  **Verified:** `bun run typecheck` and `bun run build` clean; `netlify dev`
+  smoke-tested the backend path directly (honeypot short-circuit, invalid-email
+  rejection, real Clerk invitation created and revoked afterward, confirmed via
+  `psql` DB round-trip on `mark_attempts`). **Not verified:** an actual signed-in
+  click-through of `/mark/{levelId}/part/{part}/` in a browser — that needs a real
+  Clerk sign-in (password or Google/Microsoft OAuth), and creating an account /
+  entering a password isn't something I'll do even against a throwaway dev
+  instance. **You'll need to click through this one yourself**: visit
+  `/join/`, invite your own email, accept the invite, then open
+  `/mark/y3-lc/part/1/` and try a photo end to end.
+
+- [x] **Phase 4 — QR pairing relay** (was Phase 3)
+  Reused Phase 3's existing `/mark/{levelId}/part/{part}/` route (per the note left
+  there) rather than introducing a separate `/mark/{code}/` resolver — the QR just
+  points at the same route plus `?pair={code}`. `netlify/functions/create-pairing.mts`
+  (no auth — free, no PII) mints a 6-char code (unambiguous alphabet, no 0/O/1/I/L)
+  in Netlify Blobs (`pairing-codes` store), 10-minute app-level expiry, small retry
+  loop on collision. `get-pairing.mts` is what desktop will poll. `mark-answers.mts`
+  now accepts an optional `pairingCode` and best-effort writes its result to that
+  code's record (mirrors `recordAttempt`'s best-effort pattern) after verifying
+  levelId/part match and the code hasn't expired. `Mark.tsx` reads `?pair=` from the
+  URL and passes it through on submit. Added `@netlify/blobs` as a dependency.
+  *Build at: default model, high effort.* Trickiest architectural piece — code
+  entropy/collision avoidance, expiry, polling protocol, concurrency.
+
+  **Verified:** `bun run typecheck` and `bun run build` clean; `netlify dev`
+  smoke-tested directly — `create-pairing` returns a code, `get-pairing` correctly
+  reports `pending` for a fresh code and `not_found` for an unknown one, confirmed
+  the blob actually persists under `.netlify/blobs-serve` (gitignored, local-only).
+  `mark-answers` still 401s without a Clerk session as before (unaffected by the
+  pairing changes). **Not verified:** the `completePairing` write path itself
+  (needs a real signed-in photo submission, same limitation as Phase 3 — not
+  something to fake even against a dev instance) and no QR/polling UI exists yet
+  to click through — both belong to Phase 5.
+
+- [ ] **Phase 5 — Desktop integration** (was Phase 4)
+  Wire into the actual product: "Mark my answers" entry point on the part player, the
+  QR/code display, polling + result rendering, plus the plain "or upload directly"
+  fallback input on the same screen.
+  *Build at: default model, medium-high effort.* Design-system-consistent UI work,
+  same bar as the header/water-level polish already done.
+
+- [ ] **Phase 6 — Polish (optional, defer freely)** (was Phase 5, trimmed)
+  If handwriting proves messy in testing, a low-confidence retry path escalating
+  just those words to Sonnet 5. (The abuse-guard item that used to live here is
+  already covered by Phase 2's login requirement.)
+  *Build at: default model, medium effort.* Lower stakes, can sit indefinitely without
+  blocking anything.
+
+## Reference: domain registrar
+
+Not blocking any phase above — do whenever. Recommendation: **Cloudflare
+Registrar** over Amazon Route 53 (bundles in a $0.50/mo hosted-zone charge even
+unused, mixes billing into AWS) or Netlify's own domain purchase flow (not
+competitively priced). Cloudflare sells at wholesale cost with no renewal
+markup; Netlify stays the host, DNS just points at it.
+
+## Reference: cost comparison (per photo, image + prompt + ~20-word output)
+
+| Model | Tier / cap | Cost/photo |
+|---|---|---|
+| **Haiku 4.5** (chosen) | standard, 1568 tok | ~$0.003 |
+| Sonnet 5 | high-res, 4784 tok | ~$0.02–0.03 |
+| Opus 5 | high-res, 4784 tok | ~$0.03–0.04 |

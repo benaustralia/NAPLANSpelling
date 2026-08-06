@@ -30,10 +30,15 @@ export function Landing() {
             <Button asChild size="xl" className="w-full">
               <a href="/y9-lc/">Year 9</a>
             </Button>
-            <Button asChild size="xl" className="w-full">
+          </div>
+          <p className="mt-6 text-xs font-medium tracking-widest uppercase text-muted-foreground">
+            Beyond Year 9 — for strong spellers
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-3">
+            <Button asChild size="xl" variant="outline" className="w-full border-primary/30 text-foreground hover:border-primary/50">
               <a href="/difficult-lc/">Difficult</a>
             </Button>
-            <Button asChild size="xl" className="w-full">
+            <Button asChild size="xl" variant="outline" className="w-full border-primary/30 text-foreground hover:border-primary/50">
               <a href="/challenging-lc/">Challenging</a>
             </Button>
           </div>

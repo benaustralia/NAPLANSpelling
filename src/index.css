@@ -97,6 +97,13 @@
   }
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll-thumb-black {
   scrollbar-width: thin;
   scrollbar-color: #000 transparent;

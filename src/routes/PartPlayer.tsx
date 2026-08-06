@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, FileDown, Pause, Play, SkipBack, SkipForward
 import { Shell } from '@/components/Shell';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CircularProgress } from '@/components/ui/circular-progress';
 import { Progress } from '@/components/ui/progress';
+import { WaterLevel } from '@/components/ui/water-level';
 import { getLevel, type LevelId } from '@/levels';
 import { formatDuration } from '@/lib/format';
 
@@ -48,6 +48,7 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
   const questionStarts = partInfo.questionStarts;
   const totalQuestions = questionStarts?.length ?? words.length;
   const hasNav = questionStarts != null && questionStarts.length === words.length;
+  const totalDuration = partInfo.duration ?? (audio && Number.isFinite(audio.duration) ? audio.duration : null);
 
   const currentIdx = findCurrentIdx(questionStarts, time);
   const nextStart = hasNav && currentIdx < questionStarts.length - 1 ? questionStarts[currentIdx + 1] : null;
@@ -136,17 +137,23 @@ export function PartPlayer({ levelId, part }: { levelId: LevelId; part: number }
                       <span className="tabular-nums font-semibold text-foreground">{partInfo.start + currentIdx}</span>
                       {' '}of {partInfo.start + totalQuestions - 1}
                     </>
-                  ) : <>{wordRange}</>}
+                  ) : totalDuration != null ? (
+                    <><span className="tabular-nums font-semibold text-foreground">{formatDuration(time)}</span>{' '}of {formatDuration(totalDuration)}</>
+                  ) : (
+                    <>{wordRange}</>
+                  )}
                 </p>
-                <CircularProgress
+                <WaterLevel
                   value={gapProgress}
-                  size={20}
-                  strokeWidth={3}
                   aria-hidden
                   className={`transition-opacity duration-200 ${inGap ? 'opacity-100' : 'opacity-0'}`}
                 />
               </div>
-              {hasNav && <Progress className="mt-3 mx-auto max-w-md" value={((currentIdx + 1) / totalQuestions) * 100} aria-hidden />}
+              {hasNav ? (
+                <Progress className="mt-3 mx-auto max-w-md" value={((currentIdx + 1) / totalQuestions) * 100} aria-hidden />
+              ) : totalDuration != null ? (
+                <Progress className="mt-3 mx-auto max-w-md" value={Math.min(100, (time / totalDuration) * 100)} aria-hidden />
+              ) : null}
             </div>
 
             <audio ref={setAudio} preload="none" src={audioSrc}>
