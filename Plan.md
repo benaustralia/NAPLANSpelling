@@ -208,15 +208,36 @@ phase boundaries. Build one, stop, review, move on.
       (outlook.com/hotmail.com/Xbox/Skype) are unaffected. Not pursued now
       since it's a bigger side quest (business verification); revisit only
       if a family actually hits it.
-    - [ ] **Production publishable/secret keys not yet swapped into
-      Netlify** — the live site is still running against the Development
-      Clerk instance's keys. Don't swap until OAuth is configured (Production
-      Google/Microsoft sign-in won't work without it, and email/password
-      still works fine on Development in the meantime so there's no rush).
+    - [x] **Production publishable/secret keys swapped into Netlify**
+      (2026-08-06). `VITE_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` set
+      via `netlify env:set` — publishable key pasted directly (not
+      sensitive), secret key copied from Clerk's dashboard clipboard-copy
+      button straight into `pbpaste | netlify env:set ... --force`.
+      **Incident, self-corrected same session**: the first `netlify
+      env:set` call echoed the secret key's value back into its own
+      confirmation output (unanticipated CLI behavior — no `--secret`/quiet
+      flag suppresses this), putting a live `sk_live_` value into the
+      session transcript. Rotated immediately: created a new Clerk
+      Production secret key ("Netlify rotated"), re-ran `netlify env:set`
+      with output redirected to `/dev/null` this time, confirmed via
+      Clerk's "Used 2m ago" timestamp that the new key was the one actually
+      picked up, then deleted the originally-exposed key (Clerk confirmed
+      it had "never been used" before deletion). Takeaway for future secret
+      handling: `netlify env:set <key> "$(pbpaste)"` alone is **not**
+      transcript-safe — always append `> /dev/null 2>&1` (or equivalent)
+      when the value is sensitive. Pushed the pending commit
+      (`0cbed7e`) to trigger a real deploy so the build-time
+      `VITE_CLERK_PUBLISHABLE_KEY` actually took effect; confirmed via the
+      deployed JS bundle (`/assets/auth-*.js`) that it now embeds the
+      `pk_live_...` Production key, not the old `pk_test_...` Development
+      one. Site is live on Production Clerk as of this deploy.
     - [ ] **Restricted mode + re-invite the 25 families under Production** —
-      not started. Production has its own separate user/invite list from
-      Development; nobody currently invited under Development carries over
-      automatically.
+      not started (deliberately deferred past the key swap, per explicit
+      call to swap now/invite after). Production has its own separate
+      user/invite list from Development — nobody currently invited under
+      Development carries over automatically, by any sign-in method, so
+      no one can actually sign in yet until they're re-invited. Next
+      actionable step in this phase.
 
 - [x] **Phase 3 — Mobile capture page** (was Phase 2)
   New route `/mark/{levelId}/part/{part}/` (chosen over a literal `/mark/{code}/` —
@@ -324,6 +345,62 @@ phase boundaries. Build one, stop, review, move on.
   session. **Not verified:** an actual low-confidence photo triggering the
   Sonnet retry end-to-end — that needs a real messy-handwriting photo through
   the signed-in flow, same limitation as the phases above.
+
+- [x] **Phase 7 — Post-launch fixes and additions (2026-08-06)**
+
+  **Bug: QR pairing code showed "That code expired" almost immediately.**
+  Root cause: `pairingStore()` (`_shared.mts`) called `getStore('pairing-codes')`
+  with `@netlify/blobs`'s default **eventual** consistency. In production, a
+  fresh code's first read (the desktop panel's first `get-pairing` poll, often
+  within ~2s of `create-pairing`'s write) could race the write and come back
+  `not_found` — which the client correctly treats as expired given that
+  response. Confirmed via direct `curl` against the live functions (`not_found`
+  for a code that `netlify blobs:list` later showed did exist) and by ruling
+  out `netlify dev` locally (works fine there — local Blobs emulation is
+  already consistent, so this class of bug can only be caught against the
+  deployed site). Fixed by passing `{ consistency: 'strong' }` to `getStore()`.
+
+  **Bilingual `/join/` onboarding.** Added `/join/zh/` (Simplified Chinese)
+  alongside the existing English `/join/`, both rendered by one parameterized
+  `JoinPage` component in `src/routes/Join.tsx` sharing the same form/submit
+  logic — only copy differs. Each page sets `<html lang>` while mounted and
+  links to the other language. Copy updated to explicitly welcome students and
+  invite them to refer friends.
+
+  **Rebrand:** "NAPLAN Spelling" → "NAPLAN Style Spelling" in the header
+  wordmark (`Shell.tsx`), `index.html` `<title>`/`og:title`, and the `/join/`
+  copy (both languages). Internal identifiers (repo name, `package.json`
+  name, the `naplan-spelling` Netlify site slug/URL) were deliberately left
+  alone — out of scope, much bigger blast radius than a display-name change.
+
+  **Teacher roster dashboard** (new, not in the original photo-marking plan
+  above — added once Ben asked whether he'd be able to track which students
+  had scanned what). New route `/admin/`, gated on a small `ADMIN_EMAILS`
+  allowlist env var (not a Clerk role/org — there's exactly one admin) checked
+  server-side in the new `get-admin-roster.mts` function. Shows every invited
+  student (from Clerk's user list) cross-referenced with their `mark_attempts`
+  history (from Neon) — name, email, invited/last-active dates, and a
+  level/part/score list per scan. Student name now flows through durably:
+  `request-invite.mts` passes `studentName` as invitation `publicMetadata`,
+  which Clerk copies onto the resulting `User.publicMetadata` on signup — no
+  new mapping table needed, matching the existing minimal-schema philosophy.
+  `ADMIN_EMAILS=bahinton@gmail.com` set in Netlify. Five fake `mark_attempts`
+  rows seeded directly in Neon for Ben's own account (`bahinton@gmail.com`,
+  which he'd already signed into on Production while testing) so the roster
+  has something to show — delete these (`delete from mark_attempts where
+  user_id = 'user_3HXfx8rIGhWwW7XXmeTMehQuBzI' and created_at > '2026-08-06'`,
+  or just the specific rows) once real students start scanning for real.
+
+  **Verified:** `bun run typecheck` (via `tsc -b`) and `bun run build` clean.
+  `netlify/functions/*.mts` isn't covered by either — that's a pre-existing
+  gap, not something introduced here — so the new/changed functions
+  (`get-admin-roster.mts`, `_shared.mts`, `request-invite.mts`) were also
+  typechecked standalone against a config matching the deployed runtime
+  (ES2022/ESNext/bundler/strict/node types). Both `/join/` pages
+  browser-tested (Playwright) rendering correctly with zero console errors.
+  **Not yet verified at push time:** the strong-consistency QR fix and the
+  admin roster's actual on-screen rendering — both need a live retest after
+  this deploy goes out.
 
 ## Reference: domain registrar
 

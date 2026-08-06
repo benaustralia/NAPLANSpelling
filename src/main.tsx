@@ -10,7 +10,9 @@ const PartPlayer = lazy(() => import('@/routes/PartPlayer').then((m) => ({ defau
 const PartPrintable = lazy(() => import('@/routes/PartPrintable').then((m) => ({ default: m.PartPrintable })));
 const About = lazy(() => import('@/routes/About').then((m) => ({ default: m.About })));
 const Progress = lazy(() => import('@/routes/Progress').then((m) => ({ default: m.Progress })));
+const Admin = lazy(() => import('@/routes/Admin').then((m) => ({ default: m.Admin })));
 const Join = lazy(() => import('@/routes/Join').then((m) => ({ default: m.Join })));
+const JoinZh = lazy(() => import('@/routes/Join').then((m) => ({ default: m.JoinZh })));
 const Mark = lazy(() => import('@/routes/Mark').then((m) => ({ default: m.Mark })));
 const NotFound = lazy(() => import('@/routes/NotFound').then((m) => ({ default: m.NotFound })));
 
@@ -20,7 +22,9 @@ function App() {
   if (path === '/' || path === '') return <Landing />;
   if (path === '/about') return <About />;
   if (path === '/progress') return <Progress />;
+  if (path === '/admin') return <Admin />;
   if (path === '/join') return <Join />;
+  if (path === '/join/zh') return <JoinZh />;
 
   for (const { id, data } of ALL_LEVELS) {
     if (path === `/${id}`) return <ListOverview levelId={id} />;

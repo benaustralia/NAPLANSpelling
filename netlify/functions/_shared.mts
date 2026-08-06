@@ -102,8 +102,14 @@ type PairingRecord = {
   result?: unknown;
 };
 
+// Strong consistency: a code is written by create-pairing and almost
+// immediately read back by the desktop panel's first poll (and by
+// mark-answers/completePairing from the phone). Blobs defaults to eventual
+// consistency, which was long enough in production for a fresh code's first
+// read to race the write and come back not_found — the client (correctly,
+// given that response) treated it as expired within seconds of creation.
 function pairingStore() {
-  return getStore('pairing-codes');
+  return getStore('pairing-codes', { consistency: 'strong' });
 }
 
 function randomCode(): string {
@@ -176,4 +182,34 @@ export async function listAttempts(userId: string): Promise<Attempt[] | null> {
     limit 200
   `;
   return rows as Attempt[];
+}
+
+export type AttemptWithUser = Attempt & { user_id: string };
+
+// Admin roster view — every attempt across every student, joined against
+// Clerk user records in get-admin-roster.mts. Small dataset (a few dozen
+// invited students), so one unfiltered query is plenty; no pagination.
+export async function listAllAttempts(): Promise<AttemptWithUser[] | null> {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) return null;
+  const sql = neon(connectionString);
+  const rows = await sql`
+    select user_id, level_id, part, score, total, created_at
+    from mark_attempts
+    order by created_at desc
+    limit 5000
+  `;
+  return rows as AttemptWithUser[];
+}
+
+// Server-side allowlist for the teacher-only roster view — a comma-separated
+// env var, not a Clerk role/organization, since there's exactly one admin
+// (the site owner) and no plan to grow past that.
+export function isAdminEmail(email: string | null): boolean {
+  if (!email) return false;
+  const allowlist = (process.env.ADMIN_EMAILS ?? '')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  return allowlist.includes(email.trim().toLowerCase());
 }

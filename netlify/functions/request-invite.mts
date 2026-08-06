@@ -46,7 +46,14 @@ async function handler(req: Request): Promise<Response> {
   }
 
   try {
-    await clerkClient.invitations.createInvitation({ emailAddress: email, notify: true });
+    await clerkClient.invitations.createInvitation({
+      emailAddress: email,
+      notify: true,
+      // Copied onto the resulting User's publicMetadata when the invite is
+      // accepted — this is how the admin roster (get-admin-roster.mts)
+      // knows a student's name without a separate mapping table.
+      publicMetadata: studentName ? { studentName } : undefined,
+    });
   } catch (err) {
     if (isClerkAPIResponseError(err)) {
       // Most likely "already invited" / "already a user" — that's a fine

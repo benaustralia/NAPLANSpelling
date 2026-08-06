@@ -37,7 +37,7 @@ export function Shell({ children }: { children: ReactNode }) {
             href="/"
             className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground shrink-0"
           >
-            NAPLAN <span className="text-primary">Spelling</span>
+            NAPLAN Style <span className="text-primary">Spelling</span>
           </a>
           <nav className="flex items-center gap-4 overflow-x-auto no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0 sm:overflow-visible">
             <div className="flex items-center gap-4 shrink-0">
