@@ -244,7 +244,7 @@ Rules:
     return { index: w.index, word: w.word, transcribed: t, correct };
   });
 
-  await recordAttempt({ userId, levelId, part, score, total: n });
+  await recordAttempt({ userId, levelId, part, score, total: n, results });
 
   const payload = { levelId, part, total: n, score, results };
 

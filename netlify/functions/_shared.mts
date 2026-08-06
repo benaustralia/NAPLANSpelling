@@ -36,14 +36,15 @@ export async function recordAttempt(params: {
   part: number;
   score: number;
   total: number;
+  results: WordResult[];
 }): Promise<void> {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) return;
   try {
     const sql = neon(connectionString);
     await sql`
-      insert into mark_attempts (user_id, level_id, part, score, total)
-      values (${params.userId}, ${params.levelId}, ${params.part}, ${params.score}, ${params.total})
+      insert into mark_attempts (user_id, level_id, part, score, total, results)
+      values (${params.userId}, ${params.levelId}, ${params.part}, ${params.score}, ${params.total}, ${JSON.stringify(params.results)}::jsonb)
     `;
   } catch (err) {
     console.error('recordAttempt failed:', err);
@@ -78,11 +79,14 @@ export async function notifyOwner(subject: string, text: string): Promise<void> 
   }
 }
 
+export type WordResult = { index: number; word: string; transcribed: string | null; correct: boolean };
+
 export type Attempt = {
   level_id: string;
   part: number;
   score: number;
   total: number;
+  results: WordResult[] | null;
   created_at: string;
 };
 
@@ -175,7 +179,7 @@ export async function listAttempts(userId: string): Promise<Attempt[] | null> {
   if (!connectionString) return null;
   const sql = neon(connectionString);
   const rows = await sql`
-    select level_id, part, score, total, created_at
+    select level_id, part, score, total, results, created_at
     from mark_attempts
     where user_id = ${userId}
     order by created_at desc
@@ -194,7 +198,7 @@ export async function listAllAttempts(): Promise<AttemptWithUser[] | null> {
   if (!connectionString) return null;
   const sql = neon(connectionString);
   const rows = await sql`
-    select user_id, level_id, part, score, total, created_at
+    select user_id, level_id, part, score, total, results, created_at
     from mark_attempts
     order by created_at desc
     limit 5000

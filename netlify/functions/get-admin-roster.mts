@@ -1,9 +1,16 @@
 // Teacher-only roster: every invited student, cross-referenced with their
 // mark_attempts history. Gated on ADMIN_EMAILS (see _shared.mts isAdminEmail) —
 // there's exactly one admin (the site owner), not a general permissions system.
-import { getClerkClient, getUserId, isAdminEmail, jsonResponse, listAllAttempts } from './_shared.mts';
+import { getClerkClient, getUserId, isAdminEmail, jsonResponse, listAllAttempts, type WordResult } from './_shared.mts';
 
-type RosterAttempt = { levelId: string; part: number; score: number; total: number; createdAt: string };
+type RosterAttempt = {
+  levelId: string;
+  part: number;
+  score: number;
+  total: number;
+  results: WordResult[] | null;
+  createdAt: string;
+};
 type RosterEntry = {
   userId: string;
   name: string;
@@ -44,7 +51,14 @@ async function handler(req: Request): Promise<Response> {
   const attemptsByUser = new Map<string, RosterAttempt[]>();
   for (const a of attempts) {
     const list = attemptsByUser.get(a.user_id) ?? [];
-    list.push({ levelId: a.level_id, part: a.part, score: a.score, total: a.total, createdAt: a.created_at });
+    list.push({
+      levelId: a.level_id,
+      part: a.part,
+      score: a.score,
+      total: a.total,
+      results: a.results,
+      createdAt: a.created_at,
+    });
     attemptsByUser.set(a.user_id, list);
   }
 

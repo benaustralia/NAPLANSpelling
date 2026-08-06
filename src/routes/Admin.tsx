@@ -6,7 +6,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { AUTH_ENABLED } from '@/lib/auth';
 import { getYearLabel, type LevelId } from '@/levels';
 
-type RosterAttempt = { levelId: LevelId; part: number; score: number; total: number; createdAt: string };
+type WordResult = { index: number; word: string; transcribed: string | null; correct: boolean };
+type RosterAttempt = {
+  levelId: LevelId;
+  part: number;
+  score: number;
+  total: number;
+  results: WordResult[] | null;
+  createdAt: string;
+};
 type RosterEntry = {
   userId: string;
   name: string;
@@ -37,22 +45,32 @@ function StudentCard({ student }: { student: RosterEntry }) {
         </p>
         {student.attempts.length > 0 && (
           <div className="mt-3 border-t border-border/70 pt-3">
-            {student.attempts.map((a, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between py-1.5 text-sm border-b border-border/50 last:border-0"
-              >
-                <span className="text-foreground">
-                  {getYearLabel(a.levelId)} — Part {a.part}
-                </span>
-                <span className="flex items-center gap-3">
-                  <span className="text-muted-foreground">{formatDate(a.createdAt)}</span>
-                  <span className="tabular-nums font-semibold text-foreground">
-                    {a.score}/{a.total}
-                  </span>
-                </span>
-              </div>
-            ))}
+            {student.attempts.map((a, i) => {
+              const missed = a.results?.filter((r) => !r.correct) ?? [];
+              return (
+                <div key={i} className="py-1.5 border-b border-border/50 last:border-0">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-foreground">
+                      {getYearLabel(a.levelId)} — Part {a.part}
+                    </span>
+                    <span className="flex items-center gap-3">
+                      <span className="text-muted-foreground">{formatDate(a.createdAt)}</span>
+                      <span className="tabular-nums font-semibold text-foreground">
+                        {a.score}/{a.total}
+                      </span>
+                    </span>
+                  </div>
+                  {missed.length > 0 && (
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      Missed: {missed.map((m) => `${m.word}${m.transcribed ? ` (wrote "${m.transcribed}")` : ' (blank)'}`).join(', ')}
+                    </p>
+                  )}
+                  {a.results === null && a.score < a.total && (
+                    <p className="mt-0.5 text-xs text-muted-foreground">No per-word detail for this attempt.</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         )}
       </CardContent>

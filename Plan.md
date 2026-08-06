@@ -388,8 +388,25 @@ phase boundaries. Build one, stop, review, move on.
   rows seeded directly in Neon for Ben's own account (`bahinton@gmail.com`,
   which he'd already signed into on Production while testing) so the roster
   has something to show — delete these (`delete from mark_attempts where
-  user_id = 'user_3HXfx8rIGhWwW7XXmeTMehQuBzI' and created_at > '2026-08-06'`,
-  or just the specific rows) once real students start scanning for real.
+  user_id = 'user_3HXfx8rIGhWwW7XXmeTMehQuBzI'`, all rows for that user are
+  fake right now) once real students start scanning for real.
+
+  **Follow-up same day: per-word "what did they get wrong" detail.** The
+  roster originally showed only a score — Ben asked for the actual missed
+  words. The per-word breakdown (`{ index, word, transcribed, correct }`)
+  already existed in memory at scoring time in `mark-answers.mts` (it's what
+  `MarkResult.tsx` shows the student) but was never persisted. Added a
+  nullable `results jsonb` column to `mark_attempts` (`db/schema.sql` updated
+  with both the fresh-install `create table` shape and an idempotent `alter
+  table ... add column if not exists` for the already-live database — ran
+  the alter directly against Neon). `recordAttempt`/`listAttempts`/
+  `listAllAttempts` (`_shared.mts`) and `get-admin-roster.mts` now carry
+  `results` through; `Admin.tsx` shows a "Missed: word (wrote "x")" line
+  under any attempt with misses. Old rows before this column existed (or any
+  future row where the write silently fails) have `results: null` — handled
+  as "No per-word detail for this attempt" rather than crashing. Re-seeded
+  the 5 fake rows above with realistic per-word results so the feature has
+  something to show on the roster.
 
   **Verified:** `bun run typecheck` (via `tsc -b`) and `bun run build` clean.
   `netlify/functions/*.mts` isn't covered by either — that's a pre-existing
