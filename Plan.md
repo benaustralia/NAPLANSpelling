@@ -160,20 +160,54 @@ phase boundaries. Build one, stop, review, move on.
       see Clerk dashboard → Configure → Domains for exact current values if
       re-verifying). SSL certs for the Frontend API and Account Portal were
       issuing as of 2026-08-06 (Clerk's own estimate: minutes, up to 24h).
-    - [ ] **Google OAuth production credentials** — not started. Needs a
-      Google Cloud Console OAuth consent screen (External, default
-      openid/email/profile scopes, no verification review needed) + an OAuth
-      2.0 Web application Client ID with Authorized Redirect URI exactly
-      `https://clerk.spelling.naplanstyle.com/v1/oauth_callback`. Paste the
-      resulting Client ID + Secret directly into Clerk (Configure → SSO
-      connections → Google) — **do this in your own browser, not by relaying
-      the Client Secret through Claude in chat** (same secrets-hygiene reason
-      as the Anthropic/Clerk API key rotation earlier: chat transcripts
-      persist).
-    - [ ] **Microsoft OAuth production credentials** — not started. Same
-      pattern, via Azure/Entra ID app registration instead of Google Cloud
-      Console. Redirect URI will be shown on Clerk's Microsoft SSO connection
-      page once you're there (same format, different provider).
+    - [x] **Google OAuth production credentials** — done (2026-08-06), via
+      Claude in Chrome browser automation (Ben's explicit call — the
+      "don't relay secrets through chat" caution below was written before
+      that option was on the table; automation still put the Client Secret
+      through the tool-result transcript once, unavoidable when copy-paste
+      between two browser tabs is screenshot-driven). New GCP project
+      `naplan-spelling` (org: none, billing: Main Billing), OAuth consent
+      screen created (External audience, support email bahinton@gmail.com),
+      OAuth 2.0 Web application Client ID "Clerk Production" created with
+      Authorized Redirect URI `https://clerk.spelling.naplanstyle.com/v1/oauth_callback`
+      (verified exact match against what Clerk's own Google SSO page
+      expects). Client ID + Secret pasted into Clerk Production → Configure →
+      SSO connections → Google via clipboard copy/paste (not retyped/echoed
+      in chat) — connection now shows **Enabled**. Consent screen's
+      publishing status was flipped from default "Testing" (100-user cap,
+      sign-in restricted to explicitly added test users) to **"In
+      production"** — required for the 25 families to sign in without being
+      added as test users individually; no Google verification review was
+      needed since only default openid/email/profile scopes are requested.
+    - [x] **Microsoft OAuth production credentials** — done (2026-08-06),
+      same automation pattern as Google above. Ben didn't have an existing
+      Azure account — signed up free with a personal Microsoft account
+      (`freyamedia@outlook.com`), which auto-provisions a free default Entra
+      ID tenant with no subscription/billing needed (App registrations are
+      part of the Entra ID Free tier). App registration "NAPLAN Spelling"
+      created in Azure Portal (`portal.azure.com`) under that default
+      directory: **Web** platform, redirect URI
+      `https://clerk.spelling.naplanstyle.com/v1/oauth_callback` (matched
+      exactly against what Clerk's Microsoft SSO page expects — same URI as
+      Google, just a different provider), account type **"Any Entra ID
+      Tenant + Personal Microsoft accounts"** (multitenant + personal, so
+      any student can sign in — not limited to this one directory).
+      Application (client) ID `c43f0454-468a-46df-8e6f-0f7dc8046eb9`. Client
+      secret created (description "Clerk Production", 24-month max expiry →
+      **2028-08-05** — note this in a calendar/reminder somewhere, Microsoft
+      client secrets don't auto-renew and Clerk's own UI flags this).
+      Client ID + secret pasted into Clerk Production → Configure → SSO
+      connections → Microsoft (secret via clipboard copy/paste, not
+      retyped; Client ID typed directly since it's not sensitive) —
+      connection now shows **Enabled**. **Known caveat, not fixed**: Azure
+      shows "End users cannot grant consent to newly registered multitenant
+      apps without verified publishers" — this can block sign-in for users
+      on *organizational* Microsoft accounts (school/work Microsoft 365
+      tenants with strict admin consent policies) until the app's publisher
+      is verified via Microsoft Partner Network. Personal Microsoft accounts
+      (outlook.com/hotmail.com/Xbox/Skype) are unaffected. Not pursued now
+      since it's a bigger side quest (business verification); revisit only
+      if a family actually hits it.
     - [ ] **Production publishable/secret keys not yet swapped into
       Netlify** — the live site is still running against the Development
       Clerk instance's keys. Don't swap until OAuth is configured (Production
