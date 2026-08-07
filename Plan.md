@@ -231,13 +231,20 @@ phase boundaries. Build one, stop, review, move on.
       deployed JS bundle (`/assets/auth-*.js`) that it now embeds the
       `pk_live_...` Production key, not the old `pk_test_...` Development
       one. Site is live on Production Clerk as of this deploy.
-    - [ ] **Restricted mode + re-invite the 25 families under Production** —
-      not started (deliberately deferred past the key swap, per explicit
-      call to swap now/invite after). Production has its own separate
-      user/invite list from Development — nobody currently invited under
-      Development carries over automatically, by any sign-in method, so
-      no one can actually sign in yet until they're re-invited. Next
-      actionable step in this phase.
+    - [x] **Restricted mode confirmed on for Production** (checked
+      2026-08-06 in Clerk's dashboard — it carried over from being cloned
+      off Development, sign-up is disabled site-wide, invite/manual-create
+      only).
+    - [ ] **Re-invite/onboard the 25 families under Production** — not
+      started. Production has its own separate user list from Development;
+      nobody currently invited under Development carries over automatically,
+      by any sign-in method. The `/join/` self-service page is live and
+      bilingual (`/join/` English, `/join/zh/` Simplified Chinese, added
+      2026-08-06) — the only remaining step is actually sending that link to
+      the 25 families, which is on Ben, not something Claude can do (no
+      contact info, and it's an outbound comms action). Only Ben himself
+      (`bahinton@gmail.com`) is signed in under Production so far, from
+      testing.
 
 - [x] **Phase 3 — Mobile capture page** (was Phase 2)
   New route `/mark/{levelId}/part/{part}/` (chosen over a literal `/mark/{code}/` —
