@@ -228,8 +228,15 @@ bun run qrcodes       # regenerates QR codes for printable hand-out
 Deploys to Netlify on push to `main` (see `netlify.toml` for the build
 command/publish dir). The public URL is `https://spelling.naplanstyle.com/`
 (a subdomain of the "NAPLAN Style" umbrella site at naplanstyle.com — see
-"Custom domain" below), with `https://naplan-spelling.netlify.app/` still
-live and serving directly as a fallback (no redirect between the two).
+"Custom domain" below). `https://naplan-spelling.netlify.app/` 301-redirects
+to the custom domain (see `netlify.toml`, added 2026-08-09) — old printed
+QR codes/PDFs referencing the netlify.app URL still work since the redirect
+preserves the path. This wasn't always true: the netlify.app URL used to
+serve directly with no redirect, which was harmless while Clerk ran on its
+Development instance but started blank-screening Clerk-gated features (e.g.
+"Mark my answers") once Clerk was promoted to Production, because Clerk
+Production keys are domain-locked to `spelling.naplanstyle.com` and reject
+requests from any other origin.
 
 **Repo linkage (as of 2026-08-05)**: the Netlify site (`naplan-spelling`) is
 linked to `github.com/benaustralia/NAPLANSpelling` via the Netlify GitHub

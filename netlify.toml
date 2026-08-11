@@ -9,6 +9,12 @@
   directory = "netlify/functions"
 
 [[redirects]]
+  from = "https://naplan-spelling.netlify.app/*"
+  to = "https://spelling.naplanstyle.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

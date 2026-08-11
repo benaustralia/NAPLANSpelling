@@ -137,11 +137,16 @@ phase boundaries. Build one, stop, review, move on.
       access configured for Claude in this environment; a scoped IAM key was
       discussed but judged not worth the setup friction mid-task). `SITE_URL`
       (`src/lib/site.ts`) and the QR/sitemap generator scripts now default to
-      `spelling.naplanstyle.com`; `naplan-spelling.netlify.app` keeps serving
-      directly with no redirect, so existing printed QR codes/PDFs referencing
-      it still work — see CLAUDE.md's "Custom domain" note for the full
-      troubleshooting history (stuck-certificate bug, fixed by removing and
-      re-adding the domain in Netlify).
+      `spelling.naplanstyle.com`; `naplan-spelling.netlify.app` originally kept
+      serving directly with no redirect so existing printed QR codes/PDFs
+      referencing it still worked. **Fixed 2026-08-09**: that stopped being
+      harmless once Clerk moved to Production below (domain-locked keys
+      blank-screen Clerk-gated features like "Mark my answers" on any other
+      origin), so `netlify.toml` now 301-redirects `naplan-spelling.netlify.app`
+      → `spelling.naplanstyle.com` (path-preserving, so old QR codes/PDFs still
+      resolve correctly). See CLAUDE.md's "Custom domain" note for the
+      certificate troubleshooting history (stuck-certificate bug, fixed by
+      removing and re-adding the domain in Netlify).
     - [x] **Production instance created**, cloned from Development's
       auth/theme settings. Domain entered as `spelling.naplanstyle.com` and
       explicitly set as a **"Secondary application"** (not primary) — Clerk's
