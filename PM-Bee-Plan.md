@@ -282,6 +282,23 @@ whatever's typed (even blank) as an attempt, same as the real Bee.
   convention. The results-list numbering was already correct (built from
   `current.index` from the start).
 
+## Fixed 2026-08-15 (UI parity check against the official demo)
+
+- **Input auto-focus on audio finish** — spotted by direct comparison against
+  the live `try-the-bee` demo (confirmed via `document.activeElement` in a
+  real browser tab): the real Bee's `enable_fields()` focuses the input the
+  instant a word's audio ends, so the student can start typing with no mouse
+  click. `BeeQuiz.tsx`'s `inputRef.current?.focus()` only ran on word-index
+  change (i.e. before Listen is even clicked) — once Listen was clicked,
+  focus stayed on that button through to the end of playback. Fixed by
+  calling `inputRef.current?.focus()` inside the `onTime` handler's
+  first-play branch (same place `startWordTimer()` fires), mirroring
+  `enable_fields()` exactly.
+- Confirmed via the live demo, side by side: hint panel there shows four
+  rows (Definition / Origin of word / Part of Speech / Homophone yes-no);
+  ours shows definition only — same known gap already tracked below under
+  "Later (still deferred)", not a new finding.
+
 ## Known gotchas from this session
 
 - **ElevenLabs "API key ID used as API key" error**: the value that had been
@@ -326,12 +343,10 @@ whatever's typed (even blank) as an attempt, same as the real Bee.
 - [x] Signed-in progress persistence (`record-bee-attempt.mts` → existing
       `mark_attempts` table) + anonymous analytics (`log-quiz-event.mts` → new
       `quiz_events` table)
-- [ ] **Apply the DB migration** — `db/schema.sql`'s new `quiz_events` table
-      (and its index) has NOT been run against the live Neon database yet. Both
-      write paths are best-effort/try-caught, so the site won't break without
-      it — Bee attempts just silently won't persist until it's run. Run
-      `psql "$DATABASE_URL" -f db/schema.sql` (or paste the new `quiz_events`
-      block into the Neon SQL editor) once.
+- [x] **Apply the DB migration** — ran `psql "$DATABASE_URL" -f db/schema.sql`
+      2026-08-15. `quiz_events` table + its index created; `mark_attempts`
+      objects skipped as already-existing (idempotent, as expected). Bee
+      attempts and anonymous quiz analytics now persist.
 - [~] **TTS render audio** — `ELEVENLABS_API_KEY` was fixed (see "Known
       gotchas"). One test render done and verified: `bee-green-lc` part 1 (20
       words) — `ffprobe` confirms correct duration (286s), `silencedetect`

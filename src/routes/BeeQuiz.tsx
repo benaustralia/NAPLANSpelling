@@ -122,6 +122,11 @@ export function BeeQuiz({ levelId, part }: { levelId: LevelId; part: number }) {
           firstPlayDoneRef.current = true;
           setHeardOnce(true);
           startWordTimer();
+          // Real Bee behaviour: enable_fields() focuses the input the moment
+          // the word's audio ends, so the student can start typing without
+          // touching the mouse — see PM-Bee-Plan.md's timer reverse-engineering
+          // notes. Without this, focus stays on the just-clicked Listen button.
+          inputRef.current?.focus();
         }
       }
     }
