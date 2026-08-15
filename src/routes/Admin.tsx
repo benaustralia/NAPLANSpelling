@@ -35,7 +35,7 @@ function StudentCard({ student }: { student: RosterEntry }) {
         <div className="flex items-baseline justify-between gap-4">
           <p className="font-medium text-foreground">{student.name}</p>
           <p className="text-sm text-muted-foreground">
-            {student.attempts.length} scan{student.attempts.length === 1 ? '' : 's'}
+            {student.attempts.length} attempt{student.attempts.length === 1 ? '' : 's'}
           </p>
         </div>
         {student.email && <p className="text-sm text-muted-foreground">{student.email}</p>}

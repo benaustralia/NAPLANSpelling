@@ -1,0 +1,1409 @@
+{
+  "id": "bee-green-lc",
+  "title": "Spelling Bee — Green",
+  "wordsPerPart": 20,
+  "pauseSec": 7.5,
+  "parts": [
+    {
+      "part": 1,
+      "start": 1,
+      "end": 20,
+      "audio": "/audio/bee-green-lc/part-01.mp3",
+      "duration": 286,
+      "questionStarts": [
+        0,
+        15.394,
+        30.552,
+        45.107,
+        59.752,
+        74.229,
+        88.605,
+        102.323,
+        116.946,
+        131.78,
+        145.159,
+        160.328,
+        175.133,
+        190.114,
+        202.501,
+        218.258,
+        232.227,
+        247.216,
+        262.837,
+        278.565
+      ]
+    },
+    {
+      "part": 2,
+      "start": 21,
+      "end": 40,
+      "audio": "/audio/bee-green-lc/part-02.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 3,
+      "start": 41,
+      "end": 60,
+      "audio": "/audio/bee-green-lc/part-03.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 4,
+      "start": 61,
+      "end": 80,
+      "audio": "/audio/bee-green-lc/part-04.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 5,
+      "start": 81,
+      "end": 100,
+      "audio": "/audio/bee-green-lc/part-05.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 6,
+      "start": 101,
+      "end": 120,
+      "audio": "/audio/bee-green-lc/part-06.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 7,
+      "start": 121,
+      "end": 140,
+      "audio": "/audio/bee-green-lc/part-07.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 8,
+      "start": 141,
+      "end": 160,
+      "audio": "/audio/bee-green-lc/part-08.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 9,
+      "start": 161,
+      "end": 180,
+      "audio": "/audio/bee-green-lc/part-09.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 10,
+      "start": 181,
+      "end": 200,
+      "audio": "/audio/bee-green-lc/part-10.mp3",
+      "duration": null,
+      "questionStarts": null
+    },
+    {
+      "part": 11,
+      "start": 201,
+      "end": 215,
+      "audio": "/audio/bee-green-lc/part-11.mp3",
+      "duration": null,
+      "questionStarts": null
+    }
+  ],
+  "words": [
+    {
+      "index": 1,
+      "word": "livid",
+      "definition": "extremely angry",
+      "sentence": "Mum was livid when she saw the broken window."
+    },
+    {
+      "index": 2,
+      "word": "temperature",
+      "definition": "how hot or cold something is",
+      "sentence": "The temperature dropped after the sun went down."
+    },
+    {
+      "index": 3,
+      "word": "wreath",
+      "definition": "a circle of leaves or flowers, often hung as decoration",
+      "sentence": "We hung a wreath of flowers on the door."
+    },
+    {
+      "index": 4,
+      "word": "brittle",
+      "definition": "hard but easily broken or snapped",
+      "sentence": "The dry autumn leaves were brittle underfoot."
+    },
+    {
+      "index": 5,
+      "word": "drenched",
+      "definition": "completely soaked with water",
+      "sentence": "We got drenched running home in the storm."
+    },
+    {
+      "index": 6,
+      "word": "castle",
+      "definition": "a large stone building with towers, built for a king or lord",
+      "sentence": "The king lived in a castle on the hill."
+    },
+    {
+      "index": 7,
+      "word": "nocturnal",
+      "definition": "active at night instead of during the day",
+      "sentence": "Owls are nocturnal hunters."
+    },
+    {
+      "index": 8,
+      "word": "treasure",
+      "definition": "valuable things like gold or jewels",
+      "sentence": "The pirates buried their treasure on the island."
+    },
+    {
+      "index": 9,
+      "word": "telescope",
+      "definition": "a tool used to see faraway objects like stars",
+      "sentence": "We looked at the moon through a telescope."
+    },
+    {
+      "index": 10,
+      "word": "lantern",
+      "definition": "a lamp with a case, often carried by hand",
+      "sentence": "We lit a lantern for our night walk."
+    },
+    {
+      "index": 11,
+      "word": "marathon",
+      "definition": "a very long running race",
+      "sentence": "She trained for months to run the marathon."
+    },
+    {
+      "index": 12,
+      "word": "spaghetti",
+      "definition": "long thin strips of pasta",
+      "sentence": "We twirled the spaghetti onto our forks."
+    },
+    {
+      "index": 13,
+      "word": "quaint",
+      "definition": "old-fashioned and charming",
+      "sentence": "We stayed in a quaint little cottage by the sea."
+    },
+    {
+      "index": 14,
+      "word": "hour",
+      "definition": "sixty minutes",
+      "sentence": "The movie lasted about one hour."
+    },
+    {
+      "index": 15,
+      "word": "ancient",
+      "definition": "very old, from long ago",
+      "sentence": "The museum displayed ancient pottery from Egypt."
+    },
+    {
+      "index": 16,
+      "word": "autumn",
+      "definition": "the season between summer and winter when leaves fall",
+      "sentence": "The leaves turn orange in autumn."
+    },
+    {
+      "index": 17,
+      "word": "anchor",
+      "definition": "a heavy hook that keeps a boat from drifting",
+      "sentence": "The sailors dropped the anchor to stop the boat."
+    },
+    {
+      "index": 18,
+      "word": "unicorn",
+      "definition": "a mythical horse with a single horn on its head",
+      "sentence": "The little girl drew a unicorn with a golden horn."
+    },
+    {
+      "index": 19,
+      "word": "enormous",
+      "definition": "extremely large",
+      "sentence": "An enormous wave crashed onto the shore."
+    },
+    {
+      "index": 20,
+      "word": "gnome",
+      "definition": "a small magical creature in stories, often with a pointy hat",
+      "sentence": "A little gnome statue sat in the garden."
+    },
+    {
+      "index": 21,
+      "word": "dissolve",
+      "definition": "to mix completely into a liquid",
+      "sentence": "The sugar will dissolve in warm water."
+    },
+    {
+      "index": 22,
+      "word": "rectangle",
+      "definition": "a shape with four straight sides and four right angles",
+      "sentence": "The door is shaped like a rectangle."
+    },
+    {
+      "index": 23,
+      "word": "scent",
+      "definition": "a smell, often a pleasant one",
+      "sentence": "The scent of fresh bread filled the kitchen."
+    },
+    {
+      "index": 24,
+      "word": "thunder",
+      "definition": "the loud rumbling sound that follows lightning",
+      "sentence": "A loud clap of thunder shook the windows."
+    },
+    {
+      "index": 25,
+      "word": "bushfire",
+      "definition": "an out-of-control fire burning through bush or forest",
+      "sentence": "Firefighters battled the bushfire for hours."
+    },
+    {
+      "index": 26,
+      "word": "island",
+      "definition": "a piece of land surrounded by water",
+      "sentence": "We took a boat to the island for a picnic."
+    },
+    {
+      "index": 27,
+      "word": "hammer",
+      "definition": "a tool used to hit nails",
+      "sentence": "She used a hammer to knock in the tent pegs."
+    },
+    {
+      "index": 28,
+      "word": "mansion",
+      "definition": "a very large, grand house",
+      "sentence": "A wealthy family once lived in the huge mansion."
+    },
+    {
+      "index": 29,
+      "word": "museum",
+      "definition": "a building where interesting old objects are shown",
+      "sentence": "We saw dinosaur bones at the museum."
+    },
+    {
+      "index": 30,
+      "word": "tournament",
+      "definition": "a competition with several rounds",
+      "sentence": "Our team entered the netball tournament."
+    },
+    {
+      "index": 31,
+      "word": "dictionary",
+      "definition": "a book that lists words and their meanings",
+      "sentence": "Look up the word in the dictionary."
+    },
+    {
+      "index": 32,
+      "word": "embarrassed",
+      "definition": "feeling shy or awkward in front of others",
+      "sentence": "I felt embarrassed when I tripped in front of everyone."
+    },
+    {
+      "index": 33,
+      "word": "compass",
+      "definition": "a tool that shows which direction is north",
+      "sentence": "The compass pointed straight to the north."
+    },
+    {
+      "index": 34,
+      "word": "triangle",
+      "definition": "a shape with three straight sides",
+      "sentence": "A triangle has three sides."
+    },
+    {
+      "index": 35,
+      "word": "courageous",
+      "definition": "brave, willing to face danger",
+      "sentence": "The firefighter was courageous inside the burning building."
+    },
+    {
+      "index": 36,
+      "word": "champion",
+      "definition": "the winner of a competition",
+      "sentence": "He was the champion of the school chess club."
+    },
+    {
+      "index": 37,
+      "word": "clear",
+      "definition": "easy to see through, or free from clutter",
+      "sentence": "I had to clear the table so we could eat."
+    },
+    {
+      "index": 38,
+      "word": "nervous",
+      "definition": "worried or scared about something that might happen",
+      "sentence": "I felt nervous before my speech."
+    },
+    {
+      "index": 39,
+      "word": "absurd",
+      "definition": "so silly that it doesn't make sense",
+      "sentence": "It seemed absurd to wear a coat in summer."
+    },
+    {
+      "index": 40,
+      "word": "patient",
+      "definition": "able to wait calmly without complaining",
+      "sentence": "The nurse was patient with the frightened child."
+    },
+    {
+      "index": 41,
+      "word": "parchment",
+      "definition": "a thick paper-like material once made from animal skin",
+      "sentence": "The old map was drawn on a scroll of parchment."
+    },
+    {
+      "index": 42,
+      "word": "heir",
+      "definition": "a person who will receive someone's money or title when they die",
+      "sentence": "The prince was the heir to the throne."
+    },
+    {
+      "index": 43,
+      "word": "wrench",
+      "definition": "a tool used to turn nuts and bolts",
+      "sentence": "Dad used a wrench to fix the leaking pipe."
+    },
+    {
+      "index": 44,
+      "word": "shell",
+      "definition": "the hard outer covering of an egg, nut or sea creature",
+      "sentence": "She cracked the shell of the nut."
+    },
+    {
+      "index": 45,
+      "word": "whisper",
+      "definition": "to speak very quietly",
+      "sentence": "She began to whisper so no one else would hear."
+    },
+    {
+      "index": 46,
+      "word": "scramble",
+      "definition": "to climb or move quickly and awkwardly",
+      "sentence": "We had to scramble up the rocky hill."
+    },
+    {
+      "index": 47,
+      "word": "yesterday",
+      "definition": "the day before today",
+      "sentence": "Yesterday it rained all day."
+    },
+    {
+      "index": 48,
+      "word": "drive",
+      "definition": "to control a car and make it go",
+      "sentence": "Dad was excited to drive the new car."
+    },
+    {
+      "index": 49,
+      "word": "orchard",
+      "definition": "a place where fruit trees are grown",
+      "sentence": "We picked apples in the orchard."
+    },
+    {
+      "index": 50,
+      "word": "harbour",
+      "definition": "a sheltered area of water where boats are kept safe",
+      "sentence": "Boats bobbed gently in the harbour."
+    },
+    {
+      "index": 51,
+      "word": "listen",
+      "definition": "to pay attention to a sound",
+      "sentence": "Please listen carefully to the instructions."
+    },
+    {
+      "index": 52,
+      "word": "dance",
+      "definition": "to move your body in time to music",
+      "sentence": "The beat of the music made me want to dance."
+    },
+    {
+      "index": 53,
+      "word": "valley",
+      "definition": "the low land between two hills",
+      "sentence": "The river ran through a green valley."
+    },
+    {
+      "index": 54,
+      "word": "popcorn",
+      "definition": "corn kernels that puff up into a fluffy snack when heated",
+      "sentence": "We shared a big bag of popcorn at the movies."
+    },
+    {
+      "index": 55,
+      "word": "giggle",
+      "definition": "to laugh in a light silly way",
+      "sentence": "The joke made everyone giggle."
+    },
+    {
+      "index": 56,
+      "word": "vast",
+      "definition": "extremely large in size or area",
+      "sentence": "The vast desert stretched for miles in every direction."
+    },
+    {
+      "index": 57,
+      "word": "honest",
+      "definition": "truthful and not lying or cheating",
+      "sentence": "It was honest of him to admit his mistake."
+    },
+    {
+      "index": 58,
+      "word": "wattle",
+      "definition": "an Australian tree with fluffy yellow flowers",
+      "sentence": "Bright yellow wattle bloomed along the track."
+    },
+    {
+      "index": 59,
+      "word": "recipe",
+      "definition": "a set of instructions for cooking a dish",
+      "sentence": "Grandma shared her recipe for chocolate cake."
+    },
+    {
+      "index": 60,
+      "word": "curious",
+      "definition": "eager to learn or find out about something",
+      "sentence": "The curious puppy sniffed every corner of the yard."
+    },
+    {
+      "index": 61,
+      "word": "picnic",
+      "definition": "a meal eaten outdoors, often on a rug",
+      "sentence": "We spread a blanket for our picnic in the park."
+    },
+    {
+      "index": 62,
+      "word": "gargoyle",
+      "definition": "a stone carving of a strange creature on an old building",
+      "sentence": "A stone gargoyle glared down from the cathedral roof."
+    },
+    {
+      "index": 63,
+      "word": "rhyme",
+      "definition": "words that end with the same sound",
+      "sentence": "\"Cat\" and \"hat\" rhyme with each other."
+    },
+    {
+      "index": 64,
+      "word": "wriggle",
+      "definition": "to twist and turn your body",
+      "sentence": "The puppy began to wriggle out of my arms."
+    },
+    {
+      "index": 65,
+      "word": "dolphin",
+      "definition": "a smart, friendly sea mammal that swims in pods",
+      "sentence": "A dolphin leapt out of the water beside our boat."
+    },
+    {
+      "index": 66,
+      "word": "drought",
+      "definition": "a long period with little or no rain",
+      "sentence": "The farmers were worried about the long drought."
+    },
+    {
+      "index": 67,
+      "word": "rhinoceros",
+      "definition": "a huge grey animal with a horn on its nose",
+      "sentence": "The rhinoceros has thick grey skin and a horn."
+    },
+    {
+      "index": 68,
+      "word": "wizard",
+      "definition": "a man in stories with magical powers",
+      "sentence": "The wizard waved his wand and cast a spell."
+    },
+    {
+      "index": 69,
+      "word": "reluctant",
+      "definition": "not wanting to do something",
+      "sentence": "He was reluctant to go to bed early."
+    },
+    {
+      "index": 70,
+      "word": "ingredient",
+      "definition": "one of the foods used to make a dish",
+      "sentence": "Flour is the main ingredient in bread."
+    },
+    {
+      "index": 71,
+      "word": "anxious",
+      "definition": "feeling worried or nervous",
+      "sentence": "She was anxious about her first day at school."
+    },
+    {
+      "index": 72,
+      "word": "hibernate",
+      "definition": "to sleep through the whole winter",
+      "sentence": "Bears hibernate through the cold winter months."
+    },
+    {
+      "index": 73,
+      "word": "century",
+      "definition": "a period of one hundred years",
+      "sentence": "The old bridge is more than a century old."
+    },
+    {
+      "index": 74,
+      "word": "jetty",
+      "definition": "a narrow platform sticking out into water",
+      "sentence": "We fished off the end of the jetty."
+    },
+    {
+      "index": 75,
+      "word": "zero",
+      "definition": "the number 0; nothing at all",
+      "sentence": "Ten minus ten is zero."
+    },
+    {
+      "index": 76,
+      "word": "mechanic",
+      "definition": "a person who fixes engines and machines",
+      "sentence": "The mechanic fixed the car's broken engine."
+    },
+    {
+      "index": 77,
+      "word": "diameter",
+      "definition": "the distance straight across a circle",
+      "sentence": "We measured the diameter of the circle."
+    },
+    {
+      "index": 78,
+      "word": "wetland",
+      "definition": "land that is often covered by shallow water",
+      "sentence": "The wetland was home to many frogs and birds."
+    },
+    {
+      "index": 79,
+      "word": "thumb",
+      "definition": "the short thick finger on your hand",
+      "sentence": "He gave me a thumbs up with his thumb."
+    },
+    {
+      "index": 80,
+      "word": "athlete",
+      "definition": "a person who is skilled at sport",
+      "sentence": "The athlete trained hard for the race."
+    },
+    {
+      "index": 81,
+      "word": "experiment",
+      "definition": "a test done to find something out",
+      "sentence": "Our science experiment showed how plants grow."
+    },
+    {
+      "index": 82,
+      "word": "drowsy",
+      "definition": "feeling sleepy and wanting to rest",
+      "sentence": "The warm afternoon sun made her feel drowsy."
+    },
+    {
+      "index": 83,
+      "word": "caterpillar",
+      "definition": "the wriggly larva that turns into a butterfly",
+      "sentence": "The caterpillar munched on a leaf all day."
+    },
+    {
+      "index": 84,
+      "word": "solemn",
+      "definition": "serious and not cheerful",
+      "sentence": "Everyone was solemn during the quiet ceremony."
+    },
+    {
+      "index": 85,
+      "word": "echidna",
+      "definition": "a spiky Australian animal that lays eggs",
+      "sentence": "We spotted an echidna waddling through the bush."
+    },
+    {
+      "index": 86,
+      "word": "wander",
+      "definition": "to walk around without a clear direction",
+      "sentence": "Don't wander too far from the campsite."
+    },
+    {
+      "index": 87,
+      "word": "haggard",
+      "definition": "looking tired and worn out",
+      "sentence": "After the long flight, Dad looked haggard."
+    },
+    {
+      "index": 88,
+      "word": "knuckle",
+      "definition": "a joint in your finger",
+      "sentence": "He knocked on the door with his knuckle."
+    },
+    {
+      "index": 89,
+      "word": "midnight",
+      "definition": "twelve o'clock at night",
+      "sentence": "The fireworks started at midnight."
+    },
+    {
+      "index": 90,
+      "word": "furious",
+      "definition": "extremely angry",
+      "sentence": "Dad was furious when the ball smashed the window."
+    },
+    {
+      "index": 91,
+      "word": "calendar",
+      "definition": "a chart showing the days, weeks and months",
+      "sentence": "I marked my birthday on the calendar."
+    },
+    {
+      "index": 92,
+      "word": "camouflage",
+      "definition": "colouring or patterns that help an animal hide",
+      "sentence": "The lizard's camouflage helped it hide among the leaves."
+    },
+    {
+      "index": 93,
+      "word": "warlock",
+      "definition": "a man in stories who can do magic",
+      "sentence": "In the story, the warlock cast a spell on the castle."
+    },
+    {
+      "index": 94,
+      "word": "uniform",
+      "definition": "the special clothes worn by students at a school",
+      "sentence": "Every student wears the school uniform."
+    },
+    {
+      "index": 95,
+      "word": "marvellous",
+      "definition": "wonderful",
+      "sentence": "The fireworks show was marvellous."
+    },
+    {
+      "index": 96,
+      "word": "sandwich",
+      "definition": "two slices of bread with filling in between",
+      "sentence": "I made a cheese sandwich for lunch."
+    },
+    {
+      "index": 97,
+      "word": "cautious",
+      "definition": "careful to avoid danger",
+      "sentence": "Be cautious when crossing a busy road."
+    },
+    {
+      "index": 98,
+      "word": "timid",
+      "definition": "shy and easily frightened",
+      "sentence": "The timid kitten hid under the couch."
+    },
+    {
+      "index": 99,
+      "word": "pagan",
+      "definition": "belonging to an old religion that worships many gods or nature",
+      "sentence": "The museum had a display about an old pagan festival."
+    },
+    {
+      "index": 100,
+      "word": "jealous",
+      "definition": "wanting what someone else has",
+      "sentence": "He was jealous of his friend's new bike."
+    },
+    {
+      "index": 101,
+      "word": "referee",
+      "definition": "a person who makes sure players follow the rules of a game",
+      "sentence": "The referee blew the whistle for full time."
+    },
+    {
+      "index": 102,
+      "word": "sturdy",
+      "definition": "strongly and solidly built",
+      "sentence": "The sturdy fence held back the strong wind."
+    },
+    {
+      "index": 103,
+      "word": "shiver",
+      "definition": "to shake because you are cold or scared",
+      "sentence": "I began to shiver in the cold wind."
+    },
+    {
+      "index": 104,
+      "word": "gigantic",
+      "definition": "extremely huge",
+      "sentence": "The gigantic whale swam past our boat."
+    },
+    {
+      "index": 105,
+      "word": "punctuation",
+      "definition": "marks like full stops and commas used in writing",
+      "sentence": "Remember to check your punctuation before you finish."
+    },
+    {
+      "index": 106,
+      "word": "stumble",
+      "definition": "to trip and almost fall",
+      "sentence": "He began to stumble over the loose rocks on the path."
+    },
+    {
+      "index": 107,
+      "word": "miniature",
+      "definition": "a tiny version of something",
+      "sentence": "She collected miniature toy animals."
+    },
+    {
+      "index": 108,
+      "word": "area",
+      "definition": "a particular part of a place or space",
+      "sentence": "The area around our house is full of wildlife."
+    },
+    {
+      "index": 109,
+      "word": "galore",
+      "definition": "in great numbers or amounts",
+      "sentence": "At the fair there were rides and prizes galore."
+    },
+    {
+      "index": 110,
+      "word": "tiptoe",
+      "definition": "to walk quietly on your toes",
+      "sentence": "She tiptoed past her sleeping brother."
+    },
+    {
+      "index": 111,
+      "word": "chorus",
+      "definition": "the part of a song that repeats, or a group of singers",
+      "sentence": "Everyone joined in for the chorus of the song."
+    },
+    {
+      "index": 112,
+      "word": "snag",
+      "definition": "a small problem or difficulty",
+      "sentence": "We have hit a snag with our project."
+    },
+    {
+      "index": 113,
+      "word": "horizon",
+      "definition": "the line where the sky seems to meet the land or sea",
+      "sentence": "The sun sank below the horizon."
+    },
+    {
+      "index": 114,
+      "word": "hook",
+      "definition": "a curved piece of metal or plastic for hanging or catching things",
+      "sentence": "Hang your bag on your hook, please."
+    },
+    {
+      "index": 115,
+      "word": "knot",
+      "definition": "a fastening made by tying rope or string together",
+      "sentence": "I tied a tight knot in my shoelace."
+    },
+    {
+      "index": 116,
+      "word": "weary",
+      "definition": "very tired",
+      "sentence": "The hikers were weary after their long climb."
+    },
+    {
+      "index": 117,
+      "word": "vacuum",
+      "definition": "a space with nothing in it, or a machine that sucks up dirt",
+      "sentence": "Dad used the vacuum to clean the carpet."
+    },
+    {
+      "index": 118,
+      "word": "opponent",
+      "definition": "the person or team you are competing against",
+      "sentence": "She shook hands with her opponent after the match."
+    },
+    {
+      "index": 119,
+      "word": "floret",
+      "definition": "a tiny flower, often one of many in a cluster",
+      "sentence": "She snapped a floret off the broccoli."
+    },
+    {
+      "index": 120,
+      "word": "orchestra",
+      "definition": "a large group of musicians playing together",
+      "sentence": "The orchestra played beautiful music at the concert."
+    },
+    {
+      "index": 121,
+      "word": "science",
+      "definition": "the study of how the world works",
+      "sentence": "We did a fun experiment in science class."
+    },
+    {
+      "index": 122,
+      "word": "envelope",
+      "definition": "a paper cover used to post a letter",
+      "sentence": "She sealed the letter inside an envelope."
+    },
+    {
+      "index": 123,
+      "word": "mysterious",
+      "definition": "strange and hard to explain",
+      "sentence": "A mysterious light appeared in the old house."
+    },
+    {
+      "index": 124,
+      "word": "village",
+      "definition": "a small group of houses, smaller than a town",
+      "sentence": "The tiny village had only one shop."
+    },
+    {
+      "index": 125,
+      "word": "confident",
+      "definition": "sure of yourself and your abilities",
+      "sentence": "She felt confident before the swimming race."
+    },
+    {
+      "index": 126,
+      "word": "energy",
+      "definition": "the power needed to make something work or move",
+      "sentence": "Running around the oval takes a lot of energy."
+    },
+    {
+      "index": 127,
+      "word": "magnet",
+      "definition": "an object that pulls certain metals towards it",
+      "sentence": "The magnet stuck to the fridge door."
+    },
+    {
+      "index": 128,
+      "word": "wrist",
+      "definition": "the joint that connects your hand to your arm",
+      "sentence": "She wore a bracelet on her wrist."
+    },
+    {
+      "index": 129,
+      "word": "crate",
+      "definition": "a large box used to carry or store things",
+      "sentence": "A crate of bananas was delivered today."
+    },
+    {
+      "index": 130,
+      "word": "magnificent",
+      "definition": "extremely impressive or beautiful",
+      "sentence": "The view from the mountain was magnificent."
+    },
+    {
+      "index": 131,
+      "word": "gloomy",
+      "definition": "dark and dull, or sad",
+      "sentence": "It was a gloomy grey morning with no sunshine."
+    },
+    {
+      "index": 132,
+      "word": "wrinkle",
+      "definition": "a small fold or crease in skin or fabric",
+      "sentence": "My shirt had a wrinkle after being in the bag."
+    },
+    {
+      "index": 133,
+      "word": "tomorrow",
+      "definition": "the day after today",
+      "sentence": "We are going to the beach tomorrow."
+    },
+    {
+      "index": 134,
+      "word": "bunyip",
+      "definition": "a mythical creature said to live in swamps and billabongs",
+      "sentence": "The old story warned of a bunyip in the swamp."
+    },
+    {
+      "index": 135,
+      "word": "hesitate",
+      "definition": "to pause because you are unsure",
+      "sentence": "Don't hesitate to ask for help."
+    },
+    {
+      "index": 136,
+      "word": "alphabet",
+      "definition": "the set of letters used to write a language",
+      "sentence": "There are twenty-six letters in the alphabet."
+    },
+    {
+      "index": 137,
+      "word": "jubilant",
+      "definition": "full of joy, especially after winning",
+      "sentence": "The jubilant crowd cheered when the final whistle blew."
+    },
+    {
+      "index": 138,
+      "word": "tranquil",
+      "definition": "calm and peaceful",
+      "sentence": "The lake was tranquil in the early morning light."
+    },
+    {
+      "index": 139,
+      "word": "pancake",
+      "definition": "a thin flat cake cooked in a pan",
+      "sentence": "Mum flipped the pancake in the frying pan."
+    },
+    {
+      "index": 140,
+      "word": "parcel",
+      "definition": "a package sent by post",
+      "sentence": "A parcel arrived on our doorstep this morning."
+    },
+    {
+      "index": 141,
+      "word": "talisman",
+      "definition": "an object believed to bring good luck or protect its owner",
+      "sentence": "He wore the silver charm as a talisman for good luck."
+    },
+    {
+      "index": 142,
+      "word": "platypus",
+      "definition": "a strange Australian animal with a bill like a duck",
+      "sentence": "The platypus swam along the riverbank."
+    },
+    {
+      "index": 143,
+      "word": "plentiful",
+      "definition": "available in large amounts",
+      "sentence": "Fresh fruit was plentiful at the market."
+    },
+    {
+      "index": 144,
+      "word": "cocoon",
+      "definition": "a silky case an insect makes to change into an adult",
+      "sentence": "The moth spun a cocoon on the branch."
+    },
+    {
+      "index": 145,
+      "word": "whistle",
+      "definition": "to make a high sound by blowing air through your lips",
+      "sentence": "The referee gave a sharp whistle to start the game."
+    },
+    {
+      "index": 146,
+      "word": "booklet",
+      "definition": "a small thin book",
+      "sentence": "I was handed a booklet at the information night."
+    },
+    {
+      "index": 147,
+      "word": "suspicious",
+      "definition": "feeling that something is wrong or not trustworthy",
+      "sentence": "The dog seemed suspicious of the new visitor."
+    },
+    {
+      "index": 148,
+      "word": "wary",
+      "definition": "careful because you sense possible danger",
+      "sentence": "The deer stayed wary of the approaching hikers."
+    },
+    {
+      "index": 149,
+      "word": "effigy",
+      "definition": "a model or statue made to look like a person",
+      "sentence": "The old statue was an effigy of a famous explorer."
+    },
+    {
+      "index": 150,
+      "word": "mermaid",
+      "definition": "a mythical creature, half woman and half fish",
+      "sentence": "The mermaid swam gracefully through the coral reef."
+    },
+    {
+      "index": 151,
+      "word": "kangaroo",
+      "definition": "an Australian animal that hops on strong back legs",
+      "sentence": "A kangaroo bounded across the paddock."
+    },
+    {
+      "index": 152,
+      "word": "dragon",
+      "definition": "a huge fire-breathing creature in stories",
+      "sentence": "In the story, a dragon guarded the golden egg."
+    },
+    {
+      "index": 153,
+      "word": "tremble",
+      "definition": "to shake, often from fear or cold",
+      "sentence": "Her hands began to tremble with excitement."
+    },
+    {
+      "index": 154,
+      "word": "ashamed",
+      "definition": "feeling bad about something you did",
+      "sentence": "He was ashamed after telling a lie."
+    },
+    {
+      "index": 155,
+      "word": "dessert",
+      "definition": "a sweet food eaten after a meal",
+      "sentence": "We had ice cream for dessert."
+    },
+    {
+      "index": 156,
+      "word": "billabong",
+      "definition": "a pool of water left behind when a river changes course",
+      "sentence": "We spotted a crocodile resting near the billabong."
+    },
+    {
+      "index": 157,
+      "word": "exotic",
+      "definition": "unusual and interesting because it comes from a faraway place",
+      "sentence": "The zoo has many exotic birds from South America."
+    },
+    {
+      "index": 158,
+      "word": "bewildered",
+      "definition": "very confused",
+      "sentence": "He looked bewildered when the map didn't match the street."
+    },
+    {
+      "index": 159,
+      "word": "stubborn",
+      "definition": "refusing to change your mind",
+      "sentence": "The stubborn mule refused to move."
+    },
+    {
+      "index": 160,
+      "word": "comb",
+      "definition": "a tool with teeth used to tidy your hair",
+      "sentence": "I ran a comb through my tangled hair."
+    },
+    {
+      "index": 161,
+      "word": "china",
+      "definition": "fine dishes and cups made from a hard white clay",
+      "sentence": "He packed the china plates away carefully."
+    },
+    {
+      "index": 162,
+      "word": "grateful",
+      "definition": "thankful for something",
+      "sentence": "We were grateful for the warm meal."
+    },
+    {
+      "index": 163,
+      "word": "umbrella",
+      "definition": "a folding cover that keeps off rain",
+      "sentence": "I grabbed my umbrella before the rain started."
+    },
+    {
+      "index": 164,
+      "word": "surge",
+      "definition": "a sudden powerful rush or increase",
+      "sentence": "A surge of excitement ran through the crowd."
+    },
+    {
+      "index": 165,
+      "word": "yearn",
+      "definition": "to want something very much",
+      "sentence": "She began to yearn for a holiday by the beach."
+    },
+    {
+      "index": 166,
+      "word": "outback",
+      "definition": "the remote inland areas of Australia",
+      "sentence": "We drove through the red dust of the outback."
+    },
+    {
+      "index": 167,
+      "word": "wooded",
+      "definition": "covered with trees",
+      "sentence": "A narrow path wound through the wooded hill."
+    },
+    {
+      "index": 168,
+      "word": "suburb",
+      "definition": "a residential area on the edge of a city",
+      "sentence": "We moved to a quiet suburb near the beach."
+    },
+    {
+      "index": 169,
+      "word": "evaporate",
+      "definition": "to change from a liquid into a gas",
+      "sentence": "The puddle began to evaporate in the sun."
+    },
+    {
+      "index": 170,
+      "word": "murky",
+      "definition": "dark, cloudy and hard to see through",
+      "sentence": "The pond water looked murky after the storm."
+    },
+    {
+      "index": 171,
+      "word": "collapse",
+      "definition": "to fall down suddenly",
+      "sentence": "The old tent began to collapse in the wind."
+    },
+    {
+      "index": 172,
+      "word": "kookaburra",
+      "definition": "an Australian bird known for its laughing call",
+      "sentence": "The kookaburra's laughing call woke us up."
+    },
+    {
+      "index": 173,
+      "word": "nimble",
+      "definition": "able to move quickly and lightly",
+      "sentence": "The nimble gymnast leapt across the beam."
+    },
+    {
+      "index": 174,
+      "word": "barbecue",
+      "definition": "cooking food over an open flame outdoors",
+      "sentence": "Dad cooked sausages on the barbecue."
+    },
+    {
+      "index": 175,
+      "word": "mischievous",
+      "definition": "enjoying playful tricks",
+      "sentence": "The mischievous kitten knocked things off the shelf."
+    },
+    {
+      "index": 176,
+      "word": "villain",
+      "definition": "the bad character in a story",
+      "sentence": "The villain was defeated at the end of the movie."
+    },
+    {
+      "index": 177,
+      "word": "cathedral",
+      "definition": "a very large and important church",
+      "sentence": "The cathedral had tall stained-glass windows."
+    },
+    {
+      "index": 178,
+      "word": "cottage",
+      "definition": "a small cosy house, often in the country",
+      "sentence": "The cottage had a little garden out the front."
+    },
+    {
+      "index": 179,
+      "word": "fortunate",
+      "definition": "lucky",
+      "sentence": "We were fortunate to find a park so close."
+    },
+    {
+      "index": 180,
+      "word": "predator",
+      "definition": "an animal that hunts other animals for food",
+      "sentence": "The lion is a fierce predator on the savanna."
+    },
+    {
+      "index": 181,
+      "word": "column",
+      "definition": "a tall upright post that holds up a building",
+      "sentence": "The old temple had a tall stone column."
+    },
+    {
+      "index": 182,
+      "word": "calculator",
+      "definition": "a small device used to work out sums",
+      "sentence": "I used a calculator to check my sums."
+    },
+    {
+      "index": 183,
+      "word": "fortnight",
+      "definition": "a period of two weeks",
+      "sentence": "We will visit Grandma again in a fortnight."
+    },
+    {
+      "index": 184,
+      "word": "crevice",
+      "definition": "a narrow crack or gap, especially in rock",
+      "sentence": "A small lizard darted into a crevice in the rocks."
+    },
+    {
+      "index": 185,
+      "word": "muscle",
+      "definition": "a part of your body that helps you move",
+      "sentence": "Lifting the box made his muscle ache."
+    },
+    {
+      "index": 186,
+      "word": "dreadful",
+      "definition": "very bad or unpleasant",
+      "sentence": "The weather was dreadful all weekend."
+    },
+    {
+      "index": 187,
+      "word": "alarm",
+      "definition": "a sudden feeling of fear, or a device that makes a warning sound",
+      "sentence": "I don't want to cause alarm, but the storm is about to hit us."
+    },
+    {
+      "index": 188,
+      "word": "blanket",
+      "definition": "a warm cover used on a bed",
+      "sentence": "I wrapped myself in a warm blanket."
+    },
+    {
+      "index": 189,
+      "word": "vivid",
+      "definition": "very bright, clear or detailed",
+      "sentence": "She had a vivid dream about flying."
+    },
+    {
+      "index": 190,
+      "word": "lava",
+      "definition": "hot melted rock that flows from a volcano",
+      "sentence": "The volcano erupted and lava spilled into the ocean."
+    },
+    {
+      "index": 191,
+      "word": "lofty",
+      "definition": "very tall, grand or high",
+      "sentence": "The eagle circled above the lofty mountain peak."
+    },
+    {
+      "index": 192,
+      "word": "goblin",
+      "definition": "a small, mischievous creature in stories",
+      "sentence": "A goblin hid under the bridge in the story."
+    },
+    {
+      "index": 193,
+      "word": "chemist",
+      "definition": "a shop that sells medicine, or a scientist who studies chemicals",
+      "sentence": "Mum picked up my medicine from the chemist."
+    },
+    {
+      "index": 194,
+      "word": "peculiar",
+      "definition": "strange or unusual",
+      "sentence": "There was a peculiar smell coming from the fridge."
+    },
+    {
+      "index": 195,
+      "word": "character",
+      "definition": "a person in a story, or someone's personality",
+      "sentence": "My favourite character in the book is brave and kind."
+    },
+    {
+      "index": 196,
+      "word": "microscope",
+      "definition": "a tool used to see very tiny things up close",
+      "sentence": "We examined the leaf under a microscope."
+    },
+    {
+      "index": 197,
+      "word": "decade",
+      "definition": "a period of ten years",
+      "sentence": "The house was built almost a decade ago."
+    },
+    {
+      "index": 198,
+      "word": "splendid",
+      "definition": "excellent or magnificent",
+      "sentence": "We had a splendid time at the party."
+    },
+    {
+      "index": 199,
+      "word": "flimsy",
+      "definition": "thin, weak and easily damaged",
+      "sentence": "The flimsy umbrella turned inside out in the wind."
+    },
+    {
+      "index": 200,
+      "word": "bubble",
+      "definition": "a small ball of air inside liquid",
+      "sentence": "I saw a bubble in the soapy water."
+    },
+    {
+      "index": 201,
+      "word": "midpoint",
+      "definition": "the middle point of something",
+      "sentence": "We stopped for lunch at the midpoint of our hike."
+    },
+    {
+      "index": 202,
+      "word": "immune",
+      "definition": "protected from catching a disease",
+      "sentence": "Having the vaccine made him immune to the virus."
+    },
+    {
+      "index": 203,
+      "word": "wombat",
+      "definition": "a stocky Australian animal that digs burrows",
+      "sentence": "The wombat dug a burrow under the fence."
+    },
+    {
+      "index": 204,
+      "word": "cabin",
+      "definition": "a small simple house, often made of wood",
+      "sentence": "We stayed in a wooden cabin by the lake."
+    },
+    {
+      "index": 205,
+      "word": "thesaurus",
+      "definition": "a book that lists words with similar meanings",
+      "sentence": "She used a thesaurus to find a better word."
+    },
+    {
+      "index": 206,
+      "word": "vanish",
+      "definition": "to disappear suddenly",
+      "sentence": "The magician made the coin vanish."
+    },
+    {
+      "index": 207,
+      "word": "earthquake",
+      "definition": "a sudden shaking of the ground",
+      "sentence": "The earthquake shook the ground for a few seconds."
+    },
+    {
+      "index": 208,
+      "word": "pirate",
+      "definition": "someone who robs ships at sea",
+      "sentence": "The pirate sailed the seas looking for treasure."
+    },
+    {
+      "index": 209,
+      "word": "wharf",
+      "definition": "a platform where ships load and unload",
+      "sentence": "Fishermen unloaded their catch at the wharf."
+    },
+    {
+      "index": 210,
+      "word": "rhythm",
+      "definition": "a regular pattern of beats or sounds",
+      "sentence": "The drummer kept a steady rhythm."
+    },
+    {
+      "index": 211,
+      "word": "ladder",
+      "definition": "a set of rungs used to climb up or down",
+      "sentence": "He climbed the ladder to fix the roof."
+    },
+    {
+      "index": 212,
+      "word": "generous",
+      "definition": "happy to give and share",
+      "sentence": "It was generous of her to share her lunch."
+    },
+    {
+      "index": 213,
+      "word": "lightning",
+      "definition": "a bright flash of light in a storm",
+      "sentence": "Lightning lit up the dark sky."
+    },
+    {
+      "index": 214,
+      "word": "playground",
+      "definition": "an outdoor area with equipment for children to play on",
+      "sentence": "The kids raced to the playground at lunchtime."
+    },
+    {
+      "index": 215,
+      "word": "gravity",
+      "definition": "the force that pulls things down towards the ground",
+      "sentence": "Gravity pulls everything down to the ground."
+    }
+  ]
+}

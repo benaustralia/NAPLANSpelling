@@ -37,6 +37,9 @@ const LEVELS: Level[] = [
   { id: 'y9-lc', title: 'Year 9 Language Conventions', seed: 90909, pauseSec: 5.5 },
   { id: 'difficult-lc', title: 'Difficult Language Conventions', seed: 111222, pauseSec: 5.5 },
   { id: 'challenging-lc', title: 'Challenging Language Conventions', seed: 333444, pauseSec: 5.5 },
+  { id: 'bee-green-lc', title: 'Spelling Bee — Green', seed: 234567, pauseSec: 7.5 },
+  { id: 'bee-orange-lc', title: 'Spelling Bee — Orange', seed: 345678, pauseSec: 7.5 },
+  { id: 'bee-red-lc', title: 'Spelling Bee — Red', seed: 456789, pauseSec: 5.5 },
 ];
 
 function mulberry32(seed: number) {

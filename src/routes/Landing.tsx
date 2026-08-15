@@ -42,6 +42,23 @@ export function Landing() {
               <a href="/challenging-lc/">Challenging</a>
             </Button>
           </div>
+          <p className="mt-6 text-xs font-medium tracking-widest uppercase text-muted-foreground">
+            Spelling Bee practice — Green, Orange &amp; Red level
+          </p>
+          <p className="mt-1.5 text-xs text-muted-foreground">
+            An independent practice resource, not affiliated with or endorsed by the Prime Minister&rsquo;s Spelling Bee.
+          </p>
+          <div className="mt-3 grid grid-cols-3 gap-3">
+            <Button asChild size="xl" variant="outline" className="w-full border-primary/30 text-foreground hover:border-primary/50">
+              <a href="/bee-green-lc/">Green</a>
+            </Button>
+            <Button asChild size="xl" variant="outline" className="w-full border-primary/30 text-foreground hover:border-primary/50">
+              <a href="/bee-orange-lc/">Orange</a>
+            </Button>
+            <Button asChild size="xl" variant="outline" className="w-full border-primary/30 text-foreground hover:border-primary/50">
+              <a href="/bee-red-lc/">Red</a>
+            </Button>
+          </div>
         </div>
       </section>
     </Shell>

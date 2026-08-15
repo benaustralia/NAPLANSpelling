@@ -1,6 +1,10 @@
 import { lazy, Suspense, type ReactNode } from 'react';
-import { ALL_LEVELS } from '@/levels';
+import { Menu, ChevronDown } from 'lucide-react';
+import { ALL_LEVELS, type LevelCategory } from '@/levels';
 import { AUTH_ENABLED } from '@/lib/auth';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
+import { Sheet, SheetTrigger, SheetContent, SheetTitle } from '@/components/ui/sheet';
 
 // Lazy: @clerk/clerk-react is a meaningful chunk of JS that the majority-anonymous
 // audience (no login required to practice) shouldn't pay for on every page load.
@@ -24,37 +28,64 @@ function NavDivider() {
   return <div className="h-4 w-px bg-border shrink-0" aria-hidden />;
 }
 
+// Groups levels by category, preserving each category's first-appearance order
+// in ALL_LEVELS — new categories (e.g. a future "Spelling Bee") just work.
+function groupByCategory() {
+  const order: LevelCategory[] = [];
+  const groups = new Map<LevelCategory, typeof ALL_LEVELS extends ReadonlyArray<infer T> ? T[] : never>();
+  for (const level of ALL_LEVELS) {
+    if (!groups.has(level.category)) {
+      groups.set(level.category, []);
+      order.push(level.category);
+    }
+    groups.get(level.category)!.push(level);
+  }
+  return order.map((category) => ({ category, levels: groups.get(category)! }));
+}
+
 export function Shell({ children }: { children: ReactNode }) {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
-  const naplanLevels = ALL_LEVELS.slice(0, 4);
-  const bonusLevels = ALL_LEVELS.slice(4);
+  const categories = groupByCategory();
 
   return (
     <div className="min-h-dvh flex flex-col">
       <header className="border-b border-border/70">
-        <div className="mx-auto max-w-5xl px-5 py-5 sm:py-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto max-w-5xl px-5 py-5 sm:py-6 flex items-center justify-between gap-3">
           <a
             href="/"
             className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground shrink-0"
           >
             NAPLAN Style <span className="text-primary">Spelling</span>
           </a>
-          <nav className="flex items-center gap-4 overflow-x-auto no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0 sm:overflow-visible">
-            <div className="flex items-center gap-4 shrink-0">
-              {naplanLevels.map((l) => (
-                <NavLink key={l.id} href={`/${l.id}/`} active={path.startsWith(`/${l.id}`)}>
-                  {l.yearLabel}
-                </NavLink>
-              ))}
-            </div>
-            <NavDivider />
-            <div className="flex items-center gap-4 shrink-0">
-              {bonusLevels.map((l) => (
-                <NavLink key={l.id} href={`/${l.id}/`} active={path.startsWith(`/${l.id}`)}>
-                  {l.yearLabel}
-                </NavLink>
-              ))}
-            </div>
+
+          {/* Desktop nav: one dropdown per level category, fixed width regardless
+              of how many levels a category holds. */}
+          <nav className="hidden sm:flex items-center gap-4">
+            {categories.map(({ category, levels }) => {
+              const categoryActive = levels.some((l) => path.startsWith(`/${l.id}`));
+              return (
+                <DropdownMenu key={category}>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={
+                        'flex items-center gap-1 text-sm font-medium transition-colors outline-none ' +
+                        (categoryActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground')
+                      }
+                    >
+                      {category}
+                      <ChevronDown className="size-3.5" aria-hidden />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    {levels.map((l) => (
+                      <DropdownMenuItem key={l.id} active={path.startsWith(`/${l.id}`)} asChild>
+                        <a href={`/${l.id}/`}>{l.yearLabel}</a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              );
+            })}
             <NavDivider />
             <NavLink href="/about/" active={path === '/about'}>
               About
@@ -68,6 +99,44 @@ export function Shell({ children }: { children: ReactNode }) {
               </>
             )}
           </nav>
+
+          {/* Mobile nav: hamburger opens a drawer with every category expanded. */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="sm:hidden" aria-label="Open menu">
+                <Menu className="size-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetTitle>Menu</SheetTitle>
+              <nav className="flex flex-col gap-5 overflow-y-auto">
+                {categories.map(({ category, levels }) => (
+                  <div key={category} className="flex flex-col gap-2">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      {category}
+                    </div>
+                    <div className="flex flex-col gap-3 pl-1">
+                      {levels.map((l) => (
+                        <NavLink key={l.id} href={`/${l.id}/`} active={path.startsWith(`/${l.id}`)}>
+                          {l.yearLabel}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <div className="border-t border-border/70 pt-4 flex flex-col gap-3">
+                  <NavLink href="/about/" active={path === '/about'}>
+                    About
+                  </NavLink>
+                  {AUTH_ENABLED && (
+                    <Suspense fallback={null}>
+                      <AccountMenu path={path} />
+                    </Suspense>
+                  )}
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
       <main className="flex-1">{children}</main>

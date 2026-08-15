@@ -4,6 +4,9 @@
 import { createClerkClient, verifyToken } from '@clerk/backend';
 import { neon } from '@neondatabase/serverless';
 import { getStore } from '@netlify/blobs';
+import beeGreen from '../../src/data/bee-green-lc.json';
+import beeOrange from '../../src/data/bee-orange-lc.json';
+import beeRed from '../../src/data/bee-red-lc.json';
 
 export function jsonResponse(status: number, body: unknown): Response {
   return new Response(JSON.stringify(body), {
@@ -80,6 +83,73 @@ export async function notifyOwner(subject: string, text: string): Promise<void> 
 }
 
 export type WordResult = { index: number; word: string; transcribed: string | null; correct: boolean };
+
+// Shared scoring for the Bee typed-quiz endpoints (record-bee-attempt.mts —
+// signed-in personal progress, log-quiz-event.mts — anonymous analytics).
+// Both re-check the student's submitted answers against the known-correct
+// spelling server-side rather than trusting a client-computed score.
+type QuizWord = { index: number; word: string };
+type QuizPart = { part: number; start: number; end: number };
+type QuizLevel = { id: string; parts: QuizPart[]; words: QuizWord[] };
+
+const BEE_LEVELS: Record<string, QuizLevel> = {
+  'bee-green-lc': beeGreen,
+  'bee-orange-lc': beeOrange,
+  'bee-red-lc': beeRed,
+};
+
+export type QuizAnswer = { index: number; typed: string | null };
+
+function normalizeWord(s: string): string {
+  return s.trim().toLowerCase();
+}
+
+export function computeQuizResults(
+  levelId: string,
+  part: number,
+  answers: QuizAnswer[],
+): { score: number; total: number; results: WordResult[] } | null {
+  const level = BEE_LEVELS[levelId];
+  if (!level) return null;
+  const partInfo = level.parts.find((p) => p.part === part);
+  if (!partInfo) return null;
+
+  const expectedWords = level.words.filter((w) => w.index >= partInfo.start && w.index <= partInfo.end);
+  const byIndex = new Map(answers.map((a) => [a?.index, a?.typed ?? null]));
+
+  let score = 0;
+  const results = expectedWords.map((w) => {
+    const typed = byIndex.get(w.index) ?? null;
+    const correct = typed != null && normalizeWord(typed) === normalizeWord(w.word);
+    if (correct) score++;
+    return { index: w.index, word: w.word, transcribed: typed, correct };
+  });
+
+  return { score, total: expectedWords.length, results };
+}
+
+// Best-effort, fire-and-forget: anonymous analytics shouldn't ever be able to
+// fail a student's quiz completion. No user_id column exists on this table —
+// see db/schema.sql "quiz_events".
+export async function logQuizEvent(params: {
+  levelId: string;
+  part: number;
+  score: number;
+  total: number;
+  results: WordResult[];
+}): Promise<void> {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) return;
+  try {
+    const sql = neon(connectionString);
+    await sql`
+      insert into quiz_events (level_id, part, score, total, results)
+      values (${params.levelId}, ${params.part}, ${params.score}, ${params.total}, ${JSON.stringify(params.results)}::jsonb)
+    `;
+  } catch (err) {
+    console.error('logQuizEvent failed:', err);
+  }
+}
 
 export type Attempt = {
   level_id: string;

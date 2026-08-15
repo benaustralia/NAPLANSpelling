@@ -1,5 +1,8 @@
 # Photo marking — build plan
 
+> **Active work (2026-08-15): see `PM-Bee-Plan.md`** — adding a Prime Minister's
+> Spelling Bee category (Green/Orange/Red levels) with expanded word lists.
+
 Goal: let a student's handwritten spelling answers get marked from a photo, without
 turning this into a NAPLAN-style typed test simulator (deliberately ruled out — see
 Decisions below).

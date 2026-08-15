@@ -7,6 +7,7 @@ import './index.css';
 
 const ListOverview = lazy(() => import('@/routes/ListOverview').then((m) => ({ default: m.ListOverview })));
 const PartPlayer = lazy(() => import('@/routes/PartPlayer').then((m) => ({ default: m.PartPlayer })));
+const BeeQuiz = lazy(() => import('@/routes/BeeQuiz').then((m) => ({ default: m.BeeQuiz })));
 const PartPrintable = lazy(() => import('@/routes/PartPrintable').then((m) => ({ default: m.PartPrintable })));
 const About = lazy(() => import('@/routes/About').then((m) => ({ default: m.About })));
 const Progress = lazy(() => import('@/routes/Progress').then((m) => ({ default: m.Progress })));
@@ -26,20 +27,21 @@ function App() {
   if (path === '/join') return <Join />;
   if (path === '/join/zh') return <JoinZh />;
 
-  for (const { id, data } of ALL_LEVELS) {
+  for (const { id, data, interaction } of ALL_LEVELS) {
     if (path === `/${id}`) return <ListOverview levelId={id} />;
+    const m = path.match(new RegExp(`^/${id}/part/(\\d+)$`));
+    if (m) {
+      const n = Number(m[1]);
+      if (Number.isInteger(n) && n >= 1 && n <= data.parts.length) {
+        return interaction === 'typed' ? <BeeQuiz levelId={id} part={n} /> : <PartPlayer levelId={id} part={n} />;
+      }
+    }
+    if (interaction !== 'dictation') continue;
     const printMatch = path.match(new RegExp(`^/${id}/part/(\\d+)/print$`));
     if (printMatch) {
       const n = Number(printMatch[1]);
       if (Number.isInteger(n) && n >= 1 && n <= data.parts.length) {
         return <PartPrintable levelId={id} part={n} />;
-      }
-    }
-    const m = path.match(new RegExp(`^/${id}/part/(\\d+)$`));
-    if (m) {
-      const n = Number(m[1]);
-      if (Number.isInteger(n) && n >= 1 && n <= data.parts.length) {
-        return <PartPlayer levelId={id} part={n} />;
       }
     }
     const markMatch = path.match(new RegExp(`^/mark/${id}/part/(\\d+)$`));
