@@ -17,6 +17,25 @@ context — it tracks phase-by-phase progress and open items that don't
 live anywhere else. **Check `PM-Bee-Plan.md`** specifically for the Spelling
 Bee category — `Plan.md` just points to it.
 
+**Two structurally different interaction models live on this one site —
+don't assume a feature that applies to one applies to both:**
+| | Dictation levels (Y3/Y5/Y7/Y9, Difficult, Challenging) | Bee levels (Green/Orange/Red) |
+|---|---|---|
+| `interaction` (`src/levels.ts`) | `'dictation'` | `'typed'` |
+| Player | `PartPlayer.tsx` — plays a whole part, prev/next/play transport | `BeeQuiz.tsx` — one word at a time, Listen → type → check |
+| Answering | Student writes on paper (or types nothing — the site never sees an answer) | Student types into the page; marked instantly, client-recomputed server-side |
+| Marking | Self-check via "Reveal answers", or AI photo-marking (`MarkPanel.tsx`, Claude Haiku) | Plain string comparison — no AI involved |
+| Time pressure | None | Real 25s-per-word countdown, reverse-engineered from the actual Bee (see `PM-Bee-Plan.md`) |
+| Printable sheet / PDF | Yes, pre-generated (`public/pdfs/`) | None — doesn't exist for this category |
+| Progress persistence | Only via photo-marking attempts | Every attempt (signed-in *and* anonymous) |
+
+This isn't "one more level with a different skin" — it's two different
+products sharing a nav and a word-list pipeline. A request that implicitly
+assumes one model ("add photo-marking to Bee", "give Y3 instant per-word
+feedback like Bee") needs a deliberate design decision, not just wiring —
+check `PM-Bee-Plan.md`'s "Decision" section for why Bee forked away from the
+dictation model in the first place before building toward either direction.
+
 URL structure (static, hash-free, no trailing-slash quirks):
 - `/`                     — landing page with level CTAs (Y3 / Y5 / Y7 / Y9 / Difficult / Challenging / Bee)
 - `/about/`               — copyright + methodology
