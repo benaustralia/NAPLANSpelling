@@ -24,9 +24,62 @@ but get it live ASAP.
   Enter. Audio can be replayed; a **Show Hint** button reveals definition, word
   origin, part of speech, and homophone yes/no — but the timer keeps running.
 - Each 30-word run ramps easy → hard; the last ~10 words are where runs are won.
+- **The real competition is one attempt only, ever, per round** — confirmed
+  2026-08-15 from the official Terms & Conditions
+  (spelling-bee.com.au/terms-conditions/, §8: "Each entrant can enter and
+  complete a Competition Round only once"). No retries within the School
+  Round, or within State/Territory Finals or the National Final if a student
+  advances that far — each is a single scored 30-word sitting. This is the
+  sharpest possible contrast with this site's category: unlimited practice
+  runs, by design. Also from the T&Cs (§7d, confirms/extends what the demo
+  showed): the answer text box is genuinely **inactive until the word's
+  audio finishes** — `BeeQuiz.tsx`'s input is currently always typeable,
+  not gated on having listened first; a deliberate MVP simplification, not
+  yet revisited. Ranking uses accuracy first, then cumulative time to the
+  millisecond as tiebreaker (§9) — not relevant to a non-competitive
+  practice tool, noted for completeness only.
+- **Round structure is a fixed 3-stage funnel, not "as many rounds as needed
+  to find a winner"** — confirmed 2026-08-15 from the T&Cs and the teacher
+  guide (spelling-bee.com.au/setting-up-the-bee/): School Round → top **500**
+  per state/territory/category advance → State/Territory Finals → top **3**
+  per state/territory/category advance → National Final → 1 winner/category.
+  Ties at a cutoff (e.g. 500th place) don't trigger an extra round — the
+  T&Cs explicitly widen the field instead (everyone tied with the 500th
+  student advances, §9b). Only an exact tie for the National Final win
+  itself gets a genuine 4th round — a one-off tiebreak sitting the next day
+  — and with time recorded to the millisecond across 30 words that's a
+  contingency clause, not a real mechanism.
+- **Appears to be an endurance/speed test, not escalating difficulty across
+  rounds** — no mention anywhere in the T&Cs or teacher guide of a harder or
+  different word bank at State/National level; the "30 randomly served
+  words, 25s each" description and each student's fixed reading level
+  (Green/Orange/Red) are stated identically for every round. Ranking is
+  accuracy-first, then cumulative millisecond-time (§9a) — so once
+  candidates are hitting 30/30 (likely at the pointy end), the only
+  remaining differentiator is speed. Caveat: this is an inference from the
+  *absence* of any stated difficulty escalation across two official pages,
+  not a sentence that explicitly confirms identical word banks — treat as
+  "no evidence found", not "confirmed".
 - Public demo ("Try the Bee"): https://www.spelling-bee.com.au/try-the-bee/?ttb-level=green
   (also `orange`, `red`; append `&skip-tutorial`). NOTE: site 403s server-side
   fetch (Cloudflare) — use a real browser if it needs re-checking.
+
+**The demo is a tech-orientation tool, not a training tool — deliberately, not
+as a limitation.** Its 30 words per level are a single **fixed** bank (same 30
+words every time, verified 2026-08-15 by decoding `window.contest_words`) —
+its purpose is letting a student preview the *mechanics* (Listen, type,
+timer, hint) before the real thing, not to be practice material with broad
+coverage. The real competition itself draws 30 *random* words per sitting
+from presumably a much larger official bank we don't have access to. So: the
+demo's 30-word sentences/register are the right **calibration anchor** for
+this site's word lists (register, ramp shape, Australian spelling), and its
+UI mechanics are the right **interaction spec** to mirror (see the timer
+section below) — but its *word count* was never the target to hit. Our
+215/250/228-word banks aren't a deviation from the demo, they're this site
+doing the training-tool job the demo was never built to do. Keep this in
+mind before treating any future demo re-check as a scope signal — if the
+demo ever changes its word count, that still wouldn't mean our banks should
+match it.
 
 ## Official demo word banks (extracted from the demo page 2026-08-15)
 
