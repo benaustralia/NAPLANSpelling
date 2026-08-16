@@ -5,39 +5,21 @@ words. Vite + React 19 + Tailwind 4, packaged with Bun, deployed to Netlify.
 Ships Year 3, 5, 7 and 9 corpora drawn from publicly released ACARA NAPLAN
 test papers (paper era: 2008–2016), plus two harder levels — Difficult and
 Challenging — sourced from the ACARA NAPLAN Writing Marking Guide for
-students who've outgrown the Year 9 list (see "Source" sections below), plus
-a Prime Minister's Spelling Bee practice category (Green/Orange/Red) with its
-own typed self-check player — see **`PM-Bee-Plan.md`** for that category's
-full build history, including a reverse-engineered spec of the real Bee's 25s
-timer mechanic.
+students who've outgrown the Year 9 list (see "Source" sections below).
 
 **Check `Plan.md` at repo root for active/in-progress work** (e.g. the
 Clerk Production promotion) before assuming a fresh conversation has full
 context — it tracks phase-by-phase progress and open items that don't
-live anywhere else. **Check `PM-Bee-Plan.md`** specifically for the Spelling
-Bee category — `Plan.md` just points to it.
+live anywhere else.
 
-**Two structurally different interaction models live on this one site —
-don't assume a feature that applies to one applies to both:**
-| | Dictation levels (Y3/Y5/Y7/Y9, Difficult, Challenging) | Bee levels (Green/Orange/Red) |
-|---|---|---|
-| `interaction` (`src/levels.ts`) | `'dictation'` | `'typed'` |
-| Player | `PartPlayer.tsx` — plays a whole part, prev/next/play transport | `BeeQuiz.tsx` — one word at a time, Listen → type → check |
-| Answering | Student writes on paper (or types nothing — the site never sees an answer) | Student types into the page; marked instantly, client-recomputed server-side |
-| Marking | Self-check via "Reveal answers", or AI photo-marking (`MarkPanel.tsx`, Claude Haiku) | Plain string comparison — no AI involved |
-| Time pressure | None | Real 25s-per-word countdown, reverse-engineered from the actual Bee (see `PM-Bee-Plan.md`) |
-| Printable sheet / PDF | Yes, pre-generated (`public/pdfs/`) | None — doesn't exist for this category |
-| Progress persistence | Only via photo-marking attempts | Every attempt (signed-in *and* anonymous) |
-
-This isn't "one more level with a different skin" — it's two different
-products sharing a nav and a word-list pipeline. A request that implicitly
-assumes one model ("add photo-marking to Bee", "give Y3 instant per-word
-feedback like Bee") needs a deliberate design decision, not just wiring —
-check `PM-Bee-Plan.md`'s "Decision" section for why Bee forked away from the
-dictation model in the first place before building toward either direction.
+> A Prime Minister's Spelling Bee practice category (Green/Orange/Red,
+> typed self-check quiz) briefly lived on this site and has been spun out
+> to its own site, HiveDrill (`../hivedrill`) — all Bee code, data, and
+> docs have been removed from this repo. Don't build Bee features here;
+> that work happens in HiveDrill now.
 
 URL structure (static, hash-free, no trailing-slash quirks):
-- `/`                     — landing page with level CTAs (Y3 / Y5 / Y7 / Y9 / Difficult / Challenging / Bee)
+- `/`                     — landing page with level CTAs (Y3 / Y5 / Y7 / Y9 / Difficult / Challenging)
 - `/about/`               — copyright + methodology
 - `/y3-lc/`               — Year 3 LC overview (list of 11 parts)
 - `/y3-lc/part/N/`        — Year 3 LC test player for part N (1–11)
@@ -51,11 +33,6 @@ URL structure (static, hash-free, no trailing-slash quirks):
 - `/difficult-lc/part/N/`   — Difficult test player for part N (1–17)
 - `/challenging-lc/`        — Challenging overview (list of 10 parts)
 - `/challenging-lc/part/N/` — Challenging test player for part N (1–10)
-- `/bee-green-lc/`, `/bee-orange-lc/`, `/bee-red-lc/` — Spelling Bee level
-  overviews (Green/Orange/Red, 11/13/11 parts respectively)
-- `/bee-{green,orange,red}-lc/part/N/` — typed self-check quiz for part N
-  (`src/routes/BeeQuiz.tsx`, not `PartPlayer.tsx` — see "Component map" and
-  `PM-Bee-Plan.md`). No print/photo-marking routes exist for these levels.
 
 Routing is hand-rolled in `src/main.tsx` against `window.location.pathname`
 and a single `ALL_LEVELS` source of truth from `src/levels.ts`. Each level
@@ -73,8 +50,7 @@ matching ("part 1 = a-words") instead of recall.
 **The seed is immutable per level once any audio is rendered.** Changing
 the seed silently re-maps words to different positions in the audio MP3s,
 which breaks every existing audio file. Current seeds: Y3 = 30303, Y5 =
-50505, Y7 = 70707, Y9 = 90909, Difficult = 111222, Challenging = 333444,
-Bee Green = 234567, Bee Orange = 345678, Bee Red = 456789.
+50505, Y7 = 70707, Y9 = 90909, Difficult = 111222, Challenging = 333444.
 Add new levels with fresh arbitrary seeds — never reuse or change an
 existing one.
 
@@ -95,13 +71,6 @@ Watson-Will 1998) plus real student feedback on Y3 audio:
 | 0 (future) | Y2-bridge / learning support | 9.0–10.0 | Y2 LPM ~30% slower than Y3 |
 | 1 | Y3, Y5 | **7.5** | Matches existing Y3/Y5 audio; comfortable for Y3 mean writer, mildly generous for Y5 |
 | 2 | Y7, Y9, Difficult, Challenging | **5.5** | Y7/Y9 LPM 2–2.5× Y3, longer words partly offset; splits Y7/Y9 fairly. Difficult/Challenging students are at least as fast as Y9 writers, so they join the same tier rather than getting a new one |
-
-The three Bee levels reuse these same tier values by Y-level analogue (Green
-Y3–4 → tier 1's 7.5, Orange Y5–6 → tier 1's 7.5, Red Y7–8 → tier 2's 5.5), but
-for a different reason: `BeeQuiz.tsx` has no paper-writing step at all (typed,
-self-marked), so `pauseSec` there only needs to be long enough for
-`build-data.ts`'s `silencedetect` to reliably find the gap between words — the
-handwriting-pace rationale above doesn't apply to Bee.
 
 Within-tier variance between students (~30%) is expected — the per-
 question prev/next buttons (see "Future feature ideas") are the right
@@ -131,14 +100,6 @@ test contains words 21–40 and the audio says "Number 21" through "Number
 
 If you change one, change all five. Mismatched numbering is the most
 common source of confusion ("the audio says 21 but my sheet says 1").
-
-Bee levels (`interaction: 'typed'`) have no print sheet, but the same rule
-applies to their two surfaces: audio (unchanged — still `w.index`) and
-`BeeQuiz.tsx`'s "Word N of M" counter + results-list numbers, both of which
-use `current.index`/`r.index` (absolute), never a part-relative position.
-This was wrong on first ship (showed "Word 1 of 20" every part instead of
-"Word 21 of 40" for part 2) and got fixed the same day — a reminder this
-convention is easy to violate by accident in a brand new component.
 
 ## Per-level data flow
 
@@ -416,38 +377,19 @@ worth the bother.
 - `src/components/Shell.tsx` — global header + footer (ACARA copyright link).
   Wraps every page. Nav groups levels by `category` (from `ALL_LEVELS`) into
   a dropdown per category on desktop (`src/components/ui/dropdown-menu.tsx`)
-  and a hamburger-triggered drawer on mobile (`src/components/ui/sheet.tsx`)
-  — rebuilt 2026-08-15 when the Bee category pushed the level count past what
-  a flat link row could hold; both are thin shadcn-style wrappers around the
-  `radix-ui` package already in deps, not new dependencies.
+  and a hamburger-triggered drawer on mobile (`src/components/ui/sheet.tsx`);
+  both are thin shadcn-style wrappers around the `radix-ui` package already
+  in deps, not new dependencies.
 - `src/components/ui/button.tsx` — shadcn-style Button.
 - `src/routes/Landing.tsx` — front page. Eyebrow text "For Year 3&5
-  students" (uppercase via Tailwind `uppercase`), two side-by-side CTA
-  buttons, plus a Bee CTA row with an affiliation disclaimer underneath.
+  students" (uppercase via Tailwind `uppercase`), CTA buttons for every level.
 - `src/routes/ListOverview.tsx` — overview grid for one level. Takes
-  `levelId` prop. Subtitle copy branches on `getInteraction(levelId)` —
-  dictation levels get the "write on paper" blurb, typed (Bee) levels get a
-  "listen, type, instant tick/cross" blurb instead.
+  `levelId` prop.
 - `src/routes/PartPlayer.tsx` — `<audio>` player + reveal answers + print
-  sheet, for `interaction: 'dictation'` levels only. Takes `levelId` and
-  `part` props. Print layout is gated by `print-only` / `no-print` Tailwind
-  utility classes (defined in `src/index.css`).
-- `src/routes/BeeQuiz.tsx` — typed self-check quiz player for
-  `interaction: 'typed'` (Bee) levels. Listen → type → Enter/Check → instant
-  tick/cross → next word → end-of-part results screen (score + full tick/cross
-  list, incorrect words in red). Implements the real Bee's 25s-per-word timer
-  (starts only once that word's audio finishes, never cumulative — see
-  `PM-Bee-Plan.md` for the reverse-engineered spec) and a definition-only
-  "Show Hint". No print/photo-marking UI. Fires
-  `netlify/functions/log-quiz-event.mts` (anonymous analytics) on every
-  completion, and lazy-loads `src/components/BeeSaveStatus.tsx` (Clerk-gated
-  personal progress save via `netlify/functions/record-bee-attempt.mts`) on
-  the results screen only when `AUTH_ENABLED`.
-- `src/components/BeeSaveStatus.tsx` — lazy-loaded from `BeeQuiz.tsx`'s
-  results screen; same "keep `@clerk/clerk-react` out of the anonymous bundle"
-  pattern as `Shell.tsx`'s `AccountMenu`.
-- `src/routes/About.tsx` — methodology + ACARA copyright statement + Bee
-  category affiliation disclaimer.
+  sheet. Takes `levelId` and `part` props. Print layout is gated by
+  `print-only` / `no-print` Tailwind utility classes (defined in
+  `src/index.css`).
+- `src/routes/About.tsx` — methodology + ACARA copyright statement.
 - `src/routes/NotFound.tsx` — 404.
 
 ## Conventions to keep

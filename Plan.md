@@ -1,11 +1,11 @@
 # Photo marking — build plan
 
-> **Active work (2026-08-15): Phases 8-10 below** are the concrete next steps
-> for the Prime Minister's Spelling Bee category (added this session — Green/
-> Orange/Red levels, typed self-check quiz). Full background, decisions, and
-> a reverse-engineered spec of the real Bee's timer mechanic live in
-> `PM-Bee-Plan.md` — read that for "why", this file's Phases 8-10 for "what's
-> next". Phases 1-7 below are the original photo-marking build, complete.
+> Phases 1-7 below are the photo-marking build, complete. The Prime
+> Minister's Spelling Bee category that briefly lived on this site (Green/
+> Orange/Red typed self-check quiz) has been spun out to its own site,
+> HiveDrill (`../hivedrill`) — all Bee code, data, and docs (including
+> `PM-Bee-Plan.md`) have been removed from this repo. See HiveDrill's own
+> `CLAUDE.md` for that category's current state.
 
 Goal: let a student's handwritten spelling answers get marked from a photo, without
 turning this into a NAPLAN-style typed test simulator (deliberately ruled out — see
@@ -437,83 +437,6 @@ phase boundaries. Build one, stop, review, move on.
   **Not yet verified at push time:** the strong-consistency QR fix and the
   admin roster's actual on-screen rendering — both need a live retest after
   this deploy goes out.
-
-- [ ] **Phase 8 — Apply the Bee `quiz_events` DB migration**
-
-  `db/schema.sql` gained a new `quiz_events` table (2026-08-15, anonymous
-  usage analytics for the Bee category — no `user_id` column, ever; see
-  `PM-Bee-Plan.md` "Built 2026-08-15") but it has **not** been run against the
-  live Neon database yet. No dependency on Phase 9 or 10 — safe to do first,
-  or anytime. Both write paths (`netlify/functions/record-bee-attempt.mts`,
-  `netlify/functions/log-quiz-event.mts`) are best-effort/try-caught, so the
-  site works without this — Bee attempts just silently won't persist until
-  it's run. Run `psql "$DATABASE_URL" -f db/schema.sql` (idempotent —
-  `create table if not exists`), or paste the new `quiz_events` block into
-  the Neon SQL editor.
-
-- [ ] **Phase 9 — Apply the Bee word-chunking size (30 words/run, capped —
-      fully decided, ready to implement)**
-
-  **Decided 2026-08-15: Bee runs are 30 words each**, matching the real
-  competition's own sitting format — a real sitting draws 30 random words
-  from the official (non-public, presumably large) word bank per attempt.
-  This is **not** the same thing as matching the public "Try the Bee" demo,
-  which serves one small **fixed** 30-word sample per level as a
-  tech-orientation/mechanics-preview tool, not training material — see
-  `PM-Bee-Plan.md`'s "The demo is a tech-orientation tool, not a training
-  tool" note. Our 215/250/228-word banks stay as-is; only the *run length*
-  (30) borrows from the real competition, not the demo's word *count*.
-
-  `scripts/build-data.ts` currently applies one hardcoded `WORDS_PER_PART =
-  20` to every level, dictation and Bee alike — inherited unexamined when
-  the Bee levels were registered (the 20/~5-minute number is a
-  handwriting-pace artefact from the paper-test dictation levels, which
-  doesn't apply to Bee's typed/instant-feedback format at all). Needs to
-  become per-level so dictation levels keep their already-rendered 20-word
-  chunking unchanged and Bee levels get 30.
-
-  **Decided 2026-08-15: cap at 30, short final run.** Never exceed 30
-  words/run — accept an uneven tail rather than reuse the dictation levels'
-  "absorb a small remainder into the last run" rule (which would instead
-  give Green/Orange one run 17-33% longer than a real Bee attempt, working
-  against the point of modelling runs on the real 30-word sitting length).
-  Yields:
-  - **Green**: 215 words → **8 runs** (seven 30s + a 5-word tail)
-  - **Orange**: 250 words → **9 runs** (eight 30s + a 10-word tail)
-  - **Red**: 228 words → **8 runs** (seven 30s + an 18-word tail)
-
-  **Do this before Phase 10, not after.** Only one part (Bee Green part 1,
-  20 words, the OLD chunking) has real audio rendered so far, so right now is
-  the cheapest possible moment to change this — worst case is re-rendering
-  that one test part. Waiting until after Phase 10's full render would mean
-  re-rendering everything.
-
-  Once the tail policy is picked: give `Level` a per-level `wordsPerPart`
-  field in `scripts/build-data.ts` (20 for the six existing dictation levels,
-  30 for the three Bee levels), thread it through `partRanges()` instead of
-  the current global `WORDS_PER_PART` constant, re-run `bun run
-  scripts/build-data.ts`, re-render Bee Green part 1 (its word range will
-  have shifted).
-
-- [ ] **Phase 10 — Full TTS render for the remaining Bee words**
-
-  Render the ~673 words not yet rendered (Bee Green parts 2-11, all of Bee
-  Orange, all of Bee Red) — real ElevenLabs quota cost, confirm with the user
-  before running (per this repo's existing quota-awareness convention — see
-  CLAUDE.md "Audio rendering with ElevenLabs"). **Depends on Phase 9 being
-  settled first** — don't spend the render budget on word ranges that are
-  about to be redefined.
-
-  ```bash
-  bun run scripts/tts-spelling.ts bee-green-lc
-  bun run scripts/tts-spelling.ts bee-orange-lc
-  bun run scripts/tts-spelling.ts bee-red-lc
-  bun run scripts/build-data.ts   # refresh durations + questionStarts
-  ```
-
-  Test one part per level first if the chunk size changed materially (same
-  "test before committing to a full render" note as everywhere else in this
-  file/CLAUDE.md).
 
 ## Reference: domain registrar
 

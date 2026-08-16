@@ -1,13 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 import { Shell } from '@/components/Shell';
 import { Card } from '@/components/ui/card';
-import { getInteraction, getLevel, getYearLabel, type LevelId } from '@/levels';
+import { getLevel, getYearLabel, type LevelId } from '@/levels';
 import { formatDuration } from '@/lib/format';
 
 export function ListOverview({ levelId }: { levelId: LevelId }) {
   const data = getLevel(levelId);
   const yearLabel = getYearLabel(levelId);
-  const typed = getInteraction(levelId) === 'typed';
 
   return (
     <Shell>
@@ -19,9 +18,7 @@ export function ListOverview({ levelId }: { levelId: LevelId }) {
           {data.title}
         </h1>
         <p className="mt-3 text-muted-foreground max-w-2xl">
-          {typed
-            ? 'Listen to each word, then type it and press Enter to check — just like the real Prime Minister’s Spelling Bee. See a tick/cross summary at the end of each part.'
-            : `Each test reads about 20 words with a ${data.pauseSec}-second pause between each question — plenty of time to write the answer on paper. If your child gets stressed, just pause the audio and help them find what number they are up to.`}
+          Each test reads about 20 words with a {data.pauseSec}-second pause between each question — plenty of time to write the answer on paper. If your child gets stressed, just pause the audio and help them find what number they are up to.
         </p>
       </section>
 

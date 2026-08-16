@@ -29,7 +29,7 @@ function NavDivider() {
 }
 
 // Groups levels by category, preserving each category's first-appearance order
-// in ALL_LEVELS — new categories (e.g. a future "Spelling Bee") just work.
+// in ALL_LEVELS — a new category added there just works.
 function groupByCategory() {
   const order: LevelCategory[] = [];
   const groups = new Map<LevelCategory, typeof ALL_LEVELS extends ReadonlyArray<infer T> ? T[] : never>();

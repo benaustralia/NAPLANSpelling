@@ -25,24 +25,6 @@ export function About() {
             enough to write a word comfortably, short enough to keep the test
             moving.
           </p>
-          <p>
-            The Spelling Bee (Green / Orange / Red) levels are a separate
-            practice category matching the reading levels used by the Prime
-            Minister&rsquo;s Spelling Bee, with word lists compiled to a similar
-            length and difficulty ramp. This site and its word lists are
-            independently produced and are not affiliated with, endorsed by,
-            or sourced from the Prime Minister&rsquo;s Spelling Bee or its
-            organisers — see{' '}
-            <a
-              href="https://www.spelling-bee.com.au/"
-              className="underline hover:text-foreground"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              spelling-bee.com.au
-            </a>{' '}
-            for the official competition.
-          </p>
           <h2 className="font-display text-2xl font-bold mt-8">Copyright</h2>
           <p className="text-sm text-muted-foreground">
             NAPLAN test materials are © ACARA — see the{' '}
