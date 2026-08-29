@@ -14,6 +14,33 @@
   status = 301
   force = true
 
+# The Spelling Bee category was spun out to hivedrill.com and removed from
+# this site. These URLs predate the split, so they must not keep answering
+# 200 with the SPA shell — that is a soft 404: the client renders NotFound
+# while search engines see a live page and keep the URL indexed.
+#
+# Deliberately 404, not 301 — the redirect option was considered and declined.
+# The body still points a stranded student at HiveDrill, so the honest status
+# code costs a human nothing.
+#
+# `to` is required even for a 404: Netlify rejects the rule outright without
+# one, which silently leaves the catch-all below answering these paths.
+# These must stay ABOVE that catch-all.
+[[redirects]]
+  from = "/bee-green-lc/*"
+  to = "/bee-moved.html"
+  status = 404
+
+[[redirects]]
+  from = "/bee-orange-lc/*"
+  to = "/bee-moved.html"
+  status = 404
+
+[[redirects]]
+  from = "/bee-red-lc/*"
+  to = "/bee-moved.html"
+  status = 404
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
